@@ -80,7 +80,7 @@ public class BuggyController : MonoBehaviour
 
     void FixedUpdate()
     {
-        // CurrentSpeed = rb.velocity.magnitude;
+        CurrentSpeed = transform.InverseTransformVector(rb.velocity).z;
 
         if (timing)
         {
@@ -96,7 +96,7 @@ public class BuggyController : MonoBehaviour
         if (speedy && CurrentSpeed < Maxspeed)
         {
             CurrentSpeed *= 1.25f;
-            rb.velocity = Vector3.forward * CurrentSpeed;
+            rb.velocity = transform.forward * CurrentSpeed;
         }
 
         minutes = (int)(timeNum / 60f) % 60;
