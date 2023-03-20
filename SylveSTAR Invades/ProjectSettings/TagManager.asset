@@ -8,6 +8,8 @@ TagManager:
   - FxTemporaire
   - FinishLine
   - Mushroom
+  - Racing
+  - Golfing
   layers:
   - Default
   - TransparentFX
