@@ -7,6 +7,7 @@ TagManager:
   - projectile
   - FxTemporaire
   - FinishLine
+  - Mushroom
   layers:
   - Default
   - TransparentFX
