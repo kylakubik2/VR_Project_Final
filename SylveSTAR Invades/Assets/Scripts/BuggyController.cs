@@ -7,8 +7,8 @@ public class BuggyController : MonoBehaviour
 {
     private Rigidbody rb;
 
-    public TextMeshProUGUI lapCountText;
-    public TextMeshProUGUI timerText;
+    public TextMeshPro lapCountText;
+    public TextMeshPro timerText;
     private float timeNum;
     private float startEffectTime;
     private Vector3 initVelocity;
@@ -19,7 +19,7 @@ public class BuggyController : MonoBehaviour
     private int numLaps;
 
     public float Maxspeed = 20f;
-    public float CurrentSpeed = 0.0f;
+    public float CurrentSpeed;
     private bool speedy = false;
 
     public AudioSource source;
@@ -80,7 +80,7 @@ public class BuggyController : MonoBehaviour
 
     void FixedUpdate()
     {
-        CurrentSpeed = rb.velocity.magnitude;
+        // CurrentSpeed = rb.velocity.magnitude;
 
         if (timing)
         {
