@@ -10,6 +10,8 @@ TagManager:
   - Mushroom
   - Racing
   - Golfing
+  - Club
+  - Sand
   layers:
   - Default
   - TransparentFX
