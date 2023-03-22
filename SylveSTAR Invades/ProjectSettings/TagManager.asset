@@ -12,6 +12,9 @@ TagManager:
   - Golfing
   - Club
   - Sand
+  - Hole
+  - Golf
+  - Buggy
   layers:
   - Default
   - TransparentFX

@@ -7,9 +7,11 @@ public class Teleporter : MonoBehaviour
 {
     public Vector3 startPosition = new Vector3(0.0f, 0.0f, 0.0f);
     public Vector3 racingPosition = new Vector3(-595.58f, 21.11f, 247.71f);
-    public Vector3 golf1Position = new Vector3(0.27f, 0.0f, 1.0f);
-    public Vector3 golf2Position = new Vector3(-3.705f, 0.0f, -1.0f);
-    public Vector3 golf3Position = new Vector3(-1.3f, 0.0f, -1.2f);
+    public Vector3 golf1Position = new Vector3(-401.0f, 0.0f, 296.0f);
+    public Vector3 golf2Position = new Vector3(-444.0f, 0.0f, 446.0f);
+    public Vector3 golf3Position = new Vector3(-408.0f, 0.0f, 728.0f);
+
+    public GameObject player;
 
     public AudioSource racingAudio;
     public TextMeshPro lapCountText;
@@ -23,7 +25,7 @@ public class Teleporter : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        transform.position = startPosition;
+        player.transform.position = startPosition;
 
         racingAudio.enabled = false;
         lapCountText.enabled = false;
@@ -44,7 +46,7 @@ public class Teleporter : MonoBehaviour
     {
         if(other.gameObject.CompareTag("Racing"))
         {
-            transform.position = racingPosition;
+            player.transform.position = racingPosition;
             racingAudio.enabled = true;
 
             racingAudio.enabled = true;
@@ -52,25 +54,33 @@ public class Teleporter : MonoBehaviour
             timerText.enabled = true;
             racingToBeat.enabled = true;
         }
-        else if (other.gameObject.CompareTag("Golfing"))
+        if (other.gameObject.CompareTag("Golfing"))
         {
             int room = Random.Range(1, 4);
+            Debug.Log(room);
             strokesText.enabled = true;
             parText.enabled = true;
+            
 
             if (room == 1)
             {
-                transform.position = golf1Position;
+                player.transform.position = golf1Position;
+                parText.text = "Par: ";
             } 
             else if (room == 2)
             {
-                transform.position = golf2Position;
+                Debug.Log("got to part 2");
+                player.transform.position = golf2Position;
+                parText.text = "Par: ";
             }
             else
             {
-                transform.position = golf3Position;
+                Debug.Log("got to part 3");
+                player.transform.position = golf3Position;
+                parText.text = "Par: ";
             }
-        } 
+        }
+        
         else
         {
             Debug.Log("Adding other teleporation locations laterrrr");

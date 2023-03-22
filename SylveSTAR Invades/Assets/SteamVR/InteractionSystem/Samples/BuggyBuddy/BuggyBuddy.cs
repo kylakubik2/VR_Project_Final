@@ -69,12 +69,6 @@ namespace Valve.VR.InteractionSystem.Sample
         public Transform centerOfMass;
 
 
-        private bool SpeedUp;
-        public AudioSource source;
-        public AudioClip mushroom;
-        public AudioClip lastLap;
-
-
         private void Start()
         {
             body = GetComponent<Rigidbody>();
@@ -115,15 +109,6 @@ namespace Valve.VR.InteractionSystem.Sample
         }
         */
 
-        private void OnTriggerEnter(Collider other)
-        {
-            if (other.gameObject.CompareTag("Mushroom"))
-            {
-                other.gameObject.SetActive(false);
-                source.PlayOneShot(mushroom);
-                SpeedUp = true;
-            }
-        }
 
         private void Update()
         {
@@ -146,11 +131,7 @@ namespace Valve.VR.InteractionSystem.Sample
 
             speed = transform.InverseTransformVector(body.velocity).z;
 
-            if (SpeedUp)
-            {
-                speed += 1.5f;
-                SpeedUp = false;
-            }
+            speed *= 2.5f;
 
             float forw = Mathf.Abs(speed);
 
