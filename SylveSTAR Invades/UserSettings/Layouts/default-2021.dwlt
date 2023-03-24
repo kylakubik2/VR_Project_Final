@@ -19,7 +19,7 @@ MonoBehaviour:
     width: 2116.6667
     height: 1268
   m_ShowMode: 4
-  m_Title: Project
+  m_Title: Scene
   m_RootView: {fileID: 6}
   m_MinSize: {x: 875, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
@@ -48,7 +48,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 200}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 0
-  controlID: 64
+  controlID: 59
 --- !u!114 &3
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -68,8 +68,8 @@ MonoBehaviour:
     y: 0
     width: 494.66675
     height: 1218
-  m_MinSize: {x: 276, y: 71}
-  m_MaxSize: {x: 4001, y: 4021}
+  m_MinSize: {x: 275, y: 50}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 15}
   m_Panes:
   - {fileID: 15}
@@ -223,7 +223,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 200}
   m_MaxSize: {x: 16192, y: 16192}
   vertical: 1
-  controlID: 65
+  controlID: 60
 --- !u!114 &10
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -248,7 +248,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 100}
   m_MaxSize: {x: 16192, y: 8096}
   vertical: 0
-  controlID: 66
+  controlID: 61
 --- !u!114 &11
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -268,8 +268,8 @@ MonoBehaviour:
     y: 0
     width: 1096.6667
     height: 1008.6667
-  m_MinSize: {x: 202, y: 221}
-  m_MaxSize: {x: 4002, y: 4021}
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 17}
   m_Panes:
   - {fileID: 17}
@@ -377,22 +377,23 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Scripts
+    - Assets
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Scripts
+  - Assets
   m_LastFoldersGridSize: -1
-  m_LastProjectPath: D:\Student Work\VR_Project_Final\SylveSTAR Invades
+  m_LastProjectPath: C:\Users\hshin9\Documents\GitHub\VR_Project_Final\SylveSTAR
+    Invades
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 87.66669}
-    m_SelectedIDs: 2a840000
-    m_LastClickedID: 33834
-    m_ExpandedIDs: 000000001a84000020840000248400002e840000249604002696040028960400529604009a010c009e010c00a0010c0000ca9a3b
+    scrollPos: {x: 0, y: 79}
+    m_SelectedIDs: ec000100
+    m_LastClickedID: 65772
+    m_ExpandedIDs: 00000000ec00010000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -420,7 +421,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 000000001a840000
+    m_ExpandedIDs: 
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -549,21 +550,21 @@ MonoBehaviour:
     m_SaveData: []
   m_SceneHierarchy:
     m_TreeViewState:
-      scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 
-      m_LastClickedID: 0
-      m_ExpandedIDs: 5e63feffcce7ffff22e9ffffdeeaffff12ecffff12edfffff6edffffd0eeffffcaefffffd4f0ffffdcf2ffff80f3fffffef3ffff02f5ffffe0f5ffffa0f7ffff5af8ffff7cf8ffff88f8ffff6efaffffc2fafffff4ffffff826f0000946f0000d07000009c710000ce7100002c7300000074000092740000a87500000076000028760000de760000ce770000
+      scrollPos: {x: 0, y: 80}
+      m_SelectedIDs: 88050100
+      m_LastClickedID: 66952
+      m_ExpandedIDs: 5c8affffda8afffffc90ffff8a93ffff1c04010082090100520b0100760b010060110100
       m_RenameOverlay:
         m_UserAcceptedRename: 0
-        m_Name: Fence_White (12)
-        m_OriginalName: Fence_White (12)
+        m_Name: THE PLAYER
+        m_OriginalName: THE PLAYER
         m_EditFieldRect:
           serializedVersion: 2
           x: 0
           y: 0
           width: 0
           height: 0
-        m_UserData: -5636
+        m_UserData: 69984
         m_IsWaitingForDelay: 0
         m_IsRenaming: 0
         m_OriginalEventType: 0
@@ -610,8 +611,8 @@ MonoBehaviour:
       floating: 0
       collapsed: 0
       displayed: 1
-      snapOffset: {x: -101, y: -26}
-      snapOffsetDelta: {x: 0, y: 0}
+      snapOffset: {x: 0, y: 0}
+      snapOffsetDelta: {x: -98.66669, y: -26}
       snapCorner: 3
       id: Tool Settings
       index: 0
@@ -802,9 +803,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 132.88708, y: -111.807434, z: 905.32947}
+    m_Target: {x: 26.833063, y: -8.422793, z: 4.8004794}
     speed: 2
-    m_Value: {x: 132.88708, y: -111.807434, z: 905.32947}
+    m_Value: {x: 26.833063, y: -8.422793, z: 4.8004794}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -851,13 +852,13 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: 0.3885647, y: 0.4311893, z: -0.21427093, w: 0.78589916}
+    m_Target: {x: -0.16839397, y: -0.67298067, z: 0.16249701, w: -0.7020161}
     speed: 2
-    m_Value: {x: 0.3910304, y: 0.43364537, z: -0.217923, w: 0.7820207}
+    m_Value: {x: -0.1683526, y: -0.6728154, z: 0.1624571, w: -0.7018437}
   m_Size:
-    m_Target: 826.94476
+    m_Target: 20.052282
     speed: 2
-    m_Value: 826.94476
+    m_Value: 20.052282
   m_Ortho:
     m_Target: 0
     speed: 2
