@@ -3,20 +3,35 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-public class GolfingTeleport : MonoBehaviour
+public class Teleporter : MonoBehaviour
 {
+    public Vector3 startPosition = new Vector3(0.0f, 3.0f, 0.0f);
+    public Vector3 racingPosition = new Vector3(-595.58f, 21.11f, 247.71f); 
     public Vector3 golf1Position = new Vector3(-401.0f, 0.0f, 296.0f);
     public Vector3 golf2Position = new Vector3(-444.0f, 0.0f, 446.0f);
     public Vector3 golf3Position = new Vector3(-408.0f, 0.0f, 728.0f);
 
     public GameObject player;
+
+    public AudioSource racingAudio;
+    public TextMeshPro lapCountText;
+    public TextMeshPro timerText;
+    public TextMeshPro racingToBeat;
+
     public TextMeshPro parText;
     public TextMeshPro strokesText;
-    //add audio soon
 
+    // add other positions as we go
     // Start is called before the first frame update
     void Start()
     {
+        player.transform.position = startPosition;
+
+        racingAudio.enabled = false;
+        lapCountText.enabled = false;
+        timerText.enabled = false;
+        racingToBeat.enabled = false;
+
         parText.enabled = false;
         strokesText.enabled = false;
     }
@@ -26,11 +41,25 @@ public class GolfingTeleport : MonoBehaviour
     {
         
     }
-    
+
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("Player"))
+        if(other.gameObject.CompareTag("Racing"))
         {
+            Debug.Log("Racing Triggered");
+
+            player.transform.position = racingPosition;
+            racingAudio.enabled = true;
+
+            racingAudio.enabled = true;
+            lapCountText.enabled = true;
+            timerText.enabled = true;
+            racingToBeat.enabled = true;
+        }
+        else if (other.gameObject.CompareTag("Golfing"))
+        {
+            Debug.Log("Golfing Triggered");
+
             int room = Random.Range(1, 4);
             Debug.Log(room);
             strokesText.enabled = true;
