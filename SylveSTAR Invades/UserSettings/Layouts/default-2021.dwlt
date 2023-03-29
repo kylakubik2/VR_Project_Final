@@ -19,7 +19,7 @@ MonoBehaviour:
     width: 2560
     height: 1357.3334
   m_ShowMode: 4
-  m_Title: Inspector
+  m_Title: Hierarchy
   m_RootView: {fileID: 6}
   m_MinSize: {x: 875, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
@@ -48,7 +48,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 200}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 0
-  controlID: 115
+  controlID: 119
 --- !u!114 &3
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -223,7 +223,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 200}
   m_MaxSize: {x: 16192, y: 16192}
   vertical: 1
-  controlID: 52
+  controlID: 109
 --- !u!114 &10
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -248,7 +248,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 100}
   m_MaxSize: {x: 16192, y: 8096}
   vertical: 0
-  controlID: 53
+  controlID: 110
 --- !u!114 &11
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -434,13 +434,13 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Scripts
+    - Assets/VRKeys/Prefabs
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Scripts
+  - Assets/VRKeys/Prefabs
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Users\hshin9\Documents\GitHub\VR_Project_Final\SylveSTAR
     Invades
@@ -448,9 +448,9 @@ MonoBehaviour:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 79}
-    m_SelectedIDs: ae930000
-    m_LastClickedID: 37806
-    m_ExpandedIDs: 0000000094930000aa93000000ca9a3bffffff7f
+    m_SelectedIDs: 10960000
+    m_LastClickedID: 38416
+    m_ExpandedIDs: 00000000029300001c96000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -478,7 +478,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 0000000094930000
+    m_ExpandedIDs: 0000000002930000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -608,9 +608,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 60710000
-      m_LastClickedID: 29024
-      m_ExpandedIDs: 52bcffff08f3ffff84f9ffff2076000072760000de810000
+      m_SelectedIDs: 2cf7ffff
+      m_LastClickedID: -2260
+      m_ExpandedIDs: b8f4ffffeef4ffff38f5ffff34fbfffffa6e0000c67a0000767b0000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -860,9 +860,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -383.30682, y: 625.73193, z: 393.5365}
+    m_Target: {x: -583.9171, y: 31.882557, z: 258.23663}
     speed: 2
-    m_Value: {x: -383.30682, y: 625.73193, z: 393.5365}
+    m_Value: {x: -583.9171, y: 31.882557, z: 258.23663}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -909,13 +909,13 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: 0.01667288, y: 0.9079117, z: -0.41768602, w: 0.038486812}
+    m_Target: {x: -0.19145302, y: -0.5989431, z: 0.1516161, w: -0.76299644}
     speed: 2
-    m_Value: {x: 0.016668508, y: 0.90767366, z: -0.4175765, w: 0.03847672}
+    m_Value: {x: -0.18730237, y: -0.60835135, z: 0.15203562, w: -0.75611615}
   m_Size:
-    m_Target: 155.79065
+    m_Target: 9.183791
     speed: 2
-    m_Value: 155.79065
+    m_Value: 9.616535
   m_Ortho:
     m_Target: 0
     speed: 2

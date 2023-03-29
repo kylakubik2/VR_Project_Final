@@ -438,7 +438,7 @@ GameObject:
   - component: {fileID: 18250062}
   - component: {fileID: 18250061}
   m_Layer: 0
-  m_Name: Cube (29)
+  m_Name: Hedge (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1387,7 +1387,7 @@ GameObject:
   - component: {fileID: 79383620}
   - component: {fileID: 79383619}
   m_Layer: 0
-  m_Name: Cube (39)
+  m_Name: Barrier
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1744,7 +1744,7 @@ GameObject:
   - component: {fileID: 84310387}
   - component: {fileID: 84310386}
   m_Layer: 0
-  m_Name: Cube (29)
+  m_Name: Barrier (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1763,7 +1763,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1645471482}
-  m_RootOrder: 14
+  m_RootOrder: 18
   m_LocalEulerAnglesHint: {x: 0, y: 64.883, z: 0}
 --- !u!65 &84310386
 BoxCollider:
@@ -1867,7 +1867,7 @@ GameObject:
   - component: {fileID: 91252314}
   - component: {fileID: 91252313}
   m_Layer: 0
-  m_Name: Cube (7)
+  m_Name: Hedge
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2371,7 +2371,7 @@ GameObject:
   - component: {fileID: 95769894}
   - component: {fileID: 95769893}
   m_Layer: 0
-  m_Name: Cylinder (1)
+  m_Name: Sand (1)
   m_TagString: Sand
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2390,7 +2390,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1645471482}
-  m_RootOrder: 15
+  m_RootOrder: 20
   m_LocalEulerAnglesHint: {x: 0, y: -47.852, z: 0}
 --- !u!64 &95769893
 MeshCollider:
@@ -3640,7 +3640,7 @@ GameObject:
   - component: {fileID: 165940987}
   - component: {fileID: 165940986}
   m_Layer: 0
-  m_Name: Cube (6)
+  m_Name: Hedge (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4109,7 +4109,7 @@ Transform:
   - {fileID: 1198976525}
   - {fileID: 102269928}
   m_Father: {fileID: 1645471482}
-  m_RootOrder: 17
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!65 &199275612
 BoxCollider:
@@ -4625,7 +4625,7 @@ Transform:
   - {fileID: 1410409315}
   - {fileID: 1062245618}
   m_Father: {fileID: 1815641534}
-  m_RootOrder: 13
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 31.81, z: 0}
 --- !u!1001 &221555096
 PrefabInstance:
@@ -4924,7 +4924,7 @@ GameObject:
   - component: {fileID: 235817176}
   - component: {fileID: 235817175}
   m_Layer: 0
-  m_Name: Cube (32)
+  m_Name: Hedge (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5314,7 +5314,7 @@ GameObject:
   - component: {fileID: 252481628}
   - component: {fileID: 252481627}
   m_Layer: 0
-  m_Name: Cylinder (1)
+  m_Name: Sand (1)
   m_TagString: Sand
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5333,7 +5333,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1039272857}
-  m_RootOrder: 20
+  m_RootOrder: 24
   m_LocalEulerAnglesHint: {x: 0, y: 28.622, z: 0}
 --- !u!64 &252481627
 MeshCollider:
@@ -5584,7 +5584,7 @@ GameObject:
   - component: {fileID: 263603751}
   - component: {fileID: 263603750}
   m_Layer: 0
-  m_Name: Cube (44)
+  m_Name: Barrier (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6341,7 +6341,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: dcdf3a1a45deb8d48b7d3d0176a525f0,
         type: 3}
       propertyPath: m_RootOrder
-      value: 7
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: dcdf3a1a45deb8d48b7d3d0176a525f0,
         type: 3}
@@ -6805,7 +6805,7 @@ GameObject:
   - component: {fileID: 318136871}
   - component: {fileID: 318136870}
   m_Layer: 0
-  m_Name: Cube (9)
+  m_Name: Hedge (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6902,7 +6902,7 @@ GameObject:
   - component: {fileID: 318311990}
   - component: {fileID: 318311989}
   m_Layer: 0
-  m_Name: Cube (22)
+  m_Name: Barrier (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6984,7 +6984,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1039272857}
-  m_RootOrder: 15
+  m_RootOrder: 18
   m_LocalEulerAnglesHint: {x: 0, y: 64.883, z: 0}
 --- !u!1 &318404146 stripped
 GameObject:
@@ -7344,7 +7344,7 @@ GameObject:
   - component: {fileID: 324946781}
   - component: {fileID: 324946780}
   m_Layer: 0
-  m_Name: Cube (20)
+  m_Name: Barrier (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7426,7 +7426,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1039272857}
-  m_RootOrder: 13
+  m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 15.067, z: 0}
 --- !u!1 &326599176
 GameObject:
@@ -7705,7 +7705,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: dcdf3a1a45deb8d48b7d3d0176a525f0,
         type: 3}
       propertyPath: m_RootOrder
-      value: 23
+      value: 24
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: dcdf3a1a45deb8d48b7d3d0176a525f0,
         type: 3}
@@ -7981,7 +7981,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: dcdf3a1a45deb8d48b7d3d0176a525f0,
         type: 3}
       propertyPath: m_RootOrder
-      value: 21
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: dcdf3a1a45deb8d48b7d3d0176a525f0,
         type: 3}
@@ -8862,7 +8862,7 @@ GameObject:
   - component: {fileID: 357715341}
   - component: {fileID: 357715340}
   m_Layer: 0
-  m_Name: Cube (1)
+  m_Name: Sand (1)
   m_TagString: Sand
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8875,13 +8875,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 357715338}
-  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 3.55, y: 0, z: -4.06}
-  m_LocalScale: {x: 1.5, y: 0.01, z: 2.5378}
+  m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: 0.7071068}
+  m_LocalPosition: {x: 3.55, y: 0, z: -4.059999}
+  m_LocalScale: {x: 1.5000002, y: 0.01, z: 2.5378}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 608951564}
-  m_RootOrder: 27
+  m_RootOrder: 19
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!65 &357715340
 BoxCollider:
@@ -10740,7 +10740,7 @@ GameObject:
   - component: {fileID: 454641594}
   - component: {fileID: 454641593}
   m_Layer: 0
-  m_Name: Cube (13)
+  m_Name: Hedge (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10822,7 +10822,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1039272857}
-  m_RootOrder: 3
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &455754136 stripped
 GameObject:
@@ -10856,7 +10856,7 @@ GameObject:
   - component: {fileID: 456657243}
   - component: {fileID: 456657242}
   m_Layer: 0
-  m_Name: Cube (14)
+  m_Name: Hedge (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10938,7 +10938,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1039272857}
-  m_RootOrder: 4
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: -71.801, z: 0}
 --- !u!1 &457379424 stripped
 GameObject:
@@ -11966,7 +11966,7 @@ GameObject:
   - component: {fileID: 515407732}
   - component: {fileID: 515407731}
   m_Layer: 0
-  m_Name: Cube (21)
+  m_Name: Barrier (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -12048,7 +12048,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1039272857}
-  m_RootOrder: 14
+  m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 10.567, z: 0}
 --- !u!65 &515999120
 BoxCollider:
@@ -12809,7 +12809,7 @@ GameObject:
   - component: {fileID: 559683544}
   - component: {fileID: 559683543}
   m_Layer: 0
-  m_Name: Cylinder (2)
+  m_Name: Sand (2)
   m_TagString: Sand
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -13908,6 +13908,7 @@ Transform:
   - {fileID: 1310001849}
   - {fileID: 263603749}
   - {fileID: 1366327150}
+  - {fileID: 357715339}
   - {fileID: 1704340439}
   - {fileID: 807140957}
   - {fileID: 2064178044}
@@ -13916,7 +13917,6 @@ Transform:
   - {fileID: 631131694}
   - {fileID: 2078619037}
   - {fileID: 466586851}
-  - {fileID: 357715339}
   m_Father: {fileID: 1081798402}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -15373,7 +15373,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: dcdf3a1a45deb8d48b7d3d0176a525f0,
         type: 3}
       propertyPath: m_RootOrder
-      value: 21
+      value: 22
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: dcdf3a1a45deb8d48b7d3d0176a525f0,
         type: 3}
@@ -15717,7 +15717,7 @@ GameObject:
   - component: {fileID: 681751212}
   - component: {fileID: 681751211}
   m_Layer: 0
-  m_Name: Cube (5)
+  m_Name: Hedge (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -16217,6 +16217,51 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 694581254}
   m_PrefabAsset: {fileID: 0}
+--- !u!4 &694581257 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 429506, guid: dc06161b6d97feb419f45f03b62e14b9,
+    type: 3}
+  m_PrefabInstance: {fileID: 694581254}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &694581258 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 125964, guid: dc06161b6d97feb419f45f03b62e14b9,
+    type: 3}
+  m_PrefabInstance: {fileID: 694581254}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &694581259
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 694581258}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a79441f348de89743a2939f4d699eac1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_RenderShadows: 1
+  m_RequiresDepthTextureOption: 2
+  m_RequiresOpaqueTextureOption: 2
+  m_CameraType: 0
+  m_Cameras: []
+  m_RendererIndex: -1
+  m_VolumeLayerMask:
+    serializedVersion: 2
+    m_Bits: 1
+  m_VolumeTrigger: {fileID: 0}
+  m_VolumeFrameworkUpdateModeOption: 2
+  m_RenderPostProcessing: 0
+  m_Antialiasing: 0
+  m_AntialiasingQuality: 2
+  m_StopNaN: 0
+  m_Dithering: 0
+  m_ClearDepth: 1
+  m_AllowXRRendering: 1
+  m_RequiresDepthTexture: 0
+  m_RequiresColorTexture: 0
+  m_Version: 2
 --- !u!1 &697137690 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -1515691885257331071, guid: dcdf3a1a45deb8d48b7d3d0176a525f0,
@@ -16297,7 +16342,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: dcdf3a1a45deb8d48b7d3d0176a525f0,
         type: 3}
       propertyPath: m_RootOrder
-      value: 10
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: dcdf3a1a45deb8d48b7d3d0176a525f0,
         type: 3}
@@ -17970,7 +18015,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: dcdf3a1a45deb8d48b7d3d0176a525f0,
         type: 3}
       propertyPath: m_RootOrder
-      value: 19
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: dcdf3a1a45deb8d48b7d3d0176a525f0,
         type: 3}
@@ -19379,7 +19424,7 @@ GameObject:
   - component: {fileID: 835075308}
   - component: {fileID: 835075307}
   m_Layer: 0
-  m_Name: Cube (17)
+  m_Name: Hedge (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -19461,7 +19506,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1039272857}
-  m_RootOrder: 8
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &837144719
 BoxCollider:
@@ -19527,7 +19572,7 @@ GameObject:
   - component: {fileID: 843562627}
   - component: {fileID: 843562626}
   m_Layer: 0
-  m_Name: Cube (30)
+  m_Name: Hedge (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -19934,7 +19979,7 @@ Transform:
   - {fileID: 1292951522}
   - {fileID: 739554926}
   m_Father: {fileID: 1645471482}
-  m_RootOrder: 18
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &859331078
 BoxCollider:
@@ -20111,7 +20156,7 @@ GameObject:
   - component: {fileID: 866637118}
   - component: {fileID: 866637117}
   m_Layer: 0
-  m_Name: Cube (15)
+  m_Name: Hedge (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -20193,7 +20238,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1039272857}
-  m_RootOrder: 5
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: -71.801, z: 0}
 --- !u!1 &871862702 stripped
 GameObject:
@@ -20493,7 +20538,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: dcdf3a1a45deb8d48b7d3d0176a525f0,
         type: 3}
       propertyPath: m_RootOrder
-      value: 26
+      value: 27
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: dcdf3a1a45deb8d48b7d3d0176a525f0,
         type: 3}
@@ -20596,7 +20641,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: dcdf3a1a45deb8d48b7d3d0176a525f0,
         type: 3}
       propertyPath: m_RootOrder
-      value: 25
+      value: 26
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: dcdf3a1a45deb8d48b7d3d0176a525f0,
         type: 3}
@@ -20819,7 +20864,7 @@ GameObject:
   - component: {fileID: 886085779}
   - component: {fileID: 886085778}
   m_Layer: 0
-  m_Name: Cube (41)
+  m_Name: Barrier (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -21328,7 +21373,7 @@ GameObject:
   - component: {fileID: 915058089}
   - component: {fileID: 915058088}
   m_Layer: 0
-  m_Name: Cube (19)
+  m_Name: Barrier
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -21410,7 +21455,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1039272857}
-  m_RootOrder: 12
+  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 10.567, z: 0}
 --- !u!1 &917363946 stripped
 GameObject:
@@ -23214,7 +23259,7 @@ GameObject:
   - component: {fileID: 1017815121}
   - component: {fileID: 1017815120}
   m_Layer: 0
-  m_Name: Cube (42)
+  m_Name: Barrier (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -23395,7 +23440,7 @@ GameObject:
   - component: {fileID: 1021537205}
   - component: {fileID: 1021537204}
   m_Layer: 0
-  m_Name: Cube (31)
+  m_Name: Hedge (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -23573,6 +23618,63 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 37596cb7b0c1fda43b63d69df3284f18, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b653ec1077153e24983bd3a4ee0ab36e, type: 3}
+--- !u!1001 &1023642439
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 694581257}
+    m_Modifications:
+    - target: {fileID: 1000010614386324, guid: f28287b1c722ebd4aa4f4d8547ed7fa8, type: 3}
+      propertyPath: m_Name
+      value: VRKeys
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000013025176432, guid: f28287b1c722ebd4aa4f4d8547ed7fa8, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000013025176432, guid: f28287b1c722ebd4aa4f4d8547ed7fa8, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000013025176432, guid: f28287b1c722ebd4aa4f4d8547ed7fa8, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.35
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000013025176432, guid: f28287b1c722ebd4aa4f4d8547ed7fa8, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000013025176432, guid: f28287b1c722ebd4aa4f4d8547ed7fa8, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000013025176432, guid: f28287b1c722ebd4aa4f4d8547ed7fa8, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000013025176432, guid: f28287b1c722ebd4aa4f4d8547ed7fa8, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000013025176432, guid: f28287b1c722ebd4aa4f4d8547ed7fa8, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000013025176432, guid: f28287b1c722ebd4aa4f4d8547ed7fa8, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000013025176432, guid: f28287b1c722ebd4aa4f4d8547ed7fa8, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000013025176432, guid: f28287b1c722ebd4aa4f4d8547ed7fa8, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: f28287b1c722ebd4aa4f4d8547ed7fa8, type: 3}
 --- !u!65 &1023669242
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -23734,7 +23836,7 @@ GameObject:
   - component: {fileID: 1029686265}
   - component: {fileID: 1029686264}
   m_Layer: 0
-  m_Name: Cube (3)
+  m_Name: Hedge
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -24055,15 +24157,18 @@ Transform:
   m_Children:
   - {fileID: 449405273}
   - {fileID: 1819620959}
+  - {fileID: 2141615043}
+  - {fileID: 1808293871}
+  - {fileID: 229441541}
+  - {fileID: 1158903489}
+  - {fileID: 1363518092}
+  - {fileID: 2142821513}
   - {fileID: 1453322944}
   - {fileID: 454641596}
   - {fileID: 456657245}
   - {fileID: 866637120}
   - {fileID: 1352903966}
-  - {fileID: 2141615043}
   - {fileID: 835075310}
-  - {fileID: 1808293871}
-  - {fileID: 229441541}
   - {fileID: 1826135536}
   - {fileID: 915058091}
   - {fileID: 324946783}
@@ -24073,11 +24178,8 @@ Transform:
   - {fileID: 1594514486}
   - {fileID: 1224246955}
   - {fileID: 2022997364}
-  - {fileID: 252481626}
   - {fileID: 1366772162}
-  - {fileID: 1158903489}
-  - {fileID: 1363518092}
-  - {fileID: 2142821513}
+  - {fileID: 252481626}
   - {fileID: 559683542}
   m_Father: {fileID: 514525567}
   m_RootOrder: 7
@@ -24133,7 +24235,7 @@ GameObject:
   - component: {fileID: 1043341023}
   - component: {fileID: 1043341022}
   m_Layer: 0
-  m_Name: Cube (4)
+  m_Name: Hedge (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -24502,7 +24604,7 @@ GameObject:
   - component: {fileID: 1072805339}
   - component: {fileID: 1072805338}
   m_Layer: 0
-  m_Name: Cube (35)
+  m_Name: Hedge (10)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -26191,7 +26293,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: dcdf3a1a45deb8d48b7d3d0176a525f0,
         type: 3}
       propertyPath: m_RootOrder
-      value: 22
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: dcdf3a1a45deb8d48b7d3d0176a525f0,
         type: 3}
@@ -27949,7 +28051,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: dcdf3a1a45deb8d48b7d3d0176a525f0,
         type: 3}
       propertyPath: m_RootOrder
-      value: 22
+      value: 23
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: dcdf3a1a45deb8d48b7d3d0176a525f0,
         type: 3}
@@ -28055,7 +28157,7 @@ GameObject:
   - component: {fileID: 1224246953}
   - component: {fileID: 1224246952}
   m_Layer: 0
-  m_Name: Cube (25)
+  m_Name: Barrier (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -28137,7 +28239,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1039272857}
-  m_RootOrder: 18
+  m_RootOrder: 21
   m_LocalEulerAnglesHint: {x: 0, y: 51.348, z: 0}
 --- !u!1 &1227536959 stripped
 GameObject:
@@ -28280,7 +28382,7 @@ GameObject:
   - component: {fileID: 1230869908}
   - component: {fileID: 1230869907}
   m_Layer: 0
-  m_Name: Cube (23)
+  m_Name: Barrier (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -28362,7 +28464,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1039272857}
-  m_RootOrder: 16
+  m_RootOrder: 19
   m_LocalEulerAnglesHint: {x: 0, y: 64.883, z: 0}
 --- !u!1 &1236126940 stripped
 GameObject:
@@ -30224,7 +30326,7 @@ GameObject:
   - component: {fileID: 1310001851}
   - component: {fileID: 1310001850}
   m_Layer: 0
-  m_Name: Cube (43)
+  m_Name: Barrier (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -30383,7 +30485,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: dcdf3a1a45deb8d48b7d3d0176a525f0,
         type: 3}
       propertyPath: m_RootOrder
-      value: 20
+      value: 21
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: dcdf3a1a45deb8d48b7d3d0176a525f0,
         type: 3}
@@ -30997,7 +31099,7 @@ GameObject:
   - component: {fileID: 1352903964}
   - component: {fileID: 1352903963}
   m_Layer: 0
-  m_Name: Cube (16)
+  m_Name: Hedge (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -31079,7 +31181,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1039272857}
-  m_RootOrder: 6
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1354893791 stripped
 GameObject:
@@ -31264,7 +31366,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: dcdf3a1a45deb8d48b7d3d0176a525f0,
         type: 3}
       propertyPath: m_RootOrder
-      value: 23
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: dcdf3a1a45deb8d48b7d3d0176a525f0,
         type: 3}
@@ -31709,7 +31811,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: dcdf3a1a45deb8d48b7d3d0176a525f0,
         type: 3}
       propertyPath: m_RootOrder
-      value: 24
+      value: 25
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: dcdf3a1a45deb8d48b7d3d0176a525f0,
         type: 3}
@@ -31829,7 +31931,7 @@ GameObject:
   - component: {fileID: 1366327152}
   - component: {fileID: 1366327151}
   m_Layer: 0
-  m_Name: Cube
+  m_Name: Sand
   m_TagString: Sand
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -31945,7 +32047,7 @@ GameObject:
   - component: {fileID: 1366772164}
   - component: {fileID: 1366772163}
   m_Layer: 0
-  m_Name: Cube
+  m_Name: Sand
   m_TagString: Sand
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -31964,7 +32066,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1039272857}
-  m_RootOrder: 21
+  m_RootOrder: 23
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &1366772163
 BoxCollider:
@@ -33914,7 +34016,7 @@ GameObject:
   - component: {fileID: 1453322942}
   - component: {fileID: 1453322941}
   m_Layer: 0
-  m_Name: Cube (12)
+  m_Name: Hedge
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -33996,7 +34098,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1039272857}
-  m_RootOrder: 2
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: -71.801, z: 0}
 --- !u!1 &1454848838 stripped
 GameObject:
@@ -34851,7 +34953,7 @@ GameObject:
   - component: {fileID: 1513851814}
   - component: {fileID: 1513851813}
   m_Layer: 0
-  m_Name: Cube (27)
+  m_Name: Barrier
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -34933,7 +35035,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1645471482}
-  m_RootOrder: 10
+  m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 10.567, z: 0}
 --- !u!1 &1518125334 stripped
 GameObject:
@@ -35794,7 +35896,7 @@ GameObject:
   - component: {fileID: 1594514484}
   - component: {fileID: 1594514483}
   m_Layer: 0
-  m_Name: Cube (24)
+  m_Name: Barrier (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -35876,7 +35978,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1039272857}
-  m_RootOrder: 17
+  m_RootOrder: 20
   m_LocalEulerAnglesHint: {x: 0, y: 64.883, z: 0}
 --- !u!1 &1595624887 stripped
 GameObject:
@@ -36841,7 +36943,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: dcdf3a1a45deb8d48b7d3d0176a525f0,
         type: 3}
       propertyPath: m_RootOrder
-      value: 9
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: dcdf3a1a45deb8d48b7d3d0176a525f0,
         type: 3}
@@ -37491,8 +37593,8 @@ Transform:
   - {fileID: 76942929}
   - {fileID: 706126473}
   - {fileID: 1088362829}
-  - {fileID: 1426761513}
   - {fileID: 1867984302}
+  - {fileID: 1426761513}
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -37716,18 +37818,18 @@ Transform:
   - {fileID: 1066587788}
   - {fileID: 1711757249}
   - {fileID: 401441263}
-  - {fileID: 1513851816}
-  - {fileID: 2099435844}
-  - {fileID: 1691640719}
-  - {fileID: 1788369124}
-  - {fileID: 84310385}
-  - {fileID: 95769892}
   - {fileID: 8806588655795725270}
   - {fileID: 199275611}
   - {fileID: 859331077}
   - {fileID: 769324812}
   - {fileID: 1917032849}
   - {fileID: 339686809}
+  - {fileID: 1513851816}
+  - {fileID: 2099435844}
+  - {fileID: 84310385}
+  - {fileID: 1691640719}
+  - {fileID: 95769892}
+  - {fileID: 1788369124}
   m_Father: {fileID: 1815641534}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -38195,7 +38297,7 @@ GameObject:
   - component: {fileID: 1660869264}
   - component: {fileID: 1660869263}
   m_Layer: 0
-  m_Name: Cube (8)
+  m_Name: Hedge (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -38929,7 +39031,7 @@ GameObject:
   - component: {fileID: 1691640721}
   - component: {fileID: 1691640720}
   m_Layer: 0
-  m_Name: Cylinder
+  m_Name: Sand
   m_TagString: Sand
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -38948,7 +39050,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1645471482}
-  m_RootOrder: 12
+  m_RootOrder: 19
   m_LocalEulerAnglesHint: {x: 0, y: -87.681, z: 0}
 --- !u!64 &1691640720
 MeshCollider:
@@ -39409,7 +39511,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: dcdf3a1a45deb8d48b7d3d0176a525f0,
         type: 3}
       propertyPath: m_RootOrder
-      value: 19
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: dcdf3a1a45deb8d48b7d3d0176a525f0,
         type: 3}
@@ -40732,7 +40834,7 @@ GameObject:
   - component: {fileID: 1788369126}
   - component: {fileID: 1788369125}
   m_Layer: 0
-  m_Name: Cube
+  m_Name: Sand (2)
   m_TagString: Sand
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -40751,7 +40853,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1645471482}
-  m_RootOrder: 13
+  m_RootOrder: 21
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &1788369125
 BoxCollider:
@@ -41048,7 +41150,7 @@ GameObject:
   - component: {fileID: 1803223864}
   - component: {fileID: 1803223863}
   m_Layer: 0
-  m_Name: Cube (33)
+  m_Name: Hedge (8)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -41575,9 +41677,9 @@ Transform:
   - {fileID: 994878410}
   - {fileID: 326599177}
   - {fileID: 1651697622}
+  - {fileID: 219680974}
   - {fileID: 1343397516}
   - {fileID: 1738175489}
-  - {fileID: 219680974}
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -41755,7 +41857,7 @@ GameObject:
   - component: {fileID: 1819039944}
   - component: {fileID: 1819039943}
   m_Layer: 0
-  m_Name: Cube (34)
+  m_Name: Hedge (9)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -41928,7 +42030,7 @@ GameObject:
   - component: {fileID: 1826135534}
   - component: {fileID: 1826135533}
   m_Layer: 0
-  m_Name: Cube (18)
+  m_Name: Hedge (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -42010,7 +42112,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1039272857}
-  m_RootOrder: 11
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1827478737 stripped
 GameObject:
@@ -42359,7 +42461,7 @@ GameObject:
   - component: {fileID: 1845113196}
   - component: {fileID: 1845113195}
   m_Layer: 0
-  m_Name: Cube (40)
+  m_Name: Barrier (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -42949,7 +43051,7 @@ Transform:
   - {fileID: 1742698712}
   - {fileID: 649203200}
   m_Father: {fileID: 1640615522}
-  m_RootOrder: 9
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1868024509
 PrefabInstance:
@@ -43318,7 +43420,7 @@ GameObject:
   - component: {fileID: 1885313265}
   - component: {fileID: 1885313264}
   m_Layer: 0
-  m_Name: Cube (10)
+  m_Name: Hedge (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -43821,7 +43923,7 @@ GameObject:
   - component: {fileID: 1910672971}
   - component: {fileID: 1910672970}
   m_Layer: 0
-  m_Name: Cube (36)
+  m_Name: Hedge (11)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -44054,7 +44156,7 @@ Transform:
   - {fileID: 1941462451}
   - {fileID: 409609792}
   m_Father: {fileID: 1645471482}
-  m_RootOrder: 20
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 270, z: 0}
 --- !u!65 &1917032850
 BoxCollider:
@@ -46128,7 +46230,7 @@ GameObject:
   - component: {fileID: 2022997362}
   - component: {fileID: 2022997361}
   m_Layer: 0
-  m_Name: Cube (26)
+  m_Name: Barrier (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -46210,7 +46312,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1039272857}
-  m_RootOrder: 19
+  m_RootOrder: 22
   m_LocalEulerAnglesHint: {x: 0, y: 234.76001, z: 0}
 --- !u!1001 &2023801082
 PrefabInstance:
@@ -48069,7 +48171,7 @@ GameObject:
   - component: {fileID: 2099435842}
   - component: {fileID: 2099435841}
   m_Layer: 0
-  m_Name: Cube (28)
+  m_Name: Barrier (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -48151,7 +48253,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1645471482}
-  m_RootOrder: 11
+  m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 64.883, z: 0}
 --- !u!1 &2099740077 stripped
 GameObject:
@@ -48416,7 +48518,7 @@ GameObject:
   - component: {fileID: 2107857234}
   - component: {fileID: 2107857233}
   m_Layer: 0
-  m_Name: Cube (11)
+  m_Name: Hedge (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -49276,7 +49378,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: dcdf3a1a45deb8d48b7d3d0176a525f0,
         type: 3}
       propertyPath: m_RootOrder
-      value: 24
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: dcdf3a1a45deb8d48b7d3d0176a525f0,
         type: 3}
@@ -60299,7 +60401,7 @@ Transform:
   - {fileID: 2613811377007688721}
   - {fileID: 2205648086640281299}
   m_Father: {fileID: 1645471482}
-  m_RootOrder: 16
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!65 &8806588655795725271
 BoxCollider:
