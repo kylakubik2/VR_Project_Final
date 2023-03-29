@@ -53,6 +53,10 @@ public class golfballcontroller : MonoBehaviour
         {
             gameObject.SetActive(false);
             winTime = Time.time;
+        } else if (other.gameObject.CompareTag("Sand"))
+        {
+            rb.drag = 2; //slows down ball by increasing its drag
+            // rb.AddForce(-(transform.position - other.gameObject.transform.position) * (clubForce - 5.0f)); //testing out to see if the AddForce works better than drag
         }
     }
 }
