@@ -59,4 +59,12 @@ public class golfballcontroller : MonoBehaviour
             // rb.AddForce(-(transform.position - other.gameObject.transform.position) * (clubForce - 5.0f)); //testing out to see if the AddForce works better than drag
         }
     }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject.CompareTag("Sand"))
+        {
+            rb.drag = 0;
+        }
+    }
 }
