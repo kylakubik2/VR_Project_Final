@@ -10,7 +10,9 @@ public class finishLineScript : MonoBehaviour
     public TextMeshPro timeToBeat;
 
     public Vector3 startPosition = new Vector3(0.0f, 0.0f, 0.0f);
+    public Vector3 buggyStart;
 
+    public GameObject buggy;
     public AudioSource source;
     public AudioClip lastLap;
     public AudioClip cheer;
@@ -23,7 +25,7 @@ public class finishLineScript : MonoBehaviour
     private bool timing;
     private int numLaps;
 
-    private float winTime = 10000.0f;
+    private float winTime = 100000.0f;
 
     // Start is called before the first frame update
     void Start()
@@ -34,6 +36,8 @@ public class finishLineScript : MonoBehaviour
 
         SetLapText();
         SetTimerText();
+
+        buggyStart = buggy.transform.position;
     }
     void SetLapText()
     {
@@ -86,9 +90,12 @@ public class finishLineScript : MonoBehaviour
             timeToBeat.enabled = false;
 
             source.enabled = false;
+            buggy.transform.position = buggyStart;
+
+            winTime = 100000.0f;
         }
 
-        if (winTime > 2000.0f)
+        if (winTime > 50000.0f)
         {
             SetTimerText();
         }

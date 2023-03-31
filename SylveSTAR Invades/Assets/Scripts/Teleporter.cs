@@ -5,8 +5,8 @@ using TMPro;
 
 public class Teleporter : MonoBehaviour
 {
-    public Vector3 startPosition = new Vector3(0.0f, 3.0f, 0.0f);
-    public Vector3 racingPosition = new Vector3(-595.58f, 21.11f, 251.0f); 
+    public Vector3 startPosition = new Vector3(0.0f, 0.0f, 0.0f);
+    public Vector3 racingPosition = new Vector3(-595.58f, 21.11f, 252.0f); 
     public Vector3 golf1Position = new Vector3(-401.0f, 0.0f, 296.0f);
     public Vector3 golf2Position = new Vector3(-392.0f, 747.0f, 490.89f);
     public Vector3 golf3Position = new Vector3(-408.0f, 0.0f, 728.0f);

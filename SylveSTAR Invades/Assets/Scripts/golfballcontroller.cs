@@ -7,13 +7,19 @@ public class golfballcontroller : MonoBehaviour
 {
     public float speed = 0;
     private Rigidbody rb;
+    public GameObject ball;
     public float clubForce = 1000.0f;
     public Vector3 startPosition = new Vector3(0.0f, 0.0f, 0.0f);
+    public Vector3 golf1Position = new Vector3(-401.0f, 748.5f, 272.35f);
+    public Vector3 golf3Position = new Vector3(-427.6f, 748.5f, 708.62f);
+    public Vector3 ballStartPosition = new Vector3();
 
     public TextMeshPro strokeCounter;
     public TextMeshPro parText;
     private int numStrokes;
-    private float winTime = 10000.0f;
+    public float winTime = 100000.0f;
+    public float teleport1Time = 100000.0f;
+    public float teleport3Time = 100000.0f;
 
     public GameObject player;
 
@@ -23,6 +29,7 @@ public class golfballcontroller : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         numStrokes = 0;
         SetStrokeText();
+        ballStartPosition = ball.transform.position;
     }
 
     void SetStrokeText()
@@ -34,9 +41,21 @@ public class golfballcontroller : MonoBehaviour
     {
         if (Time.time > (winTime + 5.0f))
         {
+            Debug.Log("WHOOP");
+
             player.transform.position = startPosition;
             parText.enabled = false;
             strokeCounter.enabled = false;
+        }
+        if (Time.time > (teleport1Time + 3.0f))
+        {
+            player.transform.position = golf1Position;
+            teleport1Time = 100000.0f;
+        }
+        if (Time.time > (teleport3Time + 3.0f))
+        {
+            player.transform.position = golf3Position;
+            teleport3Time = 100000.0f;
         }
     }
 
@@ -51,12 +70,22 @@ public class golfballcontroller : MonoBehaviour
         }
         else if (other.gameObject.CompareTag("Hole"))
         {
-            gameObject.SetActive(false);
             winTime = Time.time;
-        } else if (other.gameObject.CompareTag("Sand"))
+            ball.transform.position = ballStartPosition;
+        }
+        else if (other.gameObject.CompareTag("Hole1"))
+        {
+            ball.transform.position = new Vector3(-401.6f, golf1Position.y + 1.78f, 268.0f);
+            teleport1Time = Time.time;
+        }
+        else if (other.gameObject.CompareTag("Hole3"))
+        {
+            ball.transform.position = new Vector3(-424.4f, golf3Position.y + 1.78f, 709.1f);
+            teleport3Time = Time.time;
+        }
+        else if (other.gameObject.CompareTag("Sand"))
         {
             rb.drag = 2; //slows down ball by increasing its drag
-            // rb.AddForce(-(transform.position - other.gameObject.transform.position) * (clubForce - 5.0f)); //testing out to see if the AddForce works better than drag
         }
     }
 
