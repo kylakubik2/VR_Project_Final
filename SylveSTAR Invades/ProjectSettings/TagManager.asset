@@ -17,6 +17,7 @@ TagManager:
   - Buggy
   - Hole1
   - Hole3
+  - Hangman
   layers:
   - Default
   - TransparentFX
