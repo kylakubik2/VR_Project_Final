@@ -24,11 +24,13 @@ public class Teleporter : MonoBehaviour
     public TextMeshPro parText;
     public TextMeshPro strokesText;
 
+    public bool inShoot;
+
     // add other positions as we go
     // Start is called before the first frame update
     void Start()
     {
-        player.transform.position = startPosition;
+        player.transform.position = shootingPosition;
 
         racingAudio.enabled = false;
         lapCountText.enabled = false;
@@ -37,6 +39,8 @@ public class Teleporter : MonoBehaviour
 
         parText.enabled = false;
         strokesText.enabled = false;
+
+        inShoot = false;
     }
 
     // Update is called once per frame
@@ -82,8 +86,10 @@ public class Teleporter : MonoBehaviour
         else if (other.gameObject.CompareTag("Shooting"))
         {
             Debug.Log("Shooting Triggered");
+            
 
             player.transform.position = shootingPosition;
+            inShoot = true;
             // add enabled texts and audio below
         }
     }

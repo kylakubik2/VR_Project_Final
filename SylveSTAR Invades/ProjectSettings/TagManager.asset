@@ -18,6 +18,8 @@ TagManager:
   - Hole1
   - Hole3
   - Hangman
+  - UFOGenerator
+  - UFO
   layers:
   - Default
   - TransparentFX
