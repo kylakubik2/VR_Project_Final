@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class UFO : MonoBehaviour
+public class UFOGenerator : MonoBehaviour
 {
     public Transform ufo;
 
@@ -12,11 +12,9 @@ public class UFO : MonoBehaviour
     public Teleporter teleporter;
     public LaserGunScript laserScript;
 
-    public int countUFOs = 0;
-
     void Start()
     {
-        
+        StartCoroutine(SpawnUFOs());
     }
 
     IEnumerator SpawnUFOs()
@@ -32,9 +30,7 @@ public class UFO : MonoBehaviour
             randZ = Random.Range(220.61f, 266.98f);
             randY = Random.Range(5.0f, 27.12f);
             Instantiate(ufo, new Vector3(xPos, randY, randZ), ufo.transform.rotation);
-            countUFOs++;
             yield return new WaitForSeconds(timeBetweenUFOs);
-            
         }
     }
 
