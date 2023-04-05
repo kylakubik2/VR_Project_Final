@@ -39,7 +39,7 @@ public class LaserGunScript : MonoBehaviour
         numHit = 0;
     }
 
-    public void TriggerUp(SteamVR_Action_Boolean fromAction, SteamVR_Input_Sources fromSOurce)
+    public void TriggerUp(SteamVR_Action_Boolean fromAction, SteamVR_Input_Sources fromSource)
     {
         Debug.Log("Trigger Up");
     }
@@ -62,8 +62,8 @@ public class LaserGunScript : MonoBehaviour
         {
             if (hit.collider.gameObject.tag == "UFO")
             {
-                var exp = hit.GetComponent<ParticleSystem>();
-                exp.Play();
+                //var exp = hit.GetComponent<ParticleSystem>();
+                //exp.Play();
                 Destroy(hit.collider.gameObject);
                 source.PlayOneShot(explodeSound);
                 numHit++;

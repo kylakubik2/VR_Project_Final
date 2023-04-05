@@ -30,7 +30,7 @@ public class Teleporter : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        player.transform.position = startPosition;
+        player.transform.position = shootingPosition;
 
         racingAudio.enabled = false;
         lapCountText.enabled = false;
