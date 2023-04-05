@@ -14,7 +14,7 @@ public class UFOGenerator : MonoBehaviour
 
     void Start()
     {
-        StartCoroutine(SpawnUFOs());
+        
     }
 
     IEnumerator SpawnUFOs()
