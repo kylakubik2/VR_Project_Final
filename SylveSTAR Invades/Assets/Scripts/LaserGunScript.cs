@@ -14,10 +14,12 @@ public class LaserGunScript : MonoBehaviour
     public AudioSource source;
     public AudioClip carnivalMusic;
     public AudioClip laserShoot;
-    public AudioClip explodeSound;
 
     public Transform laserOrigin;
     LineRenderer laser;
+
+    public float shootPower;
+    public GameObject ball;
 
     public float laserFireTime = 0.5f;
     public float laserTimer = -10.0f;
@@ -28,14 +30,12 @@ public class LaserGunScript : MonoBehaviour
     public bool stopUFO;
 
     public int numHit;
-    private Interactable interactable;
 
     void Start()
     {
         shootGun.AddOnStateDownListener(TriggerDown, rightHand);
         shootGun.AddOnStateUpListener(TriggerUp, rightHand);
         laser = GetComponent<LineRenderer>();
-        interactable = GetComponent<Interactable>();
 
         startTimer = false;
         stopUFO = false;
@@ -51,17 +51,18 @@ public class LaserGunScript : MonoBehaviour
     public void TriggerDown(SteamVR_Action_Boolean fromAction, SteamVR_Input_Sources fromSource)
     {
         Debug.Log("Trigger Down");
-        if (interactable.attachedToHand)
+        startTimer = true;
+        //laserTimer = laserFireTime;
+        //Shoot(laserOrigin.position, Vector3.forward);
+        //laser.enabled = true;
+        if (!stopUFO)
         {
-            Debug.Log("IN YA HAND");
-            startTimer = true;
-            laserTimer = laserFireTime;
-            Shoot(laserOrigin.position, Vector3.forward);
-            laser.enabled = true;
-            source.PlayOneShot(laserShoot);
+            Instantiate(ball, laserOrigin.position, laserOrigin.rotation * Quaternion.Euler(0f, 0f, 0f)).GetComponent<Rigidbody>().AddForce(laserOrigin.forward * shootPower);
         }
+        source.PlayOneShot(laserShoot);
     }
 
+    /*
     void Shoot(Vector3 startPosition, Vector3 direction)
     {
         Ray ray = new Ray(startPosition, direction);
@@ -78,9 +79,11 @@ public class LaserGunScript : MonoBehaviour
             }
         }
     }
+    */
 
     void Update()
     {
+        /*
         if (laserTimer > 0)
         {
             laserTimer -= Time.deltaTime;
@@ -90,6 +93,7 @@ public class LaserGunScript : MonoBehaviour
         {
             laser.enabled = false;
         }
+        */
 
         if (startTimer)
         {

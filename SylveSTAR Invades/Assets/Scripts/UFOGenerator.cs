@@ -23,12 +23,12 @@ public class UFOGenerator : MonoBehaviour
 
         float randY;
         float randZ;
-        float xPos = -242.95f;
+        float xPos = -212.31f;
 
         while (!laserScript.stopUFO)
         {
-            randZ = Random.Range(220.61f, 266.98f);
-            randY = Random.Range(5.0f, 27.12f);
+            randZ = Random.Range(169.09f, 173.23f);
+            randY = Random.Range(0.647f, 2.31f);
             Instantiate(ufo, new Vector3(xPos, randY, randZ), ufo.transform.rotation);
             yield return new WaitForSeconds(timeBetweenUFOs);
         }
@@ -39,6 +39,7 @@ public class UFOGenerator : MonoBehaviour
         if (teleporter.inShoot)
         {
             StartCoroutine(SpawnUFOs());
+            teleporter.inShoot = false;
         }
     }
 }

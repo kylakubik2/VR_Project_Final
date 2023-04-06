@@ -26,13 +26,16 @@ public class Teleporter : MonoBehaviour
     public TextMeshPro parText;
     public TextMeshPro strokesText;
 
+    public TextMeshPro numShot;
+    public TextMeshPro ufoToBeat;
+
     public bool inShoot;
 
     // add other positions as we go
     // Start is called before the first frame update
     void Start()
     {
-        player.transform.position = shootingPosition;
+        player.transform.position = startPosition;
 
         racingAudio.enabled = false;
         lapCountText.enabled = false;
@@ -41,6 +44,9 @@ public class Teleporter : MonoBehaviour
 
         parText.enabled = false;
         strokesText.enabled = false;
+
+        numShot.enabled = false;
+        ufoToBeat.enabled = false;
 
         inShoot = false;
     }
@@ -89,10 +95,11 @@ public class Teleporter : MonoBehaviour
         {
             Debug.Log("Shooting Triggered");
 
-            SteamVR_Actions.shooterGame.Activate();
-
             player.transform.position = shootingPosition;
             inShoot = true;
+
+            numShot.enabled = true;
+            ufoToBeat.enabled = true;
             // add enabled texts and audio below
         }
     }
