@@ -69,7 +69,7 @@ public class Hangman : MonoBehaviour
 
     public void OnTriggerEnter(Collider other)
     {
-        if(other.GameObject.CompareTag("Letter"))
+        if(other.gameObject.CompareTag("Letter"))
         {
             char letter = PLACEHOLDER; //get the letter
             if(answer.Contains(letter))
@@ -107,23 +107,31 @@ public class Hangman : MonoBehaviour
 
     }
 
+    
     private void DrawNextHangmanPart()
     {
         switch (failures){
             case 1:
                 head.SetActive(true);
+                break;
             case 2:
                 body.SetActive(true);
+                break;
             case 3:
                 leftArm.SetActive(true);
+                break;
             case 4:
                 rightArm.SetActive(true);
+                break;
             case 5:
                 leftLeg.SetActive(true);
+                break;
             case 6:
                 rightLeg.SetActive(true);
+                break;
             case 7:
                 face.SetActive(true);
+                break;
         }
     }
 }

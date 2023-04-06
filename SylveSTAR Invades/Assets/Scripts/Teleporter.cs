@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using Valve.VR;
+using Valve.VR.InteractionSystem;
 
 public class Teleporter : MonoBehaviour
 {
@@ -86,7 +88,8 @@ public class Teleporter : MonoBehaviour
         else if (other.gameObject.CompareTag("Shooting"))
         {
             Debug.Log("Shooting Triggered");
-            
+
+            SteamVR_Actions.shooterGame.Activate();
 
             player.transform.position = shootingPosition;
             inShoot = true;

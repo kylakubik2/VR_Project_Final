@@ -20,6 +20,7 @@ TagManager:
   - Hangman
   - UFOGenerator
   - UFO
+  - Shooting
   layers:
   - Default
   - TransparentFX

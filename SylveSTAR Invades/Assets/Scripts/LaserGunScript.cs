@@ -2,8 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Valve.VR;
+using Valve.VR.InteractionSystem;
 using TMPro;
 
+[RequireComponent(typeof(Throwable))]
 public class LaserGunScript : MonoBehaviour
 {
     public SteamVR_Action_Boolean shootGun;
@@ -26,12 +28,14 @@ public class LaserGunScript : MonoBehaviour
     public bool stopUFO;
 
     public int numHit;
+    private Interactable interactable;
 
     void Start()
     {
         shootGun.AddOnStateDownListener(TriggerDown, rightHand);
         shootGun.AddOnStateUpListener(TriggerUp, rightHand);
         laser = GetComponent<LineRenderer>();
+        interactable = GetComponent<Interactable>();
 
         startTimer = false;
         stopUFO = false;
@@ -47,11 +51,15 @@ public class LaserGunScript : MonoBehaviour
     public void TriggerDown(SteamVR_Action_Boolean fromAction, SteamVR_Input_Sources fromSource)
     {
         Debug.Log("Trigger Down");
-        startTimer = true;
-        laserTimer = laserFireTime;
-        Shoot(laserOrigin.position, Vector3.forward);
-        laser.enabled = true;
-        source.PlayOneShot(laserShoot);
+        if (interactable.attachedToHand)
+        {
+            Debug.Log("IN YA HAND");
+            startTimer = true;
+            laserTimer = laserFireTime;
+            Shoot(laserOrigin.position, Vector3.forward);
+            laser.enabled = true;
+            source.PlayOneShot(laserShoot);
+        }
     }
 
     void Shoot(Vector3 startPosition, Vector3 direction)
