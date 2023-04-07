@@ -1,6 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Text;
+using System.Linq;
 using UnityEngine;
+using TMPro;
 
 public class Hangman : MonoBehaviour
 {
@@ -13,6 +16,10 @@ public class Hangman : MonoBehaviour
     public GameObject face;
 
     public GameObject player;
+    public TextMeshPro wordText;
+    public TextMeshPro dashedText;
+
+    //public AudioSource source;
 
     private const char PLACEHOLDER = '_';
 
@@ -41,11 +48,21 @@ public class Hangman : MonoBehaviour
     void Start()
     {
         // disable all hangman parts
+        head.SetActive(false);
+        body.SetActive(false);
+        leftArm.SetActive(false);
+        rightArm.SetActive(false);
+        leftLeg.SetActive(false);
+        rightLeg.SetActive(false);
+        face.SetActive(false);
+
         wordBank.Add("andromeda");
         wordBank.Add("nebula");
         wordBank.Add("kuiper");
         wordBank.Add("constellation");
         wordBank.Add("perihelion");
+
+        PickRandomWord();
 
     }
 
@@ -69,24 +86,36 @@ public class Hangman : MonoBehaviour
 
     public void OnTriggerEnter(Collider other)
     {
-        if(other.gameObject.CompareTag("Letter"))
+        string tag = other.gameObject.tag;
+        if(tag.length == 1)
         {
-            char letter = PLACEHOLDER; //get the letter
-            if(answer.Contains(letter))
+            char letter = tag.ToCharArray()[0]; //get the letter
+            if (answer.Contains(letter))
             {
                 UpdateAnswerText(letter);
                 successes++;
-            } else
+            }
+            else
             {
-                DrawNextHangmanPart();
                 failures++;
+                DrawNextHangmanPart();
             }
         }
     }
 
-    private void PickRandomQuestion()
+    private void PickRandomWord()
     {
-        int word = 0;
+        int word = Random.Range(0, wordBank.Count);
+        wordText.text = wordBank[word];
+        answer = wordBank[word];
+        StringBuilder sb = new StringBuilder("");
+        for (int i = 0; i < answer.Length; i++)
+        {
+            sb.Append(PLACEHOLDER);
+        }
+        dashedText.text = sb.ToString();
+        userInput = sb.ToString();
+
     }
 
     private void UpdateAnswerText(char letter)
@@ -104,13 +133,14 @@ public class Hangman : MonoBehaviour
             }
         }
         userInput = new string(inputArray);
-
+        dashedText.text = userInput
     }
 
     
     private void DrawNextHangmanPart()
     {
-        switch (failures){
+        switch (failures) 
+        {
             case 1:
                 head.SetActive(true);
                 break;
@@ -131,6 +161,9 @@ public class Hangman : MonoBehaviour
                 break;
             case 7:
                 face.SetActive(true);
+                break;
+            default:
+                Debug.Log("??????????");
                 break;
         }
     }
