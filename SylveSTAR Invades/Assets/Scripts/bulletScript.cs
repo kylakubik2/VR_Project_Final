@@ -5,20 +5,21 @@ using UnityEngine;
 public class bulletScript : MonoBehaviour
 {
     private float lifeSpan = 10.0f;
-    public LaserGunScript laserGunScript;
-    public AudioSource source;
-    public AudioClip explodeSound;
+    public GameObject rayGun;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        rayGun = GameObject.Find("rayGun");
     }
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("UFO"))
         {
             Destroy(other.gameObject);
-            laserGunScript.numHit++;
+            rayGun.GetComponent<LaserGunScript>().numHit++;
+            rayGun.GetComponent<LaserGunScript>().SetShootText();
+            rayGun.GetComponent<LaserGunScript>().PlayExplodeSound();
             Destroy(this.gameObject);
         }
     }

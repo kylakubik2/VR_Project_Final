@@ -29,7 +29,7 @@ public class golfballcontroller : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         numStrokes = 0;
         SetStrokeText();
-        ballStartPosition = ball.transform.position;
+        ball.transform.position = ballStartPosition;
     }
 
     void SetStrokeText()

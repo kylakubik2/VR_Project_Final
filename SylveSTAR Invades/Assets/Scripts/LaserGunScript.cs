@@ -14,9 +14,13 @@ public class LaserGunScript : MonoBehaviour
     public AudioSource source;
     public AudioClip carnivalMusic;
     public AudioClip laserShoot;
+    public AudioClip explode;
 
     public Transform laserOrigin;
     LineRenderer laser;
+
+    public TextMeshPro shootText;
+    public TextMeshPro shootToBeat;
 
     public float shootPower;
     public GameObject ball;
@@ -27,7 +31,7 @@ public class LaserGunScript : MonoBehaviour
     public float gameTimer = 60.0f;
 
     public bool startTimer;
-    public bool stopUFO;
+    public GameObject ufoGenerator;
 
     public int numHit;
 
@@ -38,7 +42,9 @@ public class LaserGunScript : MonoBehaviour
         laser = GetComponent<LineRenderer>();
 
         startTimer = false;
-        stopUFO = false;
+
+        SetShootText();
+        SetShootToBeatText();
 
         numHit = 0;
     }
@@ -52,49 +58,29 @@ public class LaserGunScript : MonoBehaviour
     {
         Debug.Log("Trigger Down");
         startTimer = true;
-        //laserTimer = laserFireTime;
-        //Shoot(laserOrigin.position, Vector3.forward);
-        //laser.enabled = true;
-        if (!stopUFO)
+        if (gameTimer > 0)
         {
             Instantiate(ball, laserOrigin.position, laserOrigin.rotation * Quaternion.Euler(0f, 0f, 0f)).GetComponent<Rigidbody>().AddForce(laserOrigin.forward * shootPower);
         }
-        source.PlayOneShot(laserShoot);
+        //source.PlayOneShot(laserShoot);
     }
 
-    /*
-    void Shoot(Vector3 startPosition, Vector3 direction)
+    public void SetShootText()
     {
-        Ray ray = new Ray(startPosition, direction);
-        RaycastHit hit;
-        if (Physics.Raycast(ray, out hit, 1000) && !stopUFO)
-        {
-            if (hit.collider.gameObject.tag == "UFO")
-            {
-                //var exp = hit.GetComponent<ParticleSystem>();
-                //exp.Play();
-                Destroy(hit.collider.gameObject);
-                source.PlayOneShot(explodeSound);
-                numHit++;
-            }
-        }
+        shootText.text = "Number Hit: " + numHit.ToString();
     }
-    */
+    void SetShootToBeatText()
+    {
+        shootText.text = "Sylvestar's Score: ";
+    }
+
+    public void PlayExplodeSound()
+    {
+        source.PlayOneShot(explode);
+    }
 
     void Update()
     {
-        /*
-        if (laserTimer > 0)
-        {
-            laserTimer -= Time.deltaTime;
-            Shoot(laserOrigin.position, Vector3.forward);
-        }
-        else
-        {
-            laser.enabled = false;
-        }
-        */
-
         if (startTimer)
         {
             if (gameTimer > 0)
@@ -103,7 +89,7 @@ public class LaserGunScript : MonoBehaviour
             }
             else
             {
-                stopUFO = true;
+                ufoGenerator.SetActive(false);
             }
         }
     }

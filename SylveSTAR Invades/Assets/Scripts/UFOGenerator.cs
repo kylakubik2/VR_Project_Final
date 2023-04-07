@@ -14,7 +14,7 @@ public class UFOGenerator : MonoBehaviour
 
     void Start()
     {
-        
+        StartCoroutine(SpawnUFOs());
     }
 
     IEnumerator SpawnUFOs()
@@ -25,7 +25,7 @@ public class UFOGenerator : MonoBehaviour
         float randZ;
         float xPos = -212.31f;
 
-        while (!laserScript.stopUFO)
+        while (true)
         {
             randZ = Random.Range(169.09f, 173.23f);
             randY = Random.Range(0.647f, 2.31f);
@@ -36,10 +36,6 @@ public class UFOGenerator : MonoBehaviour
 
     void Update()
     {
-        if (teleporter.inShoot)
-        {
-            StartCoroutine(SpawnUFOs());
-            teleporter.inShoot = false;
-        }
+        
     }
 }

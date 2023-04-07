@@ -28,14 +28,15 @@ public class Teleporter : MonoBehaviour
 
     public TextMeshPro numShot;
     public TextMeshPro ufoToBeat;
+    public GameObject ufoGenerator;
 
-    public bool inShoot;
 
     // add other positions as we go
     // Start is called before the first frame update
     void Start()
     {
         player.transform.position = startPosition;
+        ufoGenerator.SetActive(false);
 
         racingAudio.enabled = false;
         lapCountText.enabled = false;
@@ -47,8 +48,6 @@ public class Teleporter : MonoBehaviour
 
         numShot.enabled = false;
         ufoToBeat.enabled = false;
-
-        inShoot = false;
     }
 
     // Update is called once per frame
@@ -96,7 +95,8 @@ public class Teleporter : MonoBehaviour
             Debug.Log("Shooting Triggered");
 
             player.transform.position = shootingPosition;
-            inShoot = true;
+            player.transform.eulerAngles = new Vector3(player.transform.eulerAngles.x, 90.0f, player.transform.eulerAngles.z);
+            ufoGenerator.SetActive(true);
 
             numShot.enabled = true;
             ufoToBeat.enabled = true;
