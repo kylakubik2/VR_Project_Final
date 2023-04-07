@@ -17,6 +17,10 @@ TagManager:
   - Buggy
   - Hole1
   - Hole3
+  - Hangman
+  - UFOGenerator
+  - UFO
+  - Shooting
   layers:
   - Default
   - TransparentFX
