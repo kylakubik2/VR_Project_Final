@@ -23,7 +23,9 @@ public class Teleporter : MonoBehaviour
     public TextMeshPro timerText;
     public TextMeshPro racingToBeat;
 
+    public AudioSource golf1Audio;
     public AudioSource golf2Audio;
+    public AudioSource golf3Audio;
     public TextMeshPro parText;
     public TextMeshPro strokesText;
     public TextMeshPro golfWarmUp;
@@ -47,6 +49,10 @@ public class Teleporter : MonoBehaviour
 
         parText.enabled = false;
         strokesText.enabled = false;
+        golfWarmUp.enabled = false;
+        golf1Audio.enabled = false;
+        golf2Audio.enabled = false;
+        golf3Audio.enabled = false;
 
         numShot.enabled = false;
         ufoToBeat.enabled = false;
@@ -78,7 +84,6 @@ public class Teleporter : MonoBehaviour
             Debug.Log("Golfing Triggered");
 
             golfWarmUp.enabled = true;
-
             golf2Audio.enabled = true;
             player.transform.position = golf2Position;
             parText.text = "Par: ";

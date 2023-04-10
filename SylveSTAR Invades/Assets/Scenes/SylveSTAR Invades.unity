@@ -12796,8 +12796,8 @@ Transform:
   - {fileID: 1039272857}
   - {fileID: 669336108}
   - {fileID: 1664265297}
-  - {fileID: 2097286696}
   - {fileID: 1521068353}
+  - {fileID: 2097286696}
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
@@ -26558,7 +26558,9 @@ MonoBehaviour:
   lapCountText: {fileID: 2126325194}
   timerText: {fileID: 225907806}
   racingToBeat: {fileID: 1159577339}
+  golf1Audio: {fileID: 1314525729}
   golf2Audio: {fileID: 1579949151}
+  golf3Audio: {fileID: 1521068354}
   parText: {fileID: 1898987822}
   strokesText: {fileID: 1148341804}
   golfWarmUp: {fileID: 866846659}
@@ -38232,7 +38234,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 514525567}
-  m_RootOrder: 11
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!82 &1521068354
 AudioSource:
@@ -44331,13 +44333,17 @@ MonoBehaviour:
   shootText: {fileID: 2024149139}
   shootToBeat: {fileID: 1125666524}
   shootPower: 1500
-  ball: {fileID: 301959646028531614, guid: 98a695d8d96c99e468306aabca9ef91f, type: 3}
+  ball: {fileID: 5543424096990329440, guid: 08a21e33455aed5448b01d5be932a0d6, type: 3}
   laserFireTime: 0.5
   laserTimer: 0
+  winTime: 100000
   gameTimer: 60
   startTimer: 0
   ufoGenerator: {fileID: 1858386410}
   numHit: 0
+  hit: 0
+  player: {fileID: 1052862163}
+  startPosition: {x: 0, y: 1, z: 0}
 --- !u!136 &1742698722
 CapsuleCollider:
   m_ObjectHideFlags: 0

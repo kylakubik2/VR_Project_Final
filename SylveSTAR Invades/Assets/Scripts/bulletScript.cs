@@ -19,7 +19,7 @@ public class bulletScript : MonoBehaviour
             Destroy(other.gameObject);
             rayGun.GetComponent<LaserGunScript>().numHit++;
             rayGun.GetComponent<LaserGunScript>().SetShootText();
-            rayGun.GetComponent<LaserGunScript>().PlayExplodeSound();
+            rayGun.GetComponent<LaserGunScript>().hit = true;
             Destroy(this.gameObject);
         }
     }
