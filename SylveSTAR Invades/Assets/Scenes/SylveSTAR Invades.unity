@@ -3012,8 +3012,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 0
   ball: {fileID: 121624180}
-  clubForce: 1100
-  startPosition: {x: 247.883, y: 631, z: 171.126}
+  clubForce: 400
+  startPosition: {x: 0, y: 1, z: 0}
   golf1Position: {x: -215.32, y: 631, z: 156.12}
   golf3Position: {x: 247.883, y: 631, z: 171.126}
   ballStartPosition: {x: 20.811, y: 631, z: 156.1}
@@ -3100,7 +3100,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 121624180}
   serializedVersion: 2
-  m_Mass: 5
+  m_Mass: 1
   m_Drag: 0.05
   m_AngularDrag: 0.05
   m_UseGravity: 1
@@ -23574,7 +23574,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 942235764}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2.17, y: 0.01, z: 0}
+  m_LocalPosition: {x: 2.17, y: 0.25, z: 0}
   m_LocalScale: {x: 0.46, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -24418,7 +24418,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 994878409}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 247.883, y: 631, z: 171.126}
+  m_LocalPosition: {x: 20.713, y: 631, z: 156.343}
   m_LocalScale: {x: 0.6, y: 0.6, z: 0.6}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -24485,7 +24485,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 994878409}
   serializedVersion: 2
-  m_Mass: 5
+  m_Mass: 1
   m_Drag: 0.05
   m_AngularDrag: 0.05
   m_UseGravity: 1
@@ -24582,7 +24582,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 0
   ball: {fileID: 994878409}
-  clubForce: 1100
+  clubForce: 400
   startPosition: {x: 0, y: 1, z: 0}
   golf1Position: {x: -215.32, y: 631, z: 156.12}
   golf3Position: {x: 247.883, y: 631, z: 171.126}
@@ -26552,7 +26552,7 @@ MonoBehaviour:
   golf2Position: {x: 22.41, y: 630.63, z: 155.04}
   golf3Position: {x: 245.5, y: 630.63, z: 174}
   hangmanPosition: {x: 195.4, y: 0, z: 249}
-  shootingPosition: {x: -207.9, y: 0.1, z: 171.4}
+  shootingPosition: {x: -205.534, y: 0.1, z: 171.4}
   player: {fileID: 1052862163}
   racingAudio: {fileID: 146258490}
   lapCountText: {fileID: 2126325194}
@@ -28000,7 +28000,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1125666521}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 20.94}
+  m_LocalPosition: {x: 0, y: 0, z: 11.53}
   m_LocalScale: {x: 5, y: 5, z: 5}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -35311,8 +35311,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 0
   ball: {fileID: 1368809473}
-  clubForce: 1100
-  startPosition: {x: -215.32, y: 631, z: 156.12}
+  clubForce: 400
+  startPosition: {x: 0, y: 1, z: 0}
   golf1Position: {x: -215.32, y: 631, z: 156.12}
   golf3Position: {x: 247.883, y: 631, z: 171.126}
   ballStartPosition: {x: 20.811, y: 631, z: 156.1}
@@ -35399,7 +35399,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1368809473}
   serializedVersion: 2
-  m_Mass: 5
+  m_Mass: 1
   m_Drag: 0.05
   m_AngularDrag: 0.05
   m_UseGravity: 1
@@ -35478,7 +35478,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1368809473}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 247.883, y: 631, z: 171.126}
+  m_LocalPosition: {x: -215.62, y: 631, z: 156.18}
   m_LocalScale: {x: 0.6, y: 0.6, z: 0.6}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -36548,6 +36548,11 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: 0.0086
       objectReference: {fileID: 0}
+    - target: {fileID: -3790352472000369974, guid: 3b14cb171533d414b8564f083b2f1c1c,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.0153
+      objectReference: {fileID: 0}
     - target: {fileID: -3334479249560807378, guid: 3b14cb171533d414b8564f083b2f1c1c,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -36568,6 +36573,11 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: c0fe4fc9af7b7b048ad755248066b63a, type: 2}
+    - target: {fileID: -1414563935680391659, guid: 3b14cb171533d414b8564f083b2f1c1c,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.004
+      objectReference: {fileID: 0}
     - target: {fileID: -425565630206218756, guid: 3b14cb171533d414b8564f083b2f1c1c,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -46971,7 +46981,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1867984301}
   m_LocalRotation: {x: -0, y: -0.03263193, z: -0, w: 0.9994675}
-  m_LocalPosition: {x: 3.03, y: 1.1, z: 0.2}
+  m_LocalPosition: {x: 10.17, y: 1.1, z: 0.2}
   m_LocalScale: {x: 10, y: 10, z: 10}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -49201,7 +49211,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 8dfa22fbf8a6f1645abbeb3bf9306e6a,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -207.908
+      value: -205.534
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 8dfa22fbf8a6f1645abbeb3bf9306e6a,
         type: 3}
@@ -49211,7 +49221,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 8dfa22fbf8a6f1645abbeb3bf9306e6a,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 171.437
+      value: 171.388
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 8dfa22fbf8a6f1645abbeb3bf9306e6a,
         type: 3}
@@ -50719,7 +50729,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2024149136}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 20.94}
+  m_LocalPosition: {x: 0, y: 0, z: 11.53}
   m_LocalScale: {x: 5, y: 5, z: 5}
   m_ConstrainProportionsScale: 0
   m_Children: []

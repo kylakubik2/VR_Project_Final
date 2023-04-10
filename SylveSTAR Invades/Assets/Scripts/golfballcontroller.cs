@@ -9,7 +9,7 @@ public class golfballcontroller : MonoBehaviour
     private Rigidbody rb;
     public GameObject ball;
     public float clubForce = 1000.0f;
-    public Vector3 startPosition = new Vector3(0.0f, 0.0f, 0.0f);
+    public Vector3 startPosition = new Vector3(0.0f, 1.0f, 0.0f);
     public Vector3 golf1Position = new Vector3(-401.0f, 748.5f, 272.35f);
     public Vector3 golf3Position = new Vector3(-427.6f, 748.5f, 708.62f);
     public Vector3 ballStartPosition = new Vector3();
@@ -37,7 +37,7 @@ public class golfballcontroller : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         numStrokes = 0;
         SetStrokeText();
-        ball.transform.position = ballStartPosition;
+        ballStartPosition = ball.transform.position;
     }
 
     void SetStrokeText()
