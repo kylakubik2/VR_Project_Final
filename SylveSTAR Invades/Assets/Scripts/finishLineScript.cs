@@ -25,6 +25,8 @@ public class finishLineScript : MonoBehaviour
     private bool timing;
     private int numLaps;
 
+    private GameObject[] mushrooms;
+
     private float winTime = 100000.0f;
 
     // Start is called before the first frame update
@@ -38,6 +40,8 @@ public class finishLineScript : MonoBehaviour
         SetTimerText();
 
         buggyStart = buggy.transform.position;
+
+        mushrooms = GameObject.FindGameObjectsWithTag("Mushroom");
     }
     void SetLapText()
     {
@@ -59,6 +63,10 @@ public class finishLineScript : MonoBehaviour
                 if (numLaps == 3)
                 {
                     source.PlayOneShot(lastLap);
+                }
+                foreach(GameObject shroom in mushrooms)
+                {
+                    shroom.gameObject.SetActive(true);
                 }
             }
             else if (numLaps == 3)

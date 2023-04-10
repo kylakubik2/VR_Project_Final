@@ -87,7 +87,7 @@ public class Hangman : MonoBehaviour
     public void OnTriggerEnter(Collider other)
     {
         string tag = other.gameObject.tag;
-        if(tag.length == 1)
+        if(tag.Length == 1)
         {
             char letter = tag.ToCharArray()[0]; //get the letter
             if (answer.Contains(letter))
@@ -133,7 +133,7 @@ public class Hangman : MonoBehaviour
             }
         }
         userInput = new string(inputArray);
-        dashedText.text = userInput
+        dashedText.text = userInput;
     }
 
     

@@ -21,6 +21,14 @@ public class golfballcontroller : MonoBehaviour
     public float teleport1Time = 100000.0f;
     public float teleport3Time = 100000.0f;
 
+    public AudioSource golf1Source;
+    public AudioSource golf2Source;
+    public AudioSource golf3Source;
+
+    public AudioClip boing;
+
+    public TextMeshPro golfWarmUp;
+
     public GameObject player;
 
     // Start is called before the first frame update
@@ -46,16 +54,28 @@ public class golfballcontroller : MonoBehaviour
             player.transform.position = startPosition;
             parText.enabled = false;
             strokeCounter.enabled = false;
+            golf1Source.enabled = false;
+            golf3Source.enabled = false;
         }
         if (Time.time > (teleport1Time + 3.0f))
         {
             player.transform.position = golf1Position;
+            golf1Source.enabled = true;
             teleport1Time = 100000.0f;
+            strokeCounter.enabled = true;
+            parText.enabled = true;
+            numStrokes = 0;
+            SetStrokeText();
         }
         if (Time.time > (teleport3Time + 3.0f))
         {
             player.transform.position = golf3Position;
+            golf3Source.enabled = true;
             teleport3Time = 100000.0f;
+            strokeCounter.enabled = true;
+            parText.enabled = true;
+            numStrokes = 0;
+            SetStrokeText();
         }
     }
 
@@ -67,6 +87,9 @@ public class golfballcontroller : MonoBehaviour
             rb.AddForce((transform.position - other.gameObject.transform.position) * clubForce);
             numStrokes++;
             SetStrokeText();
+            golf1Source.PlayOneShot(boing);
+            golf2Source.PlayOneShot(boing);
+            golf3Source.PlayOneShot(boing);
         }
         else if (other.gameObject.CompareTag("Hole"))
         {
@@ -75,13 +98,17 @@ public class golfballcontroller : MonoBehaviour
         }
         else if (other.gameObject.CompareTag("Hole1"))
         {
-            ball.transform.position = new Vector3(-401.6f, golf1Position.y + 1.78f, 268.0f);
+            ball.transform.position = ballStartPosition;
             teleport1Time = Time.time;
+            golfWarmUp.enabled = false;
+            golf2Source.enabled = false;
         }
         else if (other.gameObject.CompareTag("Hole3"))
         {
-            ball.transform.position = new Vector3(-424.4f, golf3Position.y + 1.78f, 709.1f);
+            ball.transform.position = ballStartPosition;
             teleport3Time = Time.time;
+            golfWarmUp.enabled = false;
+            golf2Source.enabled = false;
         }
         else if (other.gameObject.CompareTag("Sand"))
         {
