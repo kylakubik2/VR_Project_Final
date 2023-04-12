@@ -434,13 +434,13 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Models/matching
+    - Assets
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Models/matching
+  - Assets
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Users\Holson11\Documents\GitHub\VR_Project_Final\SylveSTAR
     Invades
@@ -448,9 +448,9 @@ MonoBehaviour:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 43}
-    m_SelectedIDs: 18980000
-    m_LastClickedID: 38936
-    m_ExpandedIDs: 0000000088970000b297000000ca9a3b
+    m_SelectedIDs: 729b0000
+    m_LastClickedID: 39794
+    m_ExpandedIDs: 00000000729b0000749b000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -478,7 +478,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 0000000088970000
+    m_ExpandedIDs: 00000000729b0000749b0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -505,7 +505,7 @@ MonoBehaviour:
   m_ListAreaState:
     m_SelectedInstanceIDs: 
     m_LastClickedInstanceID: 0
-    m_HadKeyboardFocusLastEvent: 1
+    m_HadKeyboardFocusLastEvent: 0
     m_ExpandedInstanceIDs: c6230000367f000082e2000076e2000000000000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -607,10 +607,10 @@ MonoBehaviour:
     m_SaveData: []
   m_SceneHierarchy:
     m_TreeViewState:
-      scrollPos: {x: 0, y: 336}
-      m_SelectedIDs: 34790000
-      m_LastClickedID: 31028
-      m_ExpandedIDs: 6c69ffff7a69ffff7c69ffffd46cffffce72ffffdc72ffffde72ffff0c78ffff1a78ffff1c78ffffa27dffffb07dffffb87dffffe289ffff868cffff2cafffffbcfaffffa278000034790000
+      scrollPos: {x: 0, y: 32}
+      m_SelectedIDs: 70e4ffff
+      m_LastClickedID: -7056
+      m_ExpandedIDs: 70e4ffff34fbffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -860,9 +860,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 429.6582, y: 369.00555, z: -86.42723}
+    m_Target: {x: 238.97238, y: 0, z: 220.36624}
     speed: 2
-    m_Value: {x: 429.6582, y: 369.00555, z: -86.42723}
+    m_Value: {x: 238.97238, y: 0.0000018078258, z: 220.36624}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -909,13 +909,13 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: -0.026661301, y: 0.6508036, z: -0.024698522, w: -0.7589842}
+    m_Target: {x: -0.018649654, y: 0.9164264, z: -0.3981843, w: -0.04687803}
     speed: 2
-    m_Value: {x: -0.02661194, y: 0.6516406, z: -0.024727073, w: -0.75765747}
+    m_Value: {x: -0.018649654, y: 0.91642636, z: -0.3981843, w: -0.04687803}
   m_Size:
-    m_Target: 50.530544
+    m_Target: 27.010763
     speed: 2
-    m_Value: 48.354588
+    m_Value: 28.283522
   m_Ortho:
     m_Target: 0
     speed: 2
