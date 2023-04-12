@@ -47,6 +47,7 @@ TagManager:
   - x
   - y
   - z
+  - earthCard
   layers:
   - Default
   - TransparentFX
