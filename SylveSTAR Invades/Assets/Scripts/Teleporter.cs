@@ -13,7 +13,7 @@ public class Teleporter : MonoBehaviour
     public Vector3 golf1Position = new Vector3(-401.0f, 0.0f, 296.0f);
     public Vector3 golf2Position = new Vector3(-392.0f, 747.0f, 490.89f);
     public Vector3 golf3Position = new Vector3(-408.0f, 0.0f, 728.0f);
-    public Vector3 hangmanPosition = new Vector3(195.4f, 0.0f, 249.0f); // TODO: test the coordinates
+    public Vector3 hangmanPosition = new Vector3(18.5f, 0.0f, 172.0f); // TODO: test the coordinates
     public Vector3 shootingPosition = new Vector3(0.0f, 0.0f, 0.0f); // TODO: determine the coordinates for this
 
     public GameObject player;

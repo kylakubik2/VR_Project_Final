@@ -13,11 +13,10 @@ public class Hangman : MonoBehaviour
     public GameObject rightArm;
     public GameObject leftLeg;
     public GameObject rightLeg;
-    public GameObject face;
 
     public GameObject player;
-    public TextMeshPro wordText;
-    public TextMeshPro dashedText;
+    public TMP_Text wordText;
+    public TMP_Text dashedText;
 
     //public AudioSource source;
 
@@ -29,7 +28,7 @@ public class Hangman : MonoBehaviour
     private string userInput;
     private string answer;
 
-    private List<string> wordBank = new List<string>();
+    private List<string> wordBank = new List<string>() {"andromeda", "nebula", "kuiper", "constellation", "perihelion"};
     /**
      * ideas:
      *      only one key allowed at a time 
@@ -43,8 +42,8 @@ public class Hangman : MonoBehaviour
      *          order: head, body, arm, arm, leg, leg, face, FAIL
      *      if the player completes the word without loosing, then they win; if they use all their attempts, then they lose
      */
-    // ideas come from https://github.com/ivan-golubev/unityhangman/blob/master/
-    // Start is called before the first frame update
+        // ideas come from https://github.com/ivan-golubev/unityhangman/blob/master/
+        // Start is called before the first frame update
     void Start()
     {
         // disable all hangman parts
@@ -54,13 +53,9 @@ public class Hangman : MonoBehaviour
         rightArm.SetActive(false);
         leftLeg.SetActive(false);
         rightLeg.SetActive(false);
-        face.SetActive(false);
 
-        wordBank.Add("andromeda");
-        wordBank.Add("nebula");
-        wordBank.Add("kuiper");
-        wordBank.Add("constellation");
-        wordBank.Add("perihelion");
+        wordText = GetComponent<TMP_Text>();
+        dashedText = GetComponent<TMP_Text>();
 
         PickRandomWord();
 
@@ -73,13 +68,13 @@ public class Hangman : MonoBehaviour
         {
             // you lose
             // wait five seconds
-            player.transform.position = new Vector3(0.0f, 0.0f, 0.0f);
+            player.transform.position = new Vector3(0.0f, 0.3f, 0.0f);
         }
         if(userInput.Equals(answer))
         {
             // you win
             // wait five seconds
-            player.transform.position = new Vector3(0.0f, 0.0f, 0.0f);
+            player.transform.position = new Vector3(0.0f, 0.3f, 0.0f);
         }
         
     }
@@ -94,11 +89,13 @@ public class Hangman : MonoBehaviour
             {
                 UpdateAnswerText(letter);
                 successes++;
+                other.gameObject.SetActive(false);
             }
             else
             {
                 failures++;
                 DrawNextHangmanPart();
+                other.gameObject.SetActive(false);
             }
         }
     }
@@ -106,7 +103,7 @@ public class Hangman : MonoBehaviour
     private void PickRandomWord()
     {
         int word = Random.Range(0, wordBank.Count);
-        wordText.text = wordBank[word];
+        //wordText.text = wordBank[word];
         answer = wordBank[word];
         StringBuilder sb = new StringBuilder("");
         for (int i = 0; i < answer.Length; i++)
@@ -158,9 +155,6 @@ public class Hangman : MonoBehaviour
                 break;
             case 6:
                 rightLeg.SetActive(true);
-                break;
-            case 7:
-                face.SetActive(true);
                 break;
             default:
                 Debug.Log("??????????");

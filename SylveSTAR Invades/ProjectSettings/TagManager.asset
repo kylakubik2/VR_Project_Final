@@ -57,6 +57,7 @@ TagManager:
   - saturnCard
   - uranusCard
   - sunCard
+  - Pointer
   layers:
   - Default
   - TransparentFX
