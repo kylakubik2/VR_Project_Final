@@ -22,7 +22,7 @@ public class Hangman : MonoBehaviour
 
     private const char PLACEHOLDER = '_';
 
-    private int chances = 6;
+    private int chances = 5;
     private int successes = 0;
     private int failures = 0;
     private string userInput;
