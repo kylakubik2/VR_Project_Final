@@ -15,10 +15,13 @@ public class Hangman : MonoBehaviour
     public GameObject rightLeg;
 
     public GameObject player;
-    public TMP_Text wordText;
-    public TMP_Text dashedText;
 
     //public AudioSource source;
+
+    [SerializeField]
+    private TextMeshPro wordText;
+    [SerializeField]
+    private TextMeshPro dashedText;
 
     private const char PLACEHOLDER = '_';
 
@@ -46,6 +49,7 @@ public class Hangman : MonoBehaviour
         // Start is called before the first frame update
     void Start()
     {
+        StartCoroutine(Wait());
         // disable all hangman parts
         head.SetActive(false);
         body.SetActive(false);
@@ -54,8 +58,8 @@ public class Hangman : MonoBehaviour
         leftLeg.SetActive(false);
         rightLeg.SetActive(false);
 
-        wordText = GetComponent<TMP_Text>();
-        dashedText = GetComponent<TMP_Text>();
+        wordText.text = "Letters Guessed";
+        dashedText.text = "-";
 
         PickRandomWord();
 
@@ -68,12 +72,14 @@ public class Hangman : MonoBehaviour
         {
             // you lose
             // wait five seconds
+            Wait();
             player.transform.position = new Vector3(0.0f, 0.3f, 0.0f);
         }
         if(userInput.Equals(answer))
         {
             // you win
             // wait five seconds
+            Wait();
             player.transform.position = new Vector3(0.0f, 0.3f, 0.0f);
         }
         
@@ -160,5 +166,10 @@ public class Hangman : MonoBehaviour
                 Debug.Log("??????????");
                 break;
         }
+    }
+
+    IEnumerator Wait()
+    {
+        yield return new WaitForSecondsRealtime(5);
     }
 }
