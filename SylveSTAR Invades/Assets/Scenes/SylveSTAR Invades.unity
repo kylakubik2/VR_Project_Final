@@ -726,6 +726,12 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.3595002, y: 23.372599, z: 2.0555}
   m_Center: {x: -3.8582501, y: 11.8259, z: 38.05677}
+--- !u!1 &37097038 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: dcba0d3932e365e4aa795c0472e44681,
+    type: 3}
+  m_PrefabInstance: {fileID: 165481846}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &41436225 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1463137438622544498, guid: dcdf3a1a45deb8d48b7d3d0176a525f0,
@@ -4250,6 +4256,21 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 165481846}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &165481848
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 37097038}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 800b2ef13c8a9744383bc3ae480ba49c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startRotation: {x: 0, y: 0, z: 0, w: 0}
+  targetRotation: {x: 0, y: 0, z: 0, w: 0}
+  flipped: 0
 --- !u!1 &165940985
 GameObject:
   m_ObjectHideFlags: 0

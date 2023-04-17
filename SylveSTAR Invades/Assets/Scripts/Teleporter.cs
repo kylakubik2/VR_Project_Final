@@ -40,7 +40,7 @@ public class Teleporter : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        player.transform.position = startPosition;
+        player.transform.position = matchingPosition;
         ufoGenerator.SetActive(false);
 
         racingAudio.enabled = false;
