@@ -18,18 +18,17 @@ public class Hangman : MonoBehaviour
 
     //public AudioSource source;
 
-    [SerializeField]
-    private TextMeshPro wordText;
-    [SerializeField]
-    private TextMeshPro dashedText;
+    public TextMeshPro wordText;
+    public TextMeshPro dashedText;
 
-    private const char PLACEHOLDER = '_';
+    private const char PLACEHOLDER = '-';
 
     private int chances = 5;
     private int successes = 0;
     private int failures = 0;
     private string userInput;
     private string answer;
+
 
     private List<string> wordBank = new List<string>() {"andromeda", "nebula", "kuiper", "constellation", "perihelion"};
     /**
@@ -49,7 +48,6 @@ public class Hangman : MonoBehaviour
         // Start is called before the first frame update
     void Start()
     {
-        StartCoroutine(Wait());
         // disable all hangman parts
         head.SetActive(false);
         body.SetActive(false);
@@ -72,17 +70,17 @@ public class Hangman : MonoBehaviour
         {
             // you lose
             // wait five seconds
-            Wait();
+            StartCoroutine(Wait());
             player.transform.position = new Vector3(0.0f, 0.3f, 0.0f);
         }
-        if(userInput.Equals(answer))
+        if (userInput.Equals(answer))
         {
             // you win
             // wait five seconds
-            Wait();
+            StartCoroutine(Wait());
             player.transform.position = new Vector3(0.0f, 0.3f, 0.0f);
         }
-        
+
     }
 
     public void OnTriggerEnter(Collider other)
@@ -115,6 +113,7 @@ public class Hangman : MonoBehaviour
         for (int i = 0; i < answer.Length; i++)
         {
             sb.Append(PLACEHOLDER);
+            //sb.Append(" ");
         }
         dashedText.text = sb.ToString();
         userInput = sb.ToString();

@@ -18,7 +18,7 @@ public class Teleporter : MonoBehaviour
     public Vector3 matchingPosition;
 
     public GameObject player;
-
+    
     public AudioSource racingAudio;
     public TextMeshPro lapCountText;
     public TextMeshPro timerText;
@@ -40,7 +40,7 @@ public class Teleporter : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        player.transform.position = matchingPosition;
+        player.transform.position = startPosition;
         ufoGenerator.SetActive(false);
 
         racingAudio.enabled = false;
