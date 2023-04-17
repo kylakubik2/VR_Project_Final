@@ -47,6 +47,18 @@ TagManager:
   - x
   - y
   - z
+  - earthCard
+  - jupiterCard
+  - marsCard
+  - mercuryCard
+  - neptuneCard
+  - plutoCard
+  - venusCard
+  - saturnCard
+  - uranusCard
+  - sunCard
+  - Pointer
+  - Matching
   layers:
   - Default
   - TransparentFX
