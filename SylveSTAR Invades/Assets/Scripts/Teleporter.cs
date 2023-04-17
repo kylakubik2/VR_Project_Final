@@ -15,6 +15,7 @@ public class Teleporter : MonoBehaviour
     public Vector3 golf3Position = new Vector3(-408.0f, 0.0f, 728.0f);
     public Vector3 hangmanPosition = new Vector3(18.5f, 1.0f, 172.0f); // TODO: test the coordinates
     public Vector3 shootingPosition = new Vector3(0.0f, 0.0f, 0.0f); // TODO: determine the coordinates for this
+    public Vector3 matchingPosition;
 
     public GameObject player;
 
@@ -105,6 +106,14 @@ public class Teleporter : MonoBehaviour
 
             numShot.enabled = true;
             ufoToBeat.enabled = true;
+            // add enabled texts and audio below
+        }
+        else if (other.gameObject.CompareTag("Matching"))
+        {
+            Debug.Log("matching Triggered");
+
+            player.transform.position = matchingPosition;
+            
             // add enabled texts and audio below
         }
     }
