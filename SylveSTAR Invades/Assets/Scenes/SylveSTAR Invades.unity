@@ -32106,6 +32106,24 @@ MonoBehaviour:
   numShot: {fileID: 2024149139}
   ufoToBeat: {fileID: 1125666524}
   ufoGenerator: {fileID: 1858386410}
+--- !u!114 &1052862168
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1052862163}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a8615349ab8b3c14f8bad87a4ec0e126, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveValue:
+    actionPath: /actions/default/in/MovePlayer
+    needsReinit: 0
+  maxSpeed: 5
+  sensitivity: 5
+  head: {fileID: 1431256280}
 --- !u!4 &1054579780 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: dcdf3a1a45deb8d48b7d3d0176a525f0,
@@ -43743,6 +43761,12 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 2.2325, y: 28.8249, z: 3.875496}
   m_Center: {x: -3.8582501, y: 14.552051, z: 65.22685}
+--- !u!54 &1431256280 stripped
+Rigidbody:
+  m_CorrespondingSourceObject: {fileID: 5452286, guid: dc06161b6d97feb419f45f03b62e14b9,
+    type: 3}
+  m_PrefabInstance: {fileID: 1052862162}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1432743664
 PrefabInstance:
   m_ObjectHideFlags: 0
