@@ -7,12 +7,14 @@ public class AsteroidController : MonoBehaviour
     public Vector3 endPosition;
     public Vector3 startPosition;
     public Vector3 currentPosition;
+    private Transform thisRock;
     private float move = 0.5f;
     public bool elevator;
 
     void Start()
     {
         startPosition = transform.position;
+        thisRock = GetComponent<Transform>();
         elevator = false;
     }
 
@@ -20,6 +22,7 @@ public class AsteroidController : MonoBehaviour
     {
         if (other.gameObject.tag == "Player")
         {
+            other.transform.SetParent(thisRock, true);
             elevator = true;
             Debug.Log("player on");
         }
@@ -27,8 +30,9 @@ public class AsteroidController : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.gameObject.CompareTag("Player"))
+        if (other.gameObject.tag == "Player")
         {
+            other.transform.SetParent(null);
             elevator = false;
             Debug.Log("player off");
         }

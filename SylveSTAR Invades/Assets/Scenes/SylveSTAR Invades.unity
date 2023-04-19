@@ -3961,6 +3961,12 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.3595003, y: 23.372599, z: 2.0555003}
   m_Center: {x: -3.8582506, y: 11.8259, z: 34.22195}
+--- !u!54 &134493995 stripped
+Rigidbody:
+  m_CorrespondingSourceObject: {fileID: 5452286, guid: dc06161b6d97feb419f45f03b62e14b9,
+    type: 3}
+  m_PrefabInstance: {fileID: 1052862162}
+  m_PrefabAsset: {fileID: 0}
 --- !u!65 &137424400
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6939,17 +6945,17 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 8dfa22fbf8a6f1645abbeb3bf9306e6a,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 7.87
+      value: -26.38
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 8dfa22fbf8a6f1645abbeb3bf9306e6a,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1482.3301
+      value: 1467.15
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 8dfa22fbf8a6f1645abbeb3bf9306e6a,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -755.6
+      value: -656.19
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 8dfa22fbf8a6f1645abbeb3bf9306e6a,
         type: 3}
@@ -32350,12 +32356,77 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1052862165}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d50eeecaa245187499d79047498e1e5c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startPosition: {x: -26.38, y: 1467.15, z: -656.19}
+  racingPosition: {x: -298.7, y: 23.06, z: 177.51}
+  golf1Position: {x: -213.3, y: 630.63, z: 156.12}
+  golf2Position: {x: 22.41, y: 630.63, z: 155.04}
+  golf3Position: {x: 245.5, y: 630.63, z: 174}
+  hangmanPosition: {x: 18.5, y: 0, z: 172}
+  shootingPosition: {x: -205.534, y: 0.1, z: 171.4}
+  matchingPosition: {x: 183.63, y: 0.04, z: 179}
+  player: {fileID: 1052862163}
+  racingAudio: {fileID: 146258490}
+  lapCountText: {fileID: 2126325194}
+  timerText: {fileID: 225907806}
+  racingToBeat: {fileID: 1159577339}
+  golf1Audio: {fileID: 1314525729}
+  golf2Audio: {fileID: 1579949151}
+  golf3Audio: {fileID: 1521068354}
+  parText: {fileID: 1898987822}
+  strokesText: {fileID: 1148341804}
+  golfWarmUp: {fileID: 866846659}
+  numShot: {fileID: 2024149139}
+  ufoToBeat: {fileID: 1125666524}
+  ufoGenerator: {fileID: 1858386410}
+--- !u!114 &1052862168
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1052862163}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a8615349ab8b3c14f8bad87a4ec0e126, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveValue:
+    actionPath: /actions/default/in/MovePlayer
+    needsReinit: 0
+  maxSpeed: 5
+  sensitivity: 5
+  head: {fileID: 134493995}
+--- !u!65 &1052862173
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1052862163}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1.15, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1052862174
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1052862163}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d50eeecaa245187499d79047498e1e5c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startPosition: {x: 7.87, y: 1482.33, z: -755.6}
+  startPosition: {x: -26.38, y: 1467.15, z: -656.19}
   racingPosition: {x: -298.7, y: 23.06, z: 177.51}
   golf1Position: {x: -213.3, y: 630.63, z: 156.12}
   golf2Position: {x: 22.41, y: 630.63, z: 155.04}
@@ -45172,6 +45243,26 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1476666116}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1476667475 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6919683763462532184, guid: 98b02f35a814e084f9345dccdd68a562,
+    type: 3}
+  m_PrefabInstance: {fileID: 2126945587}
+  m_PrefabAsset: {fileID: 0}
+--- !u!64 &1476667479
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1476667475}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 3525479140033381557, guid: 98b02f35a814e084f9345dccdd68a562, type: 3}
 --- !u!1001 &1476852689
 PrefabInstance:
   m_ObjectHideFlags: 0
