@@ -32124,6 +32124,19 @@ MonoBehaviour:
   maxSpeed: 5
   sensitivity: 5
   head: {fileID: 1431256280}
+--- !u!65 &1052862169
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1052862163}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1.24, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!4 &1054579780 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: dcdf3a1a45deb8d48b7d3d0176a525f0,
