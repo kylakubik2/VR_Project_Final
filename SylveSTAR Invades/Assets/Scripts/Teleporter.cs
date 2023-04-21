@@ -40,8 +40,12 @@ public class Teleporter : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        player.transform.position = startPosition;
-        ufoGenerator.SetActive(false);
+        SteamVR_Actions.move.Activate();
+
+        player.transform.position = shootingPosition;
+        ufoGenerator.SetActive(true);
+
+        //ufoGenerator.SetActive(false);
 
         racingAudio.enabled = false;
         lapCountText.enabled = false;

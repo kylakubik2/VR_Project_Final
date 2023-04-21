@@ -28,9 +28,9 @@ public class LaserGunScript : MonoBehaviour
     public float laserFireTime = 0.5f;
     public float laserTimer = -10.0f;
 
-    public float winTime = 100000.0f;
+    private float winTime = 100000.0f;
 
-    public float gameTimer = 60.0f;
+    private float gameTimer = 25.0f;
 
     public bool startTimer;
     public GameObject ufoGenerator;
@@ -38,7 +38,9 @@ public class LaserGunScript : MonoBehaviour
     public int numHit;
     public bool hit;
     public GameObject player;
-    public Vector3 startPosition = new Vector3(0.0f, 1.0f, 0.0f);
+    private Vector3 startPosition = new Vector3(4.0f, 1467.5f, -651.0f);
+
+    public GameObject[] ufos;
     void Start()
     {
         shootGun.AddOnStateDownListener(TriggerDown, rightHand);
@@ -79,6 +81,7 @@ public class LaserGunScript : MonoBehaviour
         shootText.text = "Sylvestar's Score: ";
     }
 
+
     void Update()
     {
         if (startTimer)
@@ -91,6 +94,13 @@ public class LaserGunScript : MonoBehaviour
             {
                 ufoGenerator.SetActive(false);
                 winTime = Time.time;
+
+                ufos = GameObject.FindGameObjectsWithTag("UFO");
+                foreach (GameObject ufo in ufos)
+                {
+                    ufo.SetActive(false);
+                }
+                startTimer = false;
             }
         }
         if (hit)
@@ -106,6 +116,8 @@ public class LaserGunScript : MonoBehaviour
             player.transform.position = startPosition;
             shootText.enabled = false;
             shootToBeat.enabled = false;
+
+            numHit = 0;
         }
     }
 }

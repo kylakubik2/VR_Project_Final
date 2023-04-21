@@ -100,6 +100,10 @@ public class finishLineScript : MonoBehaviour
             source.enabled = false;
             buggy.transform.position = buggyStart;
 
+            timeNum = 0.0f;
+            timing = false;
+            numLaps = 0;
+
             winTime = 100000.0f;
         }
 

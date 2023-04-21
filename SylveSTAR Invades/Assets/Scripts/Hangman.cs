@@ -14,7 +14,11 @@ public class Hangman : MonoBehaviour
     public GameObject leftLeg;
     public GameObject rightLeg;
 
+    private Vector3 startPosition = new Vector3(3.45f, 1467.5f, -652.1f);
     public GameObject player;
+
+    public GameObject keyboard;
+    private Transform[] keys;
 
     //public AudioSource source;
 
@@ -30,7 +34,7 @@ public class Hangman : MonoBehaviour
     private string answer;
 
 
-    private List<string> wordBank = new List<string>() {"andromeda", "nebula", "kuiper", "constellation", "perihelion"};
+    private List<string> wordBank = new List<string>() {"andromeda", "nebula", "kuiper", "cylinder", "constellation", "perihelion", "bob", "helicopter"};
     /**
      * ideas:
      *      only one key allowed at a time 
@@ -61,6 +65,7 @@ public class Hangman : MonoBehaviour
 
         PickRandomWord();
 
+        keys = keyboard.gameObject.GetComponentsInChildren<Transform>();
     }
 
     // Update is called once per frame
@@ -71,14 +76,42 @@ public class Hangman : MonoBehaviour
             // you lose
             // wait five seconds
             StartCoroutine(Wait());
-            player.transform.position = new Vector3(0.0f, 0.3f, 0.0f);
+            player.transform.position = startPosition;
+
+            head.SetActive(false);
+            body.SetActive(false);
+            leftArm.SetActive(false);
+            rightArm.SetActive(false);
+            leftLeg.SetActive(false);
+            rightLeg.SetActive(false);
+
+            PickRandomWord();
+
+            foreach(Transform key in keys)
+            {
+                key.gameObject.SetActive(true);
+            }
         }
         if (userInput.Equals(answer))
         {
             // you win
             // wait five seconds
             StartCoroutine(Wait());
-            player.transform.position = new Vector3(0.0f, 0.3f, 0.0f);
+            player.transform.position = startPosition;
+
+            head.SetActive(false);
+            body.SetActive(false);
+            leftArm.SetActive(false);
+            rightArm.SetActive(false);
+            leftLeg.SetActive(false);
+            rightLeg.SetActive(false);
+
+            PickRandomWord();
+
+            foreach (Transform key in keys)
+            {
+                key.gameObject.SetActive(true);
+            }
         }
 
     }

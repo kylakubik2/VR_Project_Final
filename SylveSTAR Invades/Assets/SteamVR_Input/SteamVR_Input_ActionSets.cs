@@ -27,6 +27,8 @@ namespace Valve.VR
         
         private static SteamVR_Input_ActionSet_shooterGame p_shooterGame;
         
+        private static SteamVR_Input_ActionSet_move p_move;
+        
         public static SteamVR_Input_ActionSet_default _default
         {
             get
@@ -67,6 +69,14 @@ namespace Valve.VR
             }
         }
         
+        public static SteamVR_Input_ActionSet_move move
+        {
+            get
+            {
+                return SteamVR_Actions.p_move.GetCopy<SteamVR_Input_ActionSet_move>();
+            }
+        }
+        
         private static void StartPreInitActionSets()
         {
             SteamVR_Actions.p__default = ((SteamVR_Input_ActionSet_default)(SteamVR_ActionSet.Create<SteamVR_Input_ActionSet_default>("/actions/default")));
@@ -74,12 +84,14 @@ namespace Valve.VR
             SteamVR_Actions.p_buggy = ((SteamVR_Input_ActionSet_buggy)(SteamVR_ActionSet.Create<SteamVR_Input_ActionSet_buggy>("/actions/buggy")));
             SteamVR_Actions.p_mixedreality = ((SteamVR_Input_ActionSet_mixedreality)(SteamVR_ActionSet.Create<SteamVR_Input_ActionSet_mixedreality>("/actions/mixedreality")));
             SteamVR_Actions.p_shooterGame = ((SteamVR_Input_ActionSet_shooterGame)(SteamVR_ActionSet.Create<SteamVR_Input_ActionSet_shooterGame>("/actions/shooterGame")));
+            SteamVR_Actions.p_move = ((SteamVR_Input_ActionSet_move)(SteamVR_ActionSet.Create<SteamVR_Input_ActionSet_move>("/actions/move")));
             Valve.VR.SteamVR_Input.actionSets = new Valve.VR.SteamVR_ActionSet[] {
                     SteamVR_Actions._default,
                     SteamVR_Actions.platformer,
                     SteamVR_Actions.buggy,
                     SteamVR_Actions.mixedreality,
-                    SteamVR_Actions.shooterGame};
+                    SteamVR_Actions.shooterGame,
+                    SteamVR_Actions.move};
         }
     }
 }
