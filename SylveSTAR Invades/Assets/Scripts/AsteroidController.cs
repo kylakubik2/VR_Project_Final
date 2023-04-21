@@ -30,7 +30,7 @@ public class AsteroidController : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.gameObject.CompareTag("Player"))
+        if (other.gameObject.tag == "Player")
         {
             other.transform.SetParent(null);
             elevator = false;

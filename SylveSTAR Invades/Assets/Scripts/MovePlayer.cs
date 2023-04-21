@@ -24,7 +24,8 @@ public class MovePlayer : MonoBehaviour
         if (head.SweepTest(Player.instance.hmdTransform.TransformDirection(Vector3.forward), out hit, 0.5f))
         {
 
-        } else
+        }
+        else
         {
             // if the joystick is moved forward
             if (moveValue.axis.y > 0)
