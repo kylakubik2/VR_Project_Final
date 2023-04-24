@@ -10,6 +10,7 @@ public class AsteroidController : MonoBehaviour
     private Transform thisRock;
     private float move = 0.5f;
     public bool elevator;
+    public bool stay;
 
     void Start()
     {
@@ -18,6 +19,7 @@ public class AsteroidController : MonoBehaviour
         elevator = false;
     }
 
+    /*
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "Player")
@@ -37,10 +39,33 @@ public class AsteroidController : MonoBehaviour
             Debug.Log("player off");
         }
     }
+    */
+
+    private void OnTriggerStay(Collider other)
+    {
+        if (other.gameObject.tag == "Player")
+        {
+            Debug.Log("player colliding");
+            stay = true;
+        } else
+        {
+            Debug.Log("player not colliding");
+            stay = false;
+        }
+    }
 
     void Update()
     {
         currentPosition = transform.position;
+        if (stay)
+        {
+            elevator = true;
+        } 
+        else
+        {
+            elevator = false;
+        }
+
         if (elevator)
         {
             transform.position = Vector3.Lerp(currentPosition, endPosition, move * Time.deltaTime);
