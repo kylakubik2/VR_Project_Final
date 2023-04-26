@@ -42,7 +42,7 @@ public class Teleporter : MonoBehaviour
     {
         SteamVR_Actions.move.Activate();
 
-        player.transform.position = shootingPosition;
+        player.transform.position = startPosition;
         ufoGenerator.SetActive(true);
 
         //ufoGenerator.SetActive(false);
