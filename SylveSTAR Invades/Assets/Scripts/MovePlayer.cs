@@ -21,7 +21,7 @@ public class MovePlayer : MonoBehaviour
     void Update()
     {
         RaycastHit hit;
-        if (head.SweepTest(Player.instance.hmdTransform.TransformDirection(Vector3.forward), out hit, 0.5f))
+        if (head.SweepTest(Player.instance.hmdTransform.TransformDirection(Vector3.forward), out hit, 0.01f))
         {
 
         }

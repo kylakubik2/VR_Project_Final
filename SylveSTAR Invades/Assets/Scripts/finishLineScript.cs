@@ -17,6 +17,9 @@ public class finishLineScript : MonoBehaviour
     public AudioClip lastLap;
     public AudioClip cheer;
     public GameObject player;
+    public GameObject portal;
+
+    public bool hasWon = false;
 
     private float timeNum;
     private int milliseconds;
@@ -24,6 +27,7 @@ public class finishLineScript : MonoBehaviour
     private int minutes;
     private bool timing;
     private int numLaps;
+    private int sylvestarTime; // TODO:add in time to beat
 
     private GameObject[] mushrooms;
 
@@ -32,6 +36,9 @@ public class finishLineScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        portal.SetActive(false);
+        hasWon = false;
+
         timeNum = 0.0f;
         timing = false;
         numLaps = 0;
@@ -72,7 +79,17 @@ public class finishLineScript : MonoBehaviour
             else if (numLaps == 3)
             {
                 winTime = Time.time;
-                source.PlayOneShot(cheer);
+                if (winTime < sylvestarTime)
+                {
+                    source.PlayOneShot(cheer);
+                    hasWon = true;
+                    portal.SetActive(true);
+                }
+                else
+                {
+                    hasWon = false;
+                    portal.SetActive(true);
+                }
             }
 
             SetLapText();
@@ -92,7 +109,7 @@ public class finishLineScript : MonoBehaviour
 
         if (Time.time > (winTime + 5.0f))
         {
-            player.transform.position = startPosition;
+            //player.transform.position = startPosition;
             lapText.enabled = false;
             timerText.enabled = false;
             timeToBeat.enabled = false;
@@ -106,7 +123,6 @@ public class finishLineScript : MonoBehaviour
 
             winTime = 100000.0f;
         }
-
         if (winTime > 50000.0f)
         {
             SetTimerText();

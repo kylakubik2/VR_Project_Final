@@ -9,6 +9,9 @@ public class golfballcontroller : MonoBehaviour
     private Rigidbody rb;
     public GameObject ball;
     public float clubForce = 1000.0f;
+    public bool hasWon = false;
+    public GameObject portal;
+
     private Vector3 startPosition = new Vector3(4.0f, 1467.5f, -651.0f);
     public Vector3 golf1Position = new Vector3(-401.0f, 748.5f, 272.35f);
     public Vector3 golf3Position = new Vector3(-427.6f, 748.5f, 708.62f);
@@ -17,6 +20,8 @@ public class golfballcontroller : MonoBehaviour
     public TextMeshPro strokeCounter;
     public TextMeshPro parText;
     private int numStrokes;
+    // TODO: set sylvestarPar
+    private int sylvestarPar;
     public float winTime = 100000.0f;
     public float teleport1Time = 100000.0f;
     public float teleport3Time = 100000.0f;
@@ -34,6 +39,8 @@ public class golfballcontroller : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        portal.SetActive(false);
+        hasWon = false;
         rb = GetComponent<Rigidbody>();
         numStrokes = 0;
         SetStrokeText();
@@ -51,7 +58,7 @@ public class golfballcontroller : MonoBehaviour
         {
             Debug.Log("WHOOP");
 
-            player.transform.position = startPosition;
+            //player.transform.position = startPosition;
             numStrokes = 0;
             parText.enabled = false;
             strokeCounter.enabled = false;
@@ -103,6 +110,15 @@ public class golfballcontroller : MonoBehaviour
             teleport1Time = Time.time;
             golfWarmUp.enabled = false;
             golf2Source.enabled = false;
+            if (numStrokes < sylvestarPar)
+            {
+                hasWon = true;
+                portal.SetActive(true);
+            } else
+            {
+                hasWon = false;
+                portal.SetActive(true);
+            }
         }
         else if (other.gameObject.CompareTag("Hole3"))
         {
@@ -110,6 +126,15 @@ public class golfballcontroller : MonoBehaviour
             teleport3Time = Time.time;
             golfWarmUp.enabled = false;
             golf2Source.enabled = false;
+            if (numStrokes < sylvestarPar)
+            {
+                hasWon = true;
+                portal.SetActive(true);
+            } else
+            {
+                hasWon = false;
+                portal.SetActive(true);
+            }
         }
         else if (other.gameObject.CompareTag("Sand"))
         {

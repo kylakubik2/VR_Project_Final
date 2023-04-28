@@ -119,6 +119,11 @@ public class Teleporter : MonoBehaviour
             player.transform.position = matchingPosition;
             
             // add enabled texts and audio below
+        } else if (other.gameObject.CompareTag("MainRoom"))
+        {
+            Debug.Log("Main Room Triggered");
+
+            player.transform.position = startPosition;
         }
     }
 }

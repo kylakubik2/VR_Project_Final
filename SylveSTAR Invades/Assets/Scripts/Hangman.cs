@@ -13,17 +13,22 @@ public class Hangman : MonoBehaviour
     public GameObject rightArm;
     public GameObject leftLeg;
     public GameObject rightLeg;
-
-    private Vector3 startPosition = new Vector3(3.45f, 1467.5f, -652.1f);
     public GameObject player;
-
     public GameObject keyboard;
-    private Transform[] keys;
+    public GameObject portal;
 
-    //public AudioSource source;
+    //public AudioSource music;
+    //public AudioSource click;
+    //public AudioSource write;
+    //public AudioSource draw;
 
     public TextMeshPro wordText;
     public TextMeshPro dashedText;
+
+    public bool hasWon = false;
+
+    //private Vector3 startPosition = new Vector3(3.45f, 1467.5f, -652.1f);
+    private Transform[] keys;
 
     private const char PLACEHOLDER = '-';
 
@@ -60,6 +65,10 @@ public class Hangman : MonoBehaviour
         leftLeg.SetActive(false);
         rightLeg.SetActive(false);
 
+        portal.SetActive(false);
+
+        hasWon = false;
+
         wordText.text = "Letters Guessed";
         dashedText.text = "-";
 
@@ -74,9 +83,9 @@ public class Hangman : MonoBehaviour
         if (failures > chances)
         {
             // you lose
-            // wait five seconds
-            StartCoroutine(Wait());
-            player.transform.position = startPosition;
+            hasWon = false;
+            //player.transform.position = startPosition;
+            portal.SetActive(true);
 
             head.SetActive(false);
             body.SetActive(false);
@@ -95,9 +104,9 @@ public class Hangman : MonoBehaviour
         if (userInput.Equals(answer))
         {
             // you win
-            // wait five seconds
-            StartCoroutine(Wait());
-            player.transform.position = startPosition;
+            hasWon = true;
+            //player.transform.position = startPosition;
+            portal.SetActive(true);
 
             head.SetActive(false);
             body.SetActive(false);
@@ -198,10 +207,5 @@ public class Hangman : MonoBehaviour
                 Debug.Log("??????????");
                 break;
         }
-    }
-
-    IEnumerator Wait()
-    {
-        yield return new WaitForSecondsRealtime(5);
     }
 }

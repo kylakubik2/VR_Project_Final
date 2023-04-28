@@ -59,6 +59,7 @@ TagManager:
   - sunCard
   - Pointer
   - Matching
+  - MainRoom
   layers:
   - Default
   - TransparentFX

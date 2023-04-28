@@ -6,9 +6,11 @@ public class MatchingCard : MonoBehaviour
 {
     public Quaternion startRotation;
     public Quaternion targetRotation;
+
+    public bool flipped;
+
     private float smooth = 30.0f;
     
-    public bool flipped;
 
     void Start()
     {
@@ -22,7 +24,6 @@ public class MatchingCard : MonoBehaviour
         {
             Debug.Log("player touch card");
             flipped = true;
-            
         }
     }
 
