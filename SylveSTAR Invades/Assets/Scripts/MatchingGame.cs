@@ -12,6 +12,7 @@ public class MatchingGame : MonoBehaviour
     public bool haveWon;
     public bool gameOver;
     public int numMatches;
+    public GameObject player;
 
     public GameObject mercury;
     public GameObject venus;
@@ -54,8 +55,29 @@ public class MatchingGame : MonoBehaviour
     {
         if (numFlipped == 2)
         {
-            Invoke("Matching", 1.5f);
+            Invoke("Matching", 3.0f);
             numFlipped = 0;
+        }
+
+        if (gameOver)
+        {
+            portal.SetActive(true);
+            mercury.SetActive(false);
+            venus.SetActive(false);
+            earth.SetActive(false);
+            mars.SetActive(false);
+            jupiter.SetActive(false);
+            saturn.SetActive(false);
+            uranus.SetActive(false);
+            neptune.SetActive(false);
+
+            player.transform.SetParent(null);
+        }
+
+        if (numMatches == 8)
+        {
+            gameOver = true;
+            haveWon = true;
         }
     }
 
@@ -132,25 +154,6 @@ public class MatchingGame : MonoBehaviour
                     numInPair = 0;
                 }
             }
-        }
-
-        if (gameOver)
-        {
-            portal.SetActive(true);
-            mercury.SetActive(false);
-            venus.SetActive(false);
-            earth.SetActive(false);
-            mars.SetActive(false);
-            jupiter.SetActive(false);
-            saturn.SetActive(false);
-            uranus.SetActive(false);
-            neptune.SetActive(false);
-        }
-
-        if (numMatches == 8)
-        {
-            gameOver = true;
-            haveWon = true;
         }
     }
 }

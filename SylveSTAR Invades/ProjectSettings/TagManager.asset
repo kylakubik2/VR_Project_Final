@@ -61,6 +61,7 @@ TagManager:
   - Matching
   - MainRoom
   - hand
+  - wand
   layers:
   - Default
   - TransparentFX

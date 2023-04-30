@@ -20,13 +20,16 @@ public class MatchingCard : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "hand")
+        if (other.gameObject.tag == "wand")
         {
             if (!game.gameOver)
             {
-                Debug.Log("player touch card");
-                flipped = true;
-                game.numFlipped++;
+                if (!flipped)
+                {
+                    Debug.Log("player touch card");
+                    flipped = true;
+                    game.numFlipped++;
+                }
             }
         }
     }

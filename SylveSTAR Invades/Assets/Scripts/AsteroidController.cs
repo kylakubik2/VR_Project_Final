@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Valve.VR;
+using Valve.VR.InteractionSystem;
 
 public class AsteroidController : MonoBehaviour
 {
@@ -10,13 +12,16 @@ public class AsteroidController : MonoBehaviour
     private Transform thisRock;
     private float move = 0.5f;
     public bool elevator;
-    public bool stay;
+    public GameObject wand;
+    public GameObject player;
+    private Interactable wandy;
 
     void Start()
     {
         startPosition = transform.position;
         thisRock = GetComponent<Transform>();
         elevator = false;
+        wandy = wand.GetComponent<Interactable>();
     }
 
     /*
@@ -41,24 +46,12 @@ public class AsteroidController : MonoBehaviour
     }
     */
 
-    private void OnTriggerStay(Collider other)
-    {
-        if (other.gameObject.tag == "Player")
-        {
-            Debug.Log("player colliding");
-            stay = true;
-        } else
-        {
-            Debug.Log("player not colliding");
-            stay = false;
-        }
-    }
-
     void Update()
     {
         currentPosition = transform.position;
-        if (stay)
+        if (wandy.attachedToHand)
         {
+            Debug.Log("wand in hand");
             elevator = true;
         } 
         else
@@ -68,11 +61,13 @@ public class AsteroidController : MonoBehaviour
 
         if (elevator)
         {
+            player.transform.SetParent(thisRock, true);
             transform.position = Vector3.Lerp(currentPosition, endPosition, move * Time.deltaTime);
         }
         else
         {
             transform.position = Vector3.Lerp(currentPosition, startPosition, move * Time.deltaTime);
+            player.transform.SetParent(null);
         }
     }
 }

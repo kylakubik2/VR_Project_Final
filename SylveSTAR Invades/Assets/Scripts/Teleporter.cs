@@ -40,7 +40,8 @@ public class Teleporter : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        SteamVR_Actions.move.Activate();
+        //SteamVR_Actions.move.Activate();
+        SteamVR_Actions.move.Deactivate();
 
         player.transform.position = matchingPosition;
         ufoGenerator.SetActive(false);
@@ -74,6 +75,7 @@ public class Teleporter : MonoBehaviour
         if(other.gameObject.CompareTag("Racing"))
         {
             Debug.Log("Racing Triggered");
+            SteamVR_Actions.move.Deactivate();
 
             player.transform.position = racingPosition;
             player.transform.eulerAngles = new Vector3(player.transform.eulerAngles.x, 180.0f, player.transform.eulerAngles.z);
@@ -115,6 +117,7 @@ public class Teleporter : MonoBehaviour
         else if (other.gameObject.CompareTag("Matching"))
         {
             Debug.Log("matching Triggered");
+            SteamVR_Actions.move.Deactivate();
 
             player.transform.position = matchingPosition;
             matchingGame.gameOver = false;
@@ -125,6 +128,7 @@ public class Teleporter : MonoBehaviour
         else if (other.gameObject.CompareTag("MainRoom"))
         {
             Debug.Log("Main Room Triggered");
+            SteamVR_Actions.move.Activate();
 
             player.transform.position = startPosition;
             other.gameObject.SetActive(false);
