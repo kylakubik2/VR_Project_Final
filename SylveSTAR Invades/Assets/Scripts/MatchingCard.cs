@@ -6,7 +6,7 @@ public class MatchingCard : MonoBehaviour
 {
     public Quaternion startRotation;
     public bool flipped;
-    private float smooth = 30.0f;
+    private float smooth = 100.0f;
     private float targetY;
     public MatchingGame game;
     
@@ -22,9 +22,12 @@ public class MatchingCard : MonoBehaviour
     {
         if (other.gameObject.tag == "hand")
         {
-            Debug.Log("player touch card");
-            flipped = true;
-            game.numFlipped++;
+            if (!game.gameOver)
+            {
+                Debug.Log("player touch card");
+                flipped = true;
+                game.numFlipped++;
+            }
         }
     }
 

@@ -35,7 +35,7 @@ public class Teleporter : MonoBehaviour
     public TextMeshPro ufoToBeat;
     public GameObject ufoGenerator;
 
-
+    public MatchingGame matchingGame;
     // add other positions as we go
     // Start is called before the first frame update
     void Start()
@@ -117,13 +117,17 @@ public class Teleporter : MonoBehaviour
             Debug.Log("matching Triggered");
 
             player.transform.position = matchingPosition;
-            
+            matchingGame.gameOver = false;
+            matchingGame.sun.GetComponent<MeshRenderer>().material = matchingGame.good;
+
             // add enabled texts and audio below
-        } else if (other.gameObject.CompareTag("MainRoom"))
+        } 
+        else if (other.gameObject.CompareTag("MainRoom"))
         {
             Debug.Log("Main Room Triggered");
 
             player.transform.position = startPosition;
+            other.gameObject.SetActive(false);
         }
     }
 }
