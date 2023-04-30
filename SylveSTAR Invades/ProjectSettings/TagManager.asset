@@ -60,6 +60,7 @@ TagManager:
   - Pointer
   - Matching
   - MainRoom
+  - hand
   layers:
   - Default
   - TransparentFX

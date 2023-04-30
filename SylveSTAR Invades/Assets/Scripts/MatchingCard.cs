@@ -5,34 +5,38 @@ using UnityEngine;
 public class MatchingCard : MonoBehaviour
 {
     public Quaternion startRotation;
-    public Quaternion targetRotation;
-
     public bool flipped;
-
     private float smooth = 30.0f;
+    private float targetY;
+    public MatchingGame game;
     
 
     void Start()
     {
         startRotation = transform.rotation;
         flipped = false;
+        targetY = transform.localEulerAngles.y - 180.0f;
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "Player")
+        if (other.gameObject.tag == "hand")
         {
             Debug.Log("player touch card");
             flipped = true;
+            game.numFlipped++;
         }
     }
 
     void Update()
     {
-        targetRotation = transform.rotation;
         if (flipped)
         {
-            transform.rotation = Quaternion.RotateTowards(transform.rotation, Quaternion.Euler(0, -180, 0), Time.deltaTime * smooth);
+            transform.rotation = Quaternion.RotateTowards(transform.rotation, Quaternion.Euler(0, targetY, 0), Time.deltaTime * smooth);
+        }
+        if (!flipped)
+        {
+            transform.rotation = Quaternion.RotateTowards(transform.rotation, startRotation, Time.deltaTime * smooth);
         }
     }
 }
