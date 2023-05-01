@@ -24,7 +24,7 @@ public class AsteroidController : MonoBehaviour
         wandy = wand.GetComponent<Interactable>();
     }
 
-    /*
+    
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "Player")
@@ -44,12 +44,12 @@ public class AsteroidController : MonoBehaviour
             Debug.Log("player off");
         }
     }
-    */
+    
 
     void Update()
     {
         currentPosition = transform.position;
-        if (wandy.attachedToHand)
+        /*if (wandy.attachedToHand)
         {
             Debug.Log("wand in hand");
             elevator = true;
@@ -58,6 +58,7 @@ public class AsteroidController : MonoBehaviour
         {
             elevator = false;
         }
+        */
 
         if (elevator)
         {
