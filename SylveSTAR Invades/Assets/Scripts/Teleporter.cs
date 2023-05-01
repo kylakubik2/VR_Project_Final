@@ -35,15 +35,19 @@ public class Teleporter : MonoBehaviour
     public TextMeshPro ufoToBeat;
     public GameObject ufoGenerator;
 
+    public MatchingGame matchingGame;
+    public Hangman hangman;
 
+    public MovePlayer movePlayer;
     // add other positions as we go
     // Start is called before the first frame update
     void Start()
     {
         SteamVR_Actions.move.Activate();
+        //SteamVR_Actions.move.Deactivate();
 
-        player.transform.position = shootingPosition;
-        ufoGenerator.SetActive(true);
+        player.transform.position = startPosition;
+        ufoGenerator.SetActive(false);
 
         //ufoGenerator.SetActive(false);
 
@@ -74,6 +78,7 @@ public class Teleporter : MonoBehaviour
         if(other.gameObject.CompareTag("Racing"))
         {
             Debug.Log("Racing Triggered");
+            SteamVR_Actions.move.Deactivate();
 
             player.transform.position = racingPosition;
             player.transform.eulerAngles = new Vector3(player.transform.eulerAngles.x, 180.0f, player.transform.eulerAngles.z);
@@ -92,12 +97,15 @@ public class Teleporter : MonoBehaviour
             golf2Audio.enabled = true;
             player.transform.position = golf2Position;
             parText.text = "Par: ";
+            movePlayer.maxSpeed = 1.0f;
         }
         else if (other.gameObject.CompareTag("Hangman"))
         {
             Debug.Log("Hangman Triggered");
 
+            hangman.PickRandomWord();
             player.transform.position = hangmanPosition;
+            movePlayer.maxSpeed = 1.0f;
             // add enabled texts and audio below
         }
         else if (other.gameObject.CompareTag("Shooting"))
@@ -110,15 +118,29 @@ public class Teleporter : MonoBehaviour
 
             numShot.enabled = true;
             ufoToBeat.enabled = true;
+            movePlayer.maxSpeed = 1.0f;
             // add enabled texts and audio below
         }
         else if (other.gameObject.CompareTag("Matching"))
         {
             Debug.Log("matching Triggered");
+            SteamVR_Actions.move.Deactivate();
 
             player.transform.position = matchingPosition;
-            
+            matchingGame.gameOver = false;
+            matchingGame.sun.GetComponent<MeshRenderer>().material = matchingGame.good;
+
             // add enabled texts and audio below
+        } 
+        else if (other.gameObject.CompareTag("MainRoom"))
+        {
+            Debug.Log("Main Room Triggered");
+            SteamVR_Actions.move.Activate();
+
+            player.transform.position = startPosition;
+            movePlayer.maxSpeed = 20.0f;
+            hangman.ResetPortal();
+            matchingGame.ResetPortal();
         }
     }
 }

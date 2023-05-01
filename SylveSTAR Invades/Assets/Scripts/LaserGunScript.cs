@@ -35,14 +35,19 @@ public class LaserGunScript : MonoBehaviour
     public bool startTimer;
     public GameObject ufoGenerator;
 
+    private int sylvestarScore; //TODO: set sylvestarScore
     public int numHit;
     public bool hit;
     public GameObject player;
-    private Vector3 startPosition = new Vector3(4.0f, 1467.5f, -651.0f);
+    //private Vector3 startPosition = new Vector3(4.0f, 1467.5f, -651.0f);
+    public GameObject portal;
+    public bool hasWon;
 
     public GameObject[] ufos;
     void Start()
     {
+        hasWon = false;
+        portal.SetActive(false);
         shootGun.AddOnStateDownListener(TriggerDown, rightHand);
         shootGun.AddOnStateUpListener(TriggerUp, rightHand);
         laser = GetComponent<LineRenderer>();
@@ -113,9 +118,18 @@ public class LaserGunScript : MonoBehaviour
         {
             Debug.Log("WHOOP");
 
-            player.transform.position = startPosition;
+            //player.transform.position = startPosition;
             shootText.enabled = false;
             shootToBeat.enabled = false;
+            if(numHit > sylvestarScore)
+            {
+                hasWon = true;
+                portal.SetActive(true);
+            } else
+            {
+                hasWon = false;
+                portal.SetActive(true);
+            }
 
             numHit = 0;
         }

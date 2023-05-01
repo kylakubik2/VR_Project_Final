@@ -13,17 +13,22 @@ public class Hangman : MonoBehaviour
     public GameObject rightArm;
     public GameObject leftLeg;
     public GameObject rightLeg;
-
-    private Vector3 startPosition = new Vector3(3.45f, 1467.5f, -652.1f);
     public GameObject player;
-
     public GameObject keyboard;
-    private Transform[] keys;
+    public GameObject portal;
 
-    //public AudioSource source;
+    //public AudioSource music;
+    //public AudioSource click;
+    //public AudioSource write;
+    //public AudioSource draw;
 
     public TextMeshPro wordText;
     public TextMeshPro dashedText;
+
+    public bool hasWon = false;
+
+    //private Vector3 startPosition = new Vector3(3.45f, 1467.5f, -652.1f);
+    private Transform[] keys;
 
     private const char PLACEHOLDER = '-';
 
@@ -32,9 +37,10 @@ public class Hangman : MonoBehaviour
     private int failures = 0;
     private string userInput;
     private string answer;
+    private bool gameOver = false;
 
 
-    private List<string> wordBank = new List<string>() {"andromeda", "nebula", "kuiper", "cylinder", "constellation", "perihelion", "bob", "helicopter"};
+    private List<string> wordBank = new List<string>() {"andromeda", "nebula", "kuiper", "constellation", "perihelion"};
     /**
      * ideas:
      *      only one key allowed at a time 
@@ -60,6 +66,10 @@ public class Hangman : MonoBehaviour
         leftLeg.SetActive(false);
         rightLeg.SetActive(false);
 
+        portal.SetActive(false);
+
+        hasWon = false;
+
         wordText.text = "Letters Guessed";
         dashedText.text = "-";
 
@@ -74,18 +84,16 @@ public class Hangman : MonoBehaviour
         if (failures > chances)
         {
             // you lose
-            // wait five seconds
-            StartCoroutine(Wait());
-            player.transform.position = startPosition;
-
+            gameOver = true;
+            hasWon = false;
+            //player.transform.position = startPosition;
+          
             head.SetActive(false);
             body.SetActive(false);
             leftArm.SetActive(false);
             rightArm.SetActive(false);
             leftLeg.SetActive(false);
             rightLeg.SetActive(false);
-
-            PickRandomWord();
 
             foreach(Transform key in keys)
             {
@@ -95,9 +103,9 @@ public class Hangman : MonoBehaviour
         if (userInput.Equals(answer))
         {
             // you win
-            // wait five seconds
-            StartCoroutine(Wait());
-            player.transform.position = startPosition;
+            gameOver = true;
+            hasWon = true;
+            //player.transform.position = startPosition;
 
             head.SetActive(false);
             body.SetActive(false);
@@ -106,12 +114,15 @@ public class Hangman : MonoBehaviour
             leftLeg.SetActive(false);
             rightLeg.SetActive(false);
 
-            PickRandomWord();
-
             foreach (Transform key in keys)
             {
                 key.gameObject.SetActive(true);
             }
+        }
+
+        if (gameOver)
+        {
+            portal.SetActive(true);
         }
 
     }
@@ -137,7 +148,7 @@ public class Hangman : MonoBehaviour
         }
     }
 
-    private void PickRandomWord()
+    public void PickRandomWord()
     {
         int word = Random.Range(0, wordBank.Count);
         //wordText.text = wordBank[word];
@@ -200,8 +211,8 @@ public class Hangman : MonoBehaviour
         }
     }
 
-    IEnumerator Wait()
+    public void ResetPortal()
     {
-        yield return new WaitForSecondsRealtime(5);
+        portal.SetActive(false);
     }
 }

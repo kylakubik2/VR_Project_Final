@@ -59,6 +59,9 @@ TagManager:
   - sunCard
   - Pointer
   - Matching
+  - MainRoom
+  - hand
+  - wand
   layers:
   - Default
   - TransparentFX

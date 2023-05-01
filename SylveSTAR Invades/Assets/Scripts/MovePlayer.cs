@@ -15,13 +15,13 @@ public class MovePlayer : MonoBehaviour
     // this rigidbody will be used to determine when the player is close to a collider
     public Rigidbody head;
 
-    private float speed = 0.0f;
+    private float speed = 20.0f;
 
     // Update is called once per frame
     void Update()
     {
         RaycastHit hit;
-        if (head.SweepTest(Player.instance.hmdTransform.TransformDirection(Vector3.forward), out hit, 0.5f))
+        if (head.SweepTest(Player.instance.hmdTransform.TransformDirection(Vector3.forward), out hit, 0.01f))
         {
 
         }
