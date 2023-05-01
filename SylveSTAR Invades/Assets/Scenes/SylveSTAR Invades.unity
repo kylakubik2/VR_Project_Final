@@ -17054,7 +17054,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &441526485
 RectTransform:
   m_ObjectHideFlags: 0
@@ -42172,7 +42172,7 @@ MonoBehaviour:
   golf1Position: {x: -213.3, y: 630.63, z: 156.12}
   golf2Position: {x: 22.41, y: 630.63, z: 155.04}
   golf3Position: {x: 245.5, y: 630.63, z: 174}
-  hangmanPosition: {x: 18.5, y: 0, z: 173}
+  hangmanPosition: {x: 18.5, y: 0, z: 172.3}
   shootingPosition: {x: -205.534, y: 0.1, z: 171.4}
   matchingPosition: {x: 183.63, y: 0.04, z: 179}
   player: {fileID: 1052862163}
@@ -66567,8 +66567,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1657456285}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.02475, y: 1.1317, z: 0.051056}
-  m_LocalScale: {x: 0.93813, y: 0.93813, z: 0.93813}
+  m_LocalPosition: {x: -0.029479, y: -2.04, z: -0.06076}
+  m_LocalScale: {x: 1.0736381, y: 1.0736381, z: 1.0736381}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 165481847}
@@ -84500,7 +84500,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &2136219023
 Transform:
   m_ObjectHideFlags: 0
@@ -84509,8 +84509,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2136219022}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 261.9, z: 0}
-  m_LocalScale: {x: 50, y: 10, z: 50}
+  m_LocalPosition: {x: -13.48, y: 140.23, z: -68.12}
+  m_LocalScale: {x: 10, y: 10, z: 10}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1358629847}
@@ -84551,7 +84551,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 7d2512ebb246b7c40805e2322fc73405, type: 2}
+  - {fileID: 2100000, guid: 080e22bb32c89c44cb8fdbd64c9829f7, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
