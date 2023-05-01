@@ -36,14 +36,17 @@ public class Teleporter : MonoBehaviour
     public GameObject ufoGenerator;
 
     public MatchingGame matchingGame;
+    public Hangman hangman;
+
+    public MovePlayer movePlayer;
     // add other positions as we go
     // Start is called before the first frame update
     void Start()
     {
-        //SteamVR_Actions.move.Activate();
-        SteamVR_Actions.move.Deactivate();
+        SteamVR_Actions.move.Activate();
+        //SteamVR_Actions.move.Deactivate();
 
-        player.transform.position = matchingPosition;
+        player.transform.position = startPosition;
         ufoGenerator.SetActive(false);
 
         //ufoGenerator.SetActive(false);
@@ -94,12 +97,15 @@ public class Teleporter : MonoBehaviour
             golf2Audio.enabled = true;
             player.transform.position = golf2Position;
             parText.text = "Par: ";
+            movePlayer.maxSpeed = 1.0f;
         }
         else if (other.gameObject.CompareTag("Hangman"))
         {
             Debug.Log("Hangman Triggered");
 
+            hangman.PickRandomWord();
             player.transform.position = hangmanPosition;
+            movePlayer.maxSpeed = 1.0f;
             // add enabled texts and audio below
         }
         else if (other.gameObject.CompareTag("Shooting"))
@@ -112,6 +118,7 @@ public class Teleporter : MonoBehaviour
 
             numShot.enabled = true;
             ufoToBeat.enabled = true;
+            movePlayer.maxSpeed = 1.0f;
             // add enabled texts and audio below
         }
         else if (other.gameObject.CompareTag("Matching"))
@@ -131,7 +138,9 @@ public class Teleporter : MonoBehaviour
             SteamVR_Actions.move.Activate();
 
             player.transform.position = startPosition;
-            other.gameObject.SetActive(false);
+            movePlayer.maxSpeed = 20.0f;
+            hangman.ResetPortal();
+            matchingGame.ResetPortal();
         }
     }
 }

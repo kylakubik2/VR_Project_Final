@@ -81,6 +81,11 @@ public class MatchingGame : MonoBehaviour
         }
     }
 
+    public void ResetPortal()
+    {
+        portal.SetActive(false);
+    }
+
     public void Matching()
     {
         foreach (MatchingCard card in cards)

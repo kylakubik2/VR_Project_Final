@@ -37,9 +37,10 @@ public class Hangman : MonoBehaviour
     private int failures = 0;
     private string userInput;
     private string answer;
+    private bool gameOver = false;
 
 
-    private List<string> wordBank = new List<string>() {"andromeda", "nebula", "kuiper", "cylinder", "constellation", "perihelion", "bob", "helicopter"};
+    private List<string> wordBank = new List<string>() {"andromeda", "nebula", "kuiper", "constellation", "perihelion"};
     /**
      * ideas:
      *      only one key allowed at a time 
@@ -83,18 +84,16 @@ public class Hangman : MonoBehaviour
         if (failures > chances)
         {
             // you lose
+            gameOver = true;
             hasWon = false;
             //player.transform.position = startPosition;
-            portal.SetActive(true);
-
+          
             head.SetActive(false);
             body.SetActive(false);
             leftArm.SetActive(false);
             rightArm.SetActive(false);
             leftLeg.SetActive(false);
             rightLeg.SetActive(false);
-
-            PickRandomWord();
 
             foreach(Transform key in keys)
             {
@@ -104,9 +103,9 @@ public class Hangman : MonoBehaviour
         if (userInput.Equals(answer))
         {
             // you win
+            gameOver = true;
             hasWon = true;
             //player.transform.position = startPosition;
-            portal.SetActive(true);
 
             head.SetActive(false);
             body.SetActive(false);
@@ -115,12 +114,15 @@ public class Hangman : MonoBehaviour
             leftLeg.SetActive(false);
             rightLeg.SetActive(false);
 
-            PickRandomWord();
-
             foreach (Transform key in keys)
             {
                 key.gameObject.SetActive(true);
             }
+        }
+
+        if (gameOver)
+        {
+            portal.SetActive(true);
         }
 
     }
@@ -146,7 +148,7 @@ public class Hangman : MonoBehaviour
         }
     }
 
-    private void PickRandomWord()
+    public void PickRandomWord()
     {
         int word = Random.Range(0, wordBank.Count);
         //wordText.text = wordBank[word];
@@ -207,5 +209,10 @@ public class Hangman : MonoBehaviour
                 Debug.Log("??????????");
                 break;
         }
+    }
+
+    public void ResetPortal()
+    {
+        portal.SetActive(false);
     }
 }
