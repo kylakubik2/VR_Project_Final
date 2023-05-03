@@ -7,8 +7,8 @@ using Valve.VR.InteractionSystem;
 public class AsteroidController : MonoBehaviour
 {
     public Vector3 endPosition;
-    public Vector3 startPosition;
-    public Vector3 currentPosition;
+    private Vector3 startPosition;
+    private Vector3 currentPosition;
     private Transform thisRock;
     private float move = 0.5f;
     public bool elevator;

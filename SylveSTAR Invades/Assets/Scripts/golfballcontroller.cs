@@ -39,7 +39,7 @@ public class golfballcontroller : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        portal.SetActive(false);
+        //portal.SetActive(false);
         hasWon = false;
         rb = GetComponent<Rigidbody>();
         numStrokes = 0;

@@ -37,8 +37,7 @@ public class MatchingGame : MonoBehaviour
         numMatches = 0;
         haveWon = false;
         gameOver = false;
-        portal.SetActive(false);
-
+       
         sun.SetActive(true);
         mercury.SetActive(false);
         venus.SetActive(false);
@@ -79,11 +78,6 @@ public class MatchingGame : MonoBehaviour
             gameOver = true;
             haveWon = true;
         }
-    }
-
-    public void ResetPortal()
-    {
-        portal.SetActive(false);
     }
 
     public void Matching()

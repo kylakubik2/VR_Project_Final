@@ -65,9 +65,6 @@ public class Hangman : MonoBehaviour
         rightArm.SetActive(false);
         leftLeg.SetActive(false);
         rightLeg.SetActive(false);
-
-        portal.SetActive(false);
-
         hasWon = false;
 
         wordText.text = "Letters Guessed";
@@ -209,10 +206,5 @@ public class Hangman : MonoBehaviour
                 Debug.Log("??????????");
                 break;
         }
-    }
-
-    public void ResetPortal()
-    {
-        portal.SetActive(false);
     }
 }

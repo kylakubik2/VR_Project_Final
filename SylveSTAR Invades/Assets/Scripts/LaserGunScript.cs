@@ -47,7 +47,7 @@ public class LaserGunScript : MonoBehaviour
     void Start()
     {
         hasWon = false;
-        portal.SetActive(false);
+        //portal.SetActive(false);
         shootGun.AddOnStateDownListener(TriggerDown, rightHand);
         shootGun.AddOnStateUpListener(TriggerUp, rightHand);
         laser = GetComponent<LineRenderer>();

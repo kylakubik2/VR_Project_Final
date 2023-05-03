@@ -36,7 +36,6 @@ public class finishLineScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        portal.SetActive(false);
         hasWon = false;
 
         timeNum = 0.0f;
