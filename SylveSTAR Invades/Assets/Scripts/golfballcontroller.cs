@@ -13,9 +13,9 @@ public class golfballcontroller : MonoBehaviour
     public GameObject portal;
 
     private Vector3 startPosition = new Vector3(4.0f, 1467.5f, -651.0f);
-    public Vector3 golf1Position = new Vector3(-401.0f, 748.5f, 272.35f);
-    public Vector3 golf3Position = new Vector3(-427.6f, 748.5f, 708.62f);
-    public Vector3 ballStartPosition = new Vector3();
+    private Vector3 golf1Position = new Vector3(219.635f, 505.296f, -1229.09f);
+    private Vector3 golf3Position = new Vector3(255.01f, 519.74f, -1211.8f);
+    private Vector3 ballStartPosition = new Vector3();
 
     public TextMeshPro strokeCounter;
     public TextMeshPro parText;

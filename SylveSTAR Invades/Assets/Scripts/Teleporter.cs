@@ -112,6 +112,7 @@ public class Teleporter : MonoBehaviour
             Debug.Log("Hangman Triggered");
 
             hangman.PickRandomWord();
+            hangman.gameOver = false;
             player.transform.position = hangmanPosition;
             movePlayer.maxSpeed = 1.0f;
             // add enabled texts and audio below

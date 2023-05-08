@@ -22,7 +22,6 @@ public class Hangman : MonoBehaviour
     //public AudioSource write;
     //public AudioSource draw;
 
-    public TextMeshPro wordText;
     public TextMeshPro dashedText;
 
     public bool hasWon = false;
@@ -34,13 +33,13 @@ public class Hangman : MonoBehaviour
 
     private int chances = 5;
     private int successes = 0;
-    private int failures = 0;
+    public int failures = 0;
     private string userInput;
     private string answer;
-    private bool gameOver = false;
+    public bool gameOver = false;
 
 
-    private List<string> wordBank = new List<string>() {"andromeda", "nebula", "kuiper", "constellation", "perihelion"};
+    private List<string> wordBank = new List<string>() {"andromeda", "nebula", "kuiper", "constellation", "perihelion", "meteoroid", "rocket", "penumbra"};
     /**
      * ideas:
      *      only one key allowed at a time 
@@ -67,7 +66,6 @@ public class Hangman : MonoBehaviour
         rightLeg.SetActive(false);
         hasWon = false;
 
-        wordText.text = "Letters Guessed";
         dashedText.text = "-";
 
         PickRandomWord();
@@ -83,8 +81,8 @@ public class Hangman : MonoBehaviour
             // you lose
             gameOver = true;
             hasWon = false;
-            //player.transform.position = startPosition;
-          
+            portal.SetActive(true);
+
             head.SetActive(false);
             body.SetActive(false);
             leftArm.SetActive(false);
@@ -96,13 +94,15 @@ public class Hangman : MonoBehaviour
             {
                 key.gameObject.SetActive(true);
             }
+
+            failures = 0;
         }
         if (userInput.Equals(answer))
         {
             // you win
             gameOver = true;
             hasWon = true;
-            //player.transform.position = startPosition;
+            portal.SetActive(true);
 
             head.SetActive(false);
             body.SetActive(false);
@@ -115,32 +115,31 @@ public class Hangman : MonoBehaviour
             {
                 key.gameObject.SetActive(true);
             }
-        }
 
-        if (gameOver)
-        {
-            portal.SetActive(true);
+            failures = 0;
         }
-
     }
 
     public void OnTriggerEnter(Collider other)
     {
-        string tag = other.gameObject.tag;
-        if(tag.Length == 1)
+        if (!gameOver)
         {
-            char letter = tag.ToCharArray()[0]; //get the letter
-            if (answer.Contains(letter))
+            string tag = other.gameObject.tag;
+            if (tag.Length == 1)
             {
-                UpdateAnswerText(letter);
-                successes++;
-                other.gameObject.SetActive(false);
-            }
-            else
-            {
-                failures++;
-                DrawNextHangmanPart();
-                other.gameObject.SetActive(false);
+                char letter = tag.ToCharArray()[0]; //get the letter
+                if (answer.Contains(letter))
+                {
+                    UpdateAnswerText(letter);
+                    successes++;
+                    other.gameObject.SetActive(false);
+                }
+                else
+                {
+                    failures++;
+                    DrawNextHangmanPart();
+                    other.gameObject.SetActive(false);
+                }
             }
         }
     }
@@ -148,13 +147,11 @@ public class Hangman : MonoBehaviour
     public void PickRandomWord()
     {
         int word = Random.Range(0, wordBank.Count);
-        //wordText.text = wordBank[word];
         answer = wordBank[word];
         StringBuilder sb = new StringBuilder("");
         for (int i = 0; i < answer.Length; i++)
         {
             sb.Append(PLACEHOLDER);
-            //sb.Append(" ");
         }
         dashedText.text = sb.ToString();
         userInput = sb.ToString();
