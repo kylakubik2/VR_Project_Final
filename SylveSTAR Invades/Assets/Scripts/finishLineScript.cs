@@ -29,6 +29,9 @@ public class finishLineScript : MonoBehaviour
     private int numLaps;
     private int sylvestarTime; // TODO:add in time to beat
 
+    public GameObject cylinder;
+    public GameObject button;
+
     private GameObject[] mushrooms;
 
     private float winTime = 100000.0f;
@@ -125,6 +128,12 @@ public class finishLineScript : MonoBehaviour
         if (winTime > 50000.0f)
         {
             SetTimerText();
+        }
+
+        if (hasWon)
+        {
+            cylinder.SetActive(false);
+            button.SetActive(false);
         }
     }
 }

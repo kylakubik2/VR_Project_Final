@@ -36,6 +36,9 @@ public class golfballcontroller : MonoBehaviour
 
     public GameObject player;
 
+    public GameObject cylinder;
+    public GameObject button;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -84,6 +87,12 @@ public class golfballcontroller : MonoBehaviour
             parText.enabled = true;
             numStrokes = 0;
             SetStrokeText();
+        }
+
+        if (hasWon)
+        {
+            cylinder.SetActive(false);
+            button.SetActive(false);
         }
     }
 

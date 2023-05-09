@@ -38,6 +38,9 @@ public class Hangman : MonoBehaviour
     private string answer;
     public bool gameOver = false;
 
+    public GameObject cylinder;
+    public GameObject button;
+
 
     private List<string> wordBank = new List<string>() {"andromeda", "nebula", "kuiper", "constellation", "perihelion", "meteoroid", "rocket", "penumbra"};
     /**
@@ -117,6 +120,12 @@ public class Hangman : MonoBehaviour
             }
 
             failures = 0;
+        }
+
+        if (hasWon)
+        {
+            cylinder.SetActive(false);
+            button.SetActive(false);
         }
     }
 

@@ -26,7 +26,10 @@ public class MatchingGame : MonoBehaviour
 
     public Material good;
     public Material bad;
-    
+
+    public GameObject cylinder;
+    public GameObject button;
+
 
     // Start is called before the first frame update
     void Start()
@@ -77,6 +80,12 @@ public class MatchingGame : MonoBehaviour
         {
             gameOver = true;
             haveWon = true;
+        }
+
+        if (haveWon)
+        {
+            cylinder.SetActive(false);
+            button.SetActive(false);
         }
     }
 

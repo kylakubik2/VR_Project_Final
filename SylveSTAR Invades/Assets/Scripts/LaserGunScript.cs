@@ -43,7 +43,11 @@ public class LaserGunScript : MonoBehaviour
     public GameObject portal;
     public bool hasWon;
 
+    public GameObject cylinder;
+    public GameObject button;
+
     public GameObject[] ufos;
+
     void Start()
     {
         hasWon = false;
@@ -132,6 +136,12 @@ public class LaserGunScript : MonoBehaviour
             }
 
             numHit = 0;
+        }
+
+        if (hasWon)
+        {
+            cylinder.SetActive(false);
+            button.SetActive(false);
         }
     }
 }
