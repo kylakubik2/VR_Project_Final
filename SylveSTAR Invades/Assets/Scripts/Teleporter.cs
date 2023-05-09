@@ -18,8 +18,11 @@ public class Teleporter : MonoBehaviour
     private Vector3 matchingPosition = new Vector3(353.19f, 939.21f, -428.32f);
 
     public GameObject player;
+
+    public AudioSource mainRoomNarrationAudio;
     
     public AudioSource racingAudio;
+    public AudioSource racingNarrationAudio;
     public TextMeshPro lapCountText;
     public TextMeshPro timerText;
     public TextMeshPro racingToBeat;
@@ -27,6 +30,7 @@ public class Teleporter : MonoBehaviour
     public AudioSource golf1Audio;
     public AudioSource golf2Audio;
     public AudioSource golf3Audio;
+    public AudioSource golfNarrationAudio;
     public TextMeshPro parText;
     public TextMeshPro strokesText;
     public TextMeshPro golfWarmUp;
@@ -34,9 +38,13 @@ public class Teleporter : MonoBehaviour
     public TextMeshPro numShot;
     public TextMeshPro ufoToBeat;
     public GameObject ufoGenerator;
+    public AudioSource shootingNarrationAudio;
 
     public MatchingGame matchingGame;
+    public AudioSource matchingNarrationAudio;
+
     public Hangman hangman;
+    // get audio source for hangman
 
     public MovePlayer movePlayer;
 
@@ -53,7 +61,10 @@ public class Teleporter : MonoBehaviour
 
         //ufoGenerator.SetActive(false);
 
+        mainRoomNarrationAudio.enabled = false;
+
         racingAudio.enabled = false;
+        racingNarrationAudio.enabled = false;
         lapCountText.enabled = false;
         timerText.enabled = false;
         racingToBeat.enabled = false;
@@ -64,9 +75,13 @@ public class Teleporter : MonoBehaviour
         golf1Audio.enabled = false;
         golf2Audio.enabled = false;
         golf3Audio.enabled = false;
+        golfNarrationAudio.enabled = false;
 
         numShot.enabled = false;
         ufoToBeat.enabled = false;
+        shootingNarrationAudio.enabled = false;
+
+        matchingNarrationAudio.enabled = false;
 
         portals = GameObject.FindGameObjectsWithTag("MainRoom");
         foreach(GameObject portal in portals)
@@ -91,8 +106,10 @@ public class Teleporter : MonoBehaviour
             player.transform.position = racingPosition;
             player.transform.eulerAngles = new Vector3(player.transform.eulerAngles.x, 180.0f, player.transform.eulerAngles.z);
             racingAudio.enabled = true;
+            racingNarrationAudio.enabled = true;
+            racingNarrationAudio.PlayOneShot(racingNarrationAudio.clip, 0.5f);
 
-            racingAudio.enabled = true;
+            //racingAudio.enabled = true;
             lapCountText.enabled = true;
             timerText.enabled = true;
             racingToBeat.enabled = true;
@@ -103,7 +120,9 @@ public class Teleporter : MonoBehaviour
 
             golfWarmUp.enabled = true;
             golf2Audio.enabled = true;
+            golfNarrationAudio.enabled = true;
             player.transform.position = golf2Position;
+            golfNarrationAudio.PlayOneShot(golfNarrationAudio.clip, 0.5f);
             parText.text = "Par: ";
             movePlayer.maxSpeed = 1.0f;
         }
@@ -129,6 +148,8 @@ public class Teleporter : MonoBehaviour
             ufoToBeat.enabled = true;
             movePlayer.maxSpeed = 1.0f;
             // add enabled texts and audio below
+            shootingNarrationAudio.enabled = true;
+            shootingNarrationAudio.PlayOneShot(shootingNarrationAudio.clip, 0.5f);
         }
         else if (other.gameObject.CompareTag("Matching"))
         {
@@ -140,6 +161,8 @@ public class Teleporter : MonoBehaviour
             matchingGame.sun.GetComponent<MeshRenderer>().material = matchingGame.good;
 
             // add enabled texts and audio below
+            matchingNarrationAudio.enabled = true;
+            matchingNarrationAudio.PlayOneShot(matchingNarrationAudio.clip, 0.5f);
         } 
         else if (other.gameObject.CompareTag("MainRoom"))
         {
@@ -148,6 +171,9 @@ public class Teleporter : MonoBehaviour
 
             player.transform.position = startPosition;
             movePlayer.maxSpeed = 20.0f;
+
+            mainRoomNarrationAudio.enabled = true;
+            mainRoomNarrationAudio.PlayOneShot(mainRoomNarrationAudio.clip, 0.5f);
 
             foreach (GameObject portal in portals)
             {

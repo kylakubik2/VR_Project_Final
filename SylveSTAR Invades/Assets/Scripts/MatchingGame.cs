@@ -30,6 +30,18 @@ public class MatchingGame : MonoBehaviour
     public GameObject cylinder;
     public GameObject button;
 
+    //public AudioClip sunAudio;
+    public AudioClip mercuryAudio;
+    public AudioClip venusAudio;
+    public AudioClip earthAudio;
+    public AudioClip marsAudio;
+    public AudioClip jupiterAudio;
+    public AudioClip saturnAudio;
+    public AudioClip uranusAudio;
+    public AudioClip neptuneAudio;
+    //public AudioClip plutoAudio;
+
+    private AudioSource source;
 
     // Start is called before the first frame update
     void Start()
@@ -129,27 +141,35 @@ public class MatchingGame : MonoBehaviour
                             {
                                 case "mercuryCard":
                                     mercury.SetActive(true);
+                                    source.PlayOneShot(mercuryAudio, 0.5f);
                                     break;
                                 case "venusCard":
                                     venus.SetActive(true);
+                                    source.PlayOneShot(venusAudio, 0.5f);
                                     break;
                                 case "earthCard":
                                     earth.SetActive(true);
+                                    source.PlayOneShot(earthAudio, 0.5f);
                                     break;
                                 case "marsCard":
                                     mars.SetActive(true);
+                                    source.PlayOneShot(marsAudio, 0.5f);
                                     break;
                                 case "jupiterCard":
                                     jupiter.SetActive(true);
+                                    source.PlayOneShot(jupiterAudio, 0.5f);
                                     break;
                                 case "saturnCard":
                                     saturn.SetActive(true);
+                                    source.PlayOneShot(saturnAudio, 0.5f);
                                     break;
                                 case "uranusCard":
                                     uranus.SetActive(true);
+                                    source.PlayOneShot(uranusAudio, 0.5f);
                                     break;
                                 case "neptuneCard":
                                     neptune.SetActive(true);
+                                    source.PlayOneShot(neptuneAudio, 0.5f);
                                     break;
                                 default:
                                     Debug.Log("???");
