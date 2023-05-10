@@ -12,13 +12,15 @@ public class LaserGunScript : MonoBehaviour
     public SteamVR_Input_Sources rightHand;
 
     public AudioSource source;
-    public AudioClip carnivalMusic;
     public AudioClip laserShoot;
     public AudioClip explode;
+    public AudioClip gameWin;
+    public AudioClip gameLose;
 
     public Transform laserOrigin;
     LineRenderer laser;
 
+    public TextMeshPro timerText;
     public TextMeshPro shootText;
     public TextMeshPro shootToBeat;
 
@@ -31,6 +33,9 @@ public class LaserGunScript : MonoBehaviour
     private float winTime = 100000.0f;
 
     private float gameTimer = 25.0f;
+    private int milliseconds;
+    private int seconds;
+    private int minutes;
 
     public bool startTimer;
     public GameObject ufoGenerator;
@@ -60,7 +65,6 @@ public class LaserGunScript : MonoBehaviour
         hit = false;
 
         SetShootText();
-        SetShootToBeatText();
 
         numHit = 0;
     }
@@ -83,13 +87,13 @@ public class LaserGunScript : MonoBehaviour
 
     public void SetShootText()
     {
-        shootText.text = "Number Hit: " + numHit.ToString();
+        shootText.text = numHit.ToString();
     }
-    void SetShootToBeatText()
+    
+    void SetTimerText()
     {
-        shootText.text = "Sylvestar's Score: ";
+        timerText.text = "Time: " + minutes.ToString("D2") + ":" + seconds.ToString("D2") + "." + milliseconds.ToString("D2");
     }
-
 
     void Update()
     {
@@ -123,16 +127,17 @@ public class LaserGunScript : MonoBehaviour
             Debug.Log("WHOOP");
 
             //player.transform.position = startPosition;
-            shootText.enabled = false;
-            shootToBeat.enabled = false;
             if(numHit > sylvestarScore)
             {
                 hasWon = true;
                 portal.SetActive(true);
+                source.PlayOneShot(gameWin);
+
             } else
             {
                 hasWon = false;
                 portal.SetActive(true);
+                source.PlayOneShot(gameLose);
             }
 
             numHit = 0;
@@ -142,6 +147,21 @@ public class LaserGunScript : MonoBehaviour
         {
             cylinder.SetActive(false);
             button.SetActive(false);
+        }
+
+        SetShootText();
+
+        minutes = (int)(gameTimer / 60f) % 60;
+        seconds = (int)(gameTimer % 60f);
+        milliseconds = (int)(gameTimer * 1000f) % 1000;
+
+        if (startTimer)
+        {
+            SetTimerText();
+        }
+        else
+        {
+            timerText.text = "00:00:00";
         }
     }
 }

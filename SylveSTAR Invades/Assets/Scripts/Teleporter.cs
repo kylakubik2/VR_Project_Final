@@ -8,42 +8,42 @@ using Valve.VR.InteractionSystem;
 public class Teleporter : MonoBehaviour
 {
     // these Vector3's are "global" positions relative to the parent scene
+    private Vector3 blackRoomPosition = new Vector3(-2272.43f, 5190f, 0f);
     private Vector3 startPosition = new Vector3(21.55f, 225.8f, -769.35f);
     private Vector3 racingPosition = new Vector3(-473.71f, 658.24f, -914.75f); 
     private Vector3 golf1Position = new Vector3(219.635f, 505.296f, -1229.09f);
     private Vector3 golf2Position = new Vector3(244.818f, 512.73f, -1232.788f);
     private Vector3 golf3Position = new Vector3(255.01f, 519.74f, -1211.8f);
-    private Vector3 hangmanPosition = new Vector3(18.552f, 149.147f, -12.928f); 
+    private Vector3 hangmanPosition = new Vector3(0.44f, 9.76f, -1.75f); 
     private Vector3 shootingPosition = new Vector3(-206.979f, 149.202f, -13.028f); 
     private Vector3 matchingPosition = new Vector3(353.19f, 939.21f, -428.32f);
 
     public GameObject player;
 
-    public AudioSource mainRoomNarrationAudio;
-    
+    public AudioSource mainRoomAudio;
+    public AudioClip mainRoomNarrationAudio;
+
     public AudioSource racingAudio;
-    public AudioSource racingNarrationAudio;
-    public TextMeshPro lapCountText;
-    public TextMeshPro timerText;
-    public TextMeshPro racingToBeat;
+    public AudioClip racingNarrationAudio;
 
     public AudioSource golf1Audio;
     public AudioSource golf2Audio;
     public AudioSource golf3Audio;
-    public AudioSource golfNarrationAudio;
-    public TextMeshPro parText;
-    public TextMeshPro strokesText;
-    public TextMeshPro golfWarmUp;
+    public AudioClip golfNarrationAudio;
 
-    public TextMeshPro numShot;
-    public TextMeshPro ufoToBeat;
     public GameObject ufoGenerator;
-    public AudioSource shootingNarrationAudio;
+    public AudioClip shootingNarrationAudio;
+    public AudioSource shootingAudio;
 
     public MatchingGame matchingGame;
-    public AudioSource matchingNarrationAudio;
+    public AudioClip matchingNarrationAudio;
+    public AudioSource matchingAudio;
 
     public Hangman hangman;
+    public AudioSource hangmanAudio;
+    public AudioClip hangmanNarration;
+
+    private bool timing;
     // get audio source for hangman
 
     public MovePlayer movePlayer;
@@ -53,35 +53,22 @@ public class Teleporter : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        SteamVR_Actions.move.Activate();
-        //SteamVR_Actions.move.Deactivate();
+        timing = false;
+        SteamVR_Actions.move.Deactivate();
 
-        player.transform.position = startPosition;
+        player.transform.position = blackRoomPosition;
         ufoGenerator.SetActive(false);
 
         //ufoGenerator.SetActive(false);
 
-        mainRoomNarrationAudio.enabled = false;
-
+        mainRoomAudio.enabled = true;
         racingAudio.enabled = false;
-        racingNarrationAudio.enabled = false;
-        lapCountText.enabled = false;
-        timerText.enabled = false;
-        racingToBeat.enabled = false;
-
-        parText.enabled = false;
-        strokesText.enabled = false;
-        golfWarmUp.enabled = false;
         golf1Audio.enabled = false;
         golf2Audio.enabled = false;
         golf3Audio.enabled = false;
-        golfNarrationAudio.enabled = false;
-
-        numShot.enabled = false;
-        ufoToBeat.enabled = false;
-        shootingNarrationAudio.enabled = false;
-
-        matchingNarrationAudio.enabled = false;
+        shootingAudio.enabled = false;
+        hangmanAudio.enabled = false;
+        matchingAudio.enabled = false;
 
         portals = GameObject.FindGameObjectsWithTag("MainRoom");
         foreach(GameObject portal in portals)
@@ -100,85 +87,113 @@ public class Teleporter : MonoBehaviour
     {
         if(other.gameObject.CompareTag("Racing"))
         {
+            timing = true;
+            mainRoomAudio.enabled = false;
+            racingAudio.enabled = true;
+
+            PlayAudio(racingAudio, racingNarrationAudio);
             Debug.Log("Racing Triggered");
             SteamVR_Actions.move.Deactivate();
 
             player.transform.position = racingPosition;
             player.transform.eulerAngles = new Vector3(player.transform.eulerAngles.x, 180.0f, player.transform.eulerAngles.z);
-            racingAudio.enabled = true;
-            racingNarrationAudio.enabled = true;
-            racingNarrationAudio.PlayOneShot(racingNarrationAudio.clip, 0.5f);
-
-            //racingAudio.enabled = true;
-            lapCountText.enabled = true;
-            timerText.enabled = true;
-            racingToBeat.enabled = true;
         }
         else if (other.gameObject.CompareTag("Golfing"))
         {
+            timing = true;
+            mainRoomAudio.enabled = false;
+            golf2Audio.enabled = true;
+
             Debug.Log("Golfing Triggered");
 
-            golfWarmUp.enabled = true;
-            golf2Audio.enabled = true;
-            golfNarrationAudio.enabled = true;
-            player.transform.position = golf2Position;
-            golfNarrationAudio.PlayOneShot(golfNarrationAudio.clip, 0.5f);
-            parText.text = "Par: ";
+            PlayAudio(golf2Audio, golfNarrationAudio);
+
             movePlayer.maxSpeed = 1.0f;
         }
         else if (other.gameObject.CompareTag("Hangman"))
         {
+            timing = true;
+            mainRoomAudio.enabled = false;
+            hangmanAudio.enabled = true;
+
             Debug.Log("Hangman Triggered");
+
+            PlayAudio(hangmanAudio, hangmanNarration);
 
             hangman.PickRandomWord();
             hangman.gameOver = false;
             player.transform.position = hangmanPosition;
-            movePlayer.maxSpeed = 1.0f;
+            movePlayer.maxSpeed = 2.5f;
             // add enabled texts and audio below
         }
         else if (other.gameObject.CompareTag("Shooting"))
         {
+            timing = true;
+            mainRoomAudio.enabled = false;
+            shootingAudio.enabled = true;
+
             Debug.Log("Shooting Triggered");
+
+            PlayAudio(shootingAudio, shootingNarrationAudio);
 
             player.transform.position = shootingPosition;
             player.transform.eulerAngles = new Vector3(player.transform.eulerAngles.x, 90.0f, player.transform.eulerAngles.z);
             ufoGenerator.SetActive(true);
 
-            numShot.enabled = true;
-            ufoToBeat.enabled = true;
             movePlayer.maxSpeed = 1.0f;
-            // add enabled texts and audio below
-            shootingNarrationAudio.enabled = true;
-            shootingNarrationAudio.PlayOneShot(shootingNarrationAudio.clip, 0.5f);
         }
         else if (other.gameObject.CompareTag("Matching"))
         {
+            timing = true;
+            mainRoomAudio.enabled = false;
+            matchingAudio.enabled = true;
+
             Debug.Log("matching Triggered");
+
+            PlayAudio(matchingAudio, matchingNarrationAudio);
+
             SteamVR_Actions.move.Deactivate();
 
             player.transform.position = matchingPosition;
             matchingGame.gameOver = false;
             matchingGame.sun.GetComponent<MeshRenderer>().material = matchingGame.good;
-
-            // add enabled texts and audio below
-            matchingNarrationAudio.enabled = true;
-            matchingNarrationAudio.PlayOneShot(matchingNarrationAudio.clip, 0.5f);
         } 
         else if (other.gameObject.CompareTag("MainRoom"))
         {
+            SteamVR_Actions.move.Activate();
+
+            timing = true;
+            racingAudio.enabled = false;
+            golf1Audio.enabled = false;
+            golf2Audio.enabled = false;
+            golf3Audio.enabled = false;
+            shootingAudio.enabled = false;
+            hangmanAudio.enabled = false;
+            matchingAudio.enabled = false;
+            mainRoomAudio.enabled = true;
+
             Debug.Log("Main Room Triggered");
             SteamVR_Actions.move.Activate();
 
             player.transform.position = startPosition;
             movePlayer.maxSpeed = 20.0f;
 
-            mainRoomNarrationAudio.enabled = true;
-            mainRoomNarrationAudio.PlayOneShot(mainRoomNarrationAudio.clip, 0.5f);
-
             foreach (GameObject portal in portals)
             {
                 portal.SetActive(false);
             }
+        }
+    }
+
+    public void PlayAudio(AudioSource source, AudioClip narration)
+    {
+        float timeNum = 0.0f;
+        if (timeNum < 3.0f)
+        {
+            timeNum += Time.deltaTime;
+        } else
+        {
+            source.PlayOneShot(narration);
         }
     }
 }

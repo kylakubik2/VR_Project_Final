@@ -31,6 +31,8 @@ public class golfballcontroller : MonoBehaviour
     public AudioSource golf3Source;
 
     public AudioClip boing;
+    public AudioClip gameWon;
+    public AudioClip gameLose;
 
     public TextMeshPro golfWarmUp;
 
@@ -123,10 +125,12 @@ public class golfballcontroller : MonoBehaviour
             {
                 hasWon = true;
                 portal.SetActive(true);
+                golf1Source.PlayOneShot(gameWon);
             } else
             {
                 hasWon = false;
                 portal.SetActive(true);
+                golf1Source.PlayOneShot(gameLose);
             }
         }
         else if (other.gameObject.CompareTag("Hole3"))
@@ -139,10 +143,12 @@ public class golfballcontroller : MonoBehaviour
             {
                 hasWon = true;
                 portal.SetActive(true);
+                golf3Source.PlayOneShot(gameWon);
             } else
             {
                 hasWon = false;
                 portal.SetActive(true);
+                golf3Source.PlayOneShot(gameLose);
             }
         }
         else if (other.gameObject.CompareTag("Sand"))

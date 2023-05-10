@@ -30,7 +30,9 @@ public class MatchingGame : MonoBehaviour
     public GameObject cylinder;
     public GameObject button;
 
-    //public AudioClip sunAudio;
+
+    public AudioSource source;
+    public AudioClip sunAudio;
     public AudioClip mercuryAudio;
     public AudioClip venusAudio;
     public AudioClip earthAudio;
@@ -39,9 +41,10 @@ public class MatchingGame : MonoBehaviour
     public AudioClip saturnAudio;
     public AudioClip uranusAudio;
     public AudioClip neptuneAudio;
-    //public AudioClip plutoAudio;
+    public AudioClip plutoAudio;
 
-    private AudioSource source;
+    public AudioClip gameWon;
+    public AudioClip gameLose;
 
     // Start is called before the first frame update
     void Start()
@@ -86,6 +89,13 @@ public class MatchingGame : MonoBehaviour
             neptune.SetActive(false);
 
             player.transform.SetParent(null);
+            if (haveWon)
+            {
+                source.PlayOneShot(gameWon);
+            } else
+            {
+                source.PlayOneShot(gameLose);
+            }
         }
 
         if (numMatches == 8)
@@ -131,6 +141,13 @@ public class MatchingGame : MonoBehaviour
                     {
                         gameOver = true;
                         sun.GetComponent<MeshRenderer>().material = bad;
+                        if(card.tag == "plutoCard")
+                        {
+                            source.PlayOneShot(plutoAudio, 0.5f);
+                        } else
+                        {
+                            source.PlayOneShot(sunAudio, 0.5f);
+                        }
                     }
                     else
                     {

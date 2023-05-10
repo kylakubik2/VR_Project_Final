@@ -9,7 +9,9 @@ public class MatchingCard : MonoBehaviour
     private float smooth = 100.0f;
     private float targetY;
     public MatchingGame game;
-    
+
+    public AudioClip cardFlip;
+    public AudioSource source;
 
     void Start()
     {
@@ -24,6 +26,8 @@ public class MatchingCard : MonoBehaviour
         {
             if (!game.gameOver)
             {
+                source.PlayOneShot(cardFlip);
+
                 if (!flipped)
                 {
                     Debug.Log("player touch card");

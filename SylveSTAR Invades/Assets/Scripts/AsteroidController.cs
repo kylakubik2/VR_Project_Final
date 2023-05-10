@@ -15,6 +15,8 @@ public class AsteroidController : MonoBehaviour
     public GameObject wand;
     public GameObject player;
     private Interactable wandy;
+    public AudioSource source;
+    public AudioClip rumble;
 
     void Start()
     {
@@ -32,6 +34,7 @@ public class AsteroidController : MonoBehaviour
             other.transform.SetParent(thisRock, true);
             elevator = true;
             Debug.Log("player on");
+            source.PlayOneShot(rumble);
         }
     }
 

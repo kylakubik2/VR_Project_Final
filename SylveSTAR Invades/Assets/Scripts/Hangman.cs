@@ -17,10 +17,13 @@ public class Hangman : MonoBehaviour
     public GameObject keyboard;
     public GameObject portal;
 
+    public AudioSource source;
     public AudioClip music;
     public AudioClip click;
     public AudioClip write;
     public AudioClip draw;
+    public AudioClip gameWin;
+    public AudioClip gameLose;
 
     public TextMeshPro dashedText;
 
@@ -40,8 +43,6 @@ public class Hangman : MonoBehaviour
 
     public GameObject cylinder;
     public GameObject button;
-
-    private AudioSource source;
 
     private List<string> wordBank = new List<string>() {"andromeda", "nebula", "kuiper", "constellation", "perihelion", "meteoroid", "rocket", "penumbra"};
     /**
@@ -88,6 +89,7 @@ public class Hangman : MonoBehaviour
             gameOver = true;
             hasWon = false;
             portal.SetActive(true);
+            source.PlayOneShot(gameLose, 15.0f);
 
             head.SetActive(false);
             body.SetActive(false);
@@ -109,6 +111,7 @@ public class Hangman : MonoBehaviour
             gameOver = true;
             hasWon = true;
             portal.SetActive(true);
+            source.PlayOneShot(gameWin, 15.0f);
 
             head.SetActive(false);
             body.SetActive(false);
@@ -144,14 +147,14 @@ public class Hangman : MonoBehaviour
                 {
                     UpdateAnswerText(letter);
                     successes++;
-                    source.PlayOneShot(click, 0.5f);
+                    source.PlayOneShot(click);
                     other.gameObject.SetActive(false);
                 }
                 else
                 {
                     failures++;
                     DrawNextHangmanPart();
-                    source.PlayOneShot(click, 0.5f);
+                    source.PlayOneShot(click);
                     other.gameObject.SetActive(false);
                 }
             }
@@ -184,7 +187,7 @@ public class Hangman : MonoBehaviour
             if (answer[i] == letter)
             {
                 inputArray[i] = letter;
-                source.PlayOneShot(write, 0.5f);
+                source.PlayOneShot(write, 0.50f);
             }
         }
         userInput = new string(inputArray);
@@ -198,27 +201,27 @@ public class Hangman : MonoBehaviour
         {
             case 1:
                 head.SetActive(true);
-                source.PlayOneShot(draw, 0.5f);
+                source.PlayOneShot(draw, 1.0f);
                 break;
             case 2:
                 body.SetActive(true);
-                source.PlayOneShot(draw, 0.5f);
+                source.PlayOneShot(draw, 1.0f);
                 break;
             case 3:
                 leftArm.SetActive(true);
-                source.PlayOneShot(draw, 0.5f);
+                source.PlayOneShot(draw, 1.0f);
                 break;
             case 4:
                 rightArm.SetActive(true);
-                source.PlayOneShot(draw, 0.5f);
+                source.PlayOneShot(draw, 1.0f);
                 break;
             case 5:
                 leftLeg.SetActive(true);
-                source.PlayOneShot(draw, 0.5f);
+                source.PlayOneShot(draw, 1.0f);
                 break;
             case 6:
                 rightLeg.SetActive(true);
-                source.PlayOneShot(draw, 0.5f);
+                source.PlayOneShot(draw, 1.0f);
                 break;
             default:
                 Debug.Log("??????????");

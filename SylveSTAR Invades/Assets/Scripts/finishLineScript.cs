@@ -16,6 +16,9 @@ public class finishLineScript : MonoBehaviour
     public AudioSource source;
     public AudioClip lastLap;
     public AudioClip cheer;
+    public AudioClip gameWin;
+    public AudioClip gameLose;
+
     public GameObject player;
     public GameObject portal;
 
@@ -86,11 +89,13 @@ public class finishLineScript : MonoBehaviour
                     source.PlayOneShot(cheer);
                     hasWon = true;
                     portal.SetActive(true);
+                    source.PlayOneShot(gameWin);
                 }
                 else
                 {
                     hasWon = false;
                     portal.SetActive(true);
+                    source.PlayOneShot(gameLose);
                 }
             }
 
