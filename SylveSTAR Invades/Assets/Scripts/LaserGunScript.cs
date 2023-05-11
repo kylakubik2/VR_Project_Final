@@ -92,7 +92,7 @@ public class LaserGunScript : MonoBehaviour
     
     void SetTimerText()
     {
-        timerText.text = "Time: " + minutes.ToString("D2") + ":" + seconds.ToString("D2") + "." + milliseconds.ToString("D2");
+        timerText.text = minutes.ToString("D2") + ":" + seconds.ToString("D2") + ":" + milliseconds.ToString("D2");
     }
 
     void Update()

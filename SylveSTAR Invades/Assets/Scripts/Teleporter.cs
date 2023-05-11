@@ -15,7 +15,7 @@ public class Teleporter : MonoBehaviour
     private Vector3 golf2Position = new Vector3(244.818f, 512.73f, -1232.788f);
     private Vector3 golf3Position = new Vector3(255.01f, 519.74f, -1211.8f);
     private Vector3 hangmanPosition = new Vector3(0.44f, 9.76f, -1.75f); 
-    private Vector3 shootingPosition = new Vector3(-206.979f, 149.202f, -13.028f); 
+    private Vector3 shootingPosition = new Vector3(633.57f, 410.95f, -354.45f); 
     private Vector3 matchingPosition = new Vector3(353.19f, 939.21f, -428.32f);
 
     public GameObject player;
@@ -54,10 +54,12 @@ public class Teleporter : MonoBehaviour
     void Start()
     {
         timing = false;
-        SteamVR_Actions.move.Deactivate();
+        //SteamVR_Actions.move.Deactivate();
+        SteamVR_Actions.move.Activate();
+        timing = true;
 
-        player.transform.position = blackRoomPosition;
-        ufoGenerator.SetActive(false);
+        player.transform.position = shootingPosition;
+        ufoGenerator.SetActive(true);
 
         //ufoGenerator.SetActive(false);
 

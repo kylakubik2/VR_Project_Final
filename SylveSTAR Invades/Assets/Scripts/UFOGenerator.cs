@@ -5,9 +5,9 @@ using UnityEngine;
 public class UFOGenerator : MonoBehaviour
 {
     public Transform ufo;
-
-    public float timeBeforeSpawning = 2.0f;
-    public float timeBetweenUFOs = 5.0f;
+    
+    public float timeBeforeSpawning = 5.0f;
+    public float timeBetweenUFOs = 0.25f;
 
     public Teleporter teleporter;
     public LaserGunScript laserScript;
@@ -23,13 +23,18 @@ public class UFOGenerator : MonoBehaviour
 
         float randY;
         float randZ;
-        float xPos = -212.31f;
+        float xPos = 649.664f;
 
         while (true)
         {
-            randZ = Random.Range(169.09f, 173.23f);
-            randY = Random.Range(0.647f, 2.31f);
+            randZ = Random.Range(-348.075f, -358.74f);
+            randY = Random.Range(409.9f, 413.28f);
             Instantiate(ufo, new Vector3(xPos, randY, randZ), ufo.transform.rotation);
+            
+            randZ = Random.Range(-348.075f, -358.74f);
+            randY = Random.Range(409.9f, 413.28f);
+            Instantiate(ufo, new Vector3(xPos, randY, randZ), ufo.transform.rotation);
+            
             yield return new WaitForSeconds(timeBetweenUFOs);
         }
     }
