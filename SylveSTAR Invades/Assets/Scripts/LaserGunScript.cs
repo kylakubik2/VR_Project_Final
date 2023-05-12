@@ -46,6 +46,7 @@ public class LaserGunScript : MonoBehaviour
     public GameObject player;
     //private Vector3 startPosition = new Vector3(4.0f, 1467.5f, -651.0f);
     public GameObject portal;
+    public bool gameOver;
     public bool hasWon;
 
     public GameObject cylinder;
@@ -56,6 +57,7 @@ public class LaserGunScript : MonoBehaviour
     void Start()
     {
         hasWon = false;
+        gameOver = false;
         //portal.SetActive(false);
         shootGun.AddOnStateDownListener(TriggerDown, rightHand);
         shootGun.AddOnStateUpListener(TriggerUp, rightHand);
@@ -135,7 +137,7 @@ public class LaserGunScript : MonoBehaviour
 
             } else
             {
-                hasWon = false;
+                gameOver = true;
                 portal.SetActive(true);
                 source.PlayOneShot(gameLose);
             }

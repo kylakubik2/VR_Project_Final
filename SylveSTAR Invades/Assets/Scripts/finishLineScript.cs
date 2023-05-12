@@ -23,6 +23,7 @@ public class finishLineScript : MonoBehaviour
     public GameObject portal;
 
     public bool hasWon = false;
+    public bool gameOver = false;
 
     private float timeNum;
     private int milliseconds;
@@ -84,7 +85,7 @@ public class finishLineScript : MonoBehaviour
             else if (numLaps == 3)
             {
                 winTime = Time.time;
-                if (winTime < sylvestarTime)
+                if (timeNum < sylvestarTime)
                 {
                     source.PlayOneShot(cheer);
                     hasWon = true;
@@ -93,7 +94,7 @@ public class finishLineScript : MonoBehaviour
                 }
                 else
                 {
-                    hasWon = false;
+                    gameOver = true;
                     portal.SetActive(true);
                     source.PlayOneShot(gameLose);
                 }

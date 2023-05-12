@@ -10,6 +10,7 @@ public class golfballcontroller : MonoBehaviour
     public GameObject ball;
     public float clubForce = 1000.0f;
     public bool hasWon = false;
+    public bool gameOver = false;
     public GameObject portal;
 
     private Vector3 startPosition = new Vector3(4.0f, 1467.5f, -651.0f);
@@ -128,7 +129,7 @@ public class golfballcontroller : MonoBehaviour
                 golf1Source.PlayOneShot(gameWon);
             } else
             {
-                hasWon = false;
+                gameOver = true;
                 portal.SetActive(true);
                 golf1Source.PlayOneShot(gameLose);
             }
@@ -146,7 +147,7 @@ public class golfballcontroller : MonoBehaviour
                 golf3Source.PlayOneShot(gameWon);
             } else
             {
-                hasWon = false;
+                gameOver = true;
                 portal.SetActive(true);
                 golf3Source.PlayOneShot(gameLose);
             }
