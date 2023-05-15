@@ -19,8 +19,6 @@ public class UFOGenerator : MonoBehaviour
 
     IEnumerator SpawnUFOs()
     {
-        yield return new WaitForSeconds(timeBeforeSpawning);
-
         float randY;
         float randZ;
         float xPos = 649.664f;

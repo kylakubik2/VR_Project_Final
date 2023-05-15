@@ -18,6 +18,7 @@ public class Hangman : MonoBehaviour
     public GameObject portal;
 
     public AudioSource source;
+    public AudioSource win;
     public AudioClip music;
     public AudioClip click;
     public AudioClip write;
@@ -62,6 +63,7 @@ public class Hangman : MonoBehaviour
         // Start is called before the first frame update
     void Start()
     {
+        win.enabled = false;
         // disable all hangman parts
         head.SetActive(false);
         body.SetActive(false);
@@ -111,7 +113,7 @@ public class Hangman : MonoBehaviour
             gameOver = true;
             hasWon = true;
             portal.SetActive(true);
-            source.PlayOneShot(gameWin, 15.0f);
+            win.enabled = true;
 
             head.SetActive(false);
             body.SetActive(false);
@@ -147,14 +149,14 @@ public class Hangman : MonoBehaviour
                 {
                     UpdateAnswerText(letter);
                     successes++;
-                    source.PlayOneShot(click);
+                    //source.PlayOneShot(click, 5.0f);
                     other.gameObject.SetActive(false);
                 }
                 else
                 {
                     failures++;
                     DrawNextHangmanPart();
-                    source.PlayOneShot(click);
+                    //source.PlayOneShot(click, 5.0f);
                     other.gameObject.SetActive(false);
                 }
             }

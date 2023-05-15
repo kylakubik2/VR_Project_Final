@@ -26,10 +26,9 @@ public class MatchingCard : MonoBehaviour
         {
             if (!game.gameOver)
             {
-                source.PlayOneShot(cardFlip);
-
                 if (!flipped)
                 {
+                    source.PlayOneShot(cardFlip, 5.0f);
                     Debug.Log("player touch card");
                     flipped = true;
                     game.numFlipped++;

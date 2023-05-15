@@ -34,7 +34,6 @@ public class AsteroidController : MonoBehaviour
             other.transform.SetParent(thisRock, true);
             elevator = true;
             Debug.Log("player on");
-            source.PlayOneShot(rumble);
         }
     }
 

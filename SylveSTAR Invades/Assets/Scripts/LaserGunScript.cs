@@ -12,6 +12,7 @@ public class LaserGunScript : MonoBehaviour
     public SteamVR_Input_Sources rightHand;
 
     public AudioSource source;
+    public AudioSource win;
     public AudioClip laserShoot;
     public AudioClip explode;
     public AudioClip gameWin;
@@ -49,6 +50,9 @@ public class LaserGunScript : MonoBehaviour
     public bool gameOver;
     public bool hasWon;
 
+    public bool gunInHand = false;
+    private Interactable interactable;
+
     public GameObject cylinder;
     public GameObject button;
 
@@ -56,12 +60,13 @@ public class LaserGunScript : MonoBehaviour
 
     void Start()
     {
+        win.enabled = false;
         hasWon = false;
         gameOver = false;
         //portal.SetActive(false);
         shootGun.AddOnStateDownListener(TriggerDown, rightHand);
         shootGun.AddOnStateUpListener(TriggerUp, rightHand);
-        laser = GetComponent<LineRenderer>();
+        interactable = GetComponent<Interactable>();
 
         startTimer = false;
         hit = false;
@@ -84,7 +89,7 @@ public class LaserGunScript : MonoBehaviour
         {
             Instantiate(ball, laserOrigin.position, laserOrigin.rotation * Quaternion.Euler(0f, 0f, 0f)).GetComponent<Rigidbody>().AddForce(laserOrigin.forward * shootPower);
         }
-        //source.PlayOneShot(laserShoot);
+        source.PlayOneShot(laserShoot);
     }
 
     public void SetShootText()
@@ -99,6 +104,11 @@ public class LaserGunScript : MonoBehaviour
 
     void Update()
     {
+        if (interactable.attachedToHand)
+        {
+            ufoGenerator.SetActive(true);
+        }
+
         if (startTimer)
         {
             if (gameTimer > 0)
@@ -121,7 +131,7 @@ public class LaserGunScript : MonoBehaviour
         if (hit)
         {
             hit = false;
-            source.PlayOneShot(explode);
+            source.PlayOneShot(explode, 1.0f);
         }
 
         if (Time.time > (winTime + 5.0f))
@@ -133,13 +143,13 @@ public class LaserGunScript : MonoBehaviour
             {
                 hasWon = true;
                 portal.SetActive(true);
-                source.PlayOneShot(gameWin);
+                win.enabled = true;
 
             } else
             {
                 gameOver = true;
                 portal.SetActive(true);
-                source.PlayOneShot(gameLose);
+                source.PlayOneShot(gameLose, 15.0f);
             }
 
             numHit = 0;

@@ -8,14 +8,14 @@ using Valve.VR.InteractionSystem;
 public class Teleporter : MonoBehaviour
 {
     // these Vector3's are "global" positions relative to the parent scene
-    private Vector3 blackRoomPosition = new Vector3(-2272.43f, 5190f, 0f);
+    private Vector3 blackRoomPosition = new Vector3(-2272.43f, 5189.5f, 0f);
     private Vector3 startPosition = new Vector3(21.55f, 225.8f, -769.35f);
     private Vector3 racingPosition = new Vector3(-473.71f, 658.24f, -914.75f);
     private Vector3 golf1Position = new Vector3(219.635f, 505.296f, -1229.09f);
     private Vector3 golf2Position = new Vector3(244.818f, 512.73f, -1232.788f);
     private Vector3 golf3Position = new Vector3(255.01f, 519.74f, -1211.8f);
-    private Vector3 hangmanPosition = new Vector3(0.44f, 9.76f, -1.75f);
-    private Vector3 shootingPosition = new Vector3(-206.979f, 149.202f, -13.028f);
+    private Vector3 hangmanPosition = new Vector3(0.44f, 9.76f, -3.5f);
+    private Vector3 shootingPosition = new Vector3(633.57f, 411.0f, -354.45f);
     private Vector3 matchingPosition = new Vector3(353.19f, 939.21f, -428.32f);
 
     public GameObject player;
@@ -29,7 +29,8 @@ public class Teleporter : MonoBehaviour
     public finishLineScript racingGame;
     public AudioSource racingAudio;
     public AudioSource racingNarrationAudio;
-
+    public AudioClip racingNarration;
+    
     public golfballcontroller golfGame1;
     public golfballcontroller golfGame3;
     public AudioSource golf1Audio;
@@ -41,6 +42,7 @@ public class Teleporter : MonoBehaviour
     public GameObject ufoGenerator;
     public AudioSource shootingNarrationAudio;
     public AudioSource shootingAudio;
+    public AudioSource shootingWinAudio;
 
     public MatchingGame matchingGame;
     public AudioSource matchingNarrationAudio;
@@ -49,11 +51,18 @@ public class Teleporter : MonoBehaviour
     public Hangman hangman;
     public AudioSource hangmanAudio;
     public AudioSource hangmanNarration;
+    public AudioSource hangmanWinAudio;
+    public GameObject hangmanSign;
+    public GameObject hangmanButton;
 
     private bool delayTeleport;
+    public AudioClip whoosh;
+    public AudioSource onPlayerAudio;
     // get audio source for hangman
 
     public MovePlayer movePlayer;
+    public float delayTime = 3.0f;
+    private Vector3 newRotation;
 
     public GameObject[] portals;
     // add other positions as we go
@@ -64,12 +73,12 @@ public class Teleporter : MonoBehaviour
         //SteamVR_Actions.move.Deactivate();
         SteamVR_Actions.move.Activate();
 
-        player.transform.position = blackRoomPosition;
+        player.transform.position = startPosition;
         ufoGenerator.SetActive(false);
 
         //ufoGenerator.SetActive(false);
-        blackRoomAmbient.enabled = true;
-        blackRoomNarration.enabled = true;
+        blackRoomAmbient.enabled = false;
+        blackRoomNarration.enabled = false;
 
         mainRoomAudio.enabled = false;
         mainRoomNarrationAudio.enabled = false;
@@ -85,9 +94,11 @@ public class Teleporter : MonoBehaviour
 
         shootingAudio.enabled = false;
         shootingNarrationAudio.enabled = false;
+        shootingWinAudio.enabled = false;
 
         hangmanAudio.enabled = false;
         hangmanNarration.enabled = false;
+        hangmanWinAudio.enabled = false;
 
         matchingAudio.enabled = false;
         matchingNarrationAudio.enabled = false;
@@ -109,16 +120,15 @@ public class Teleporter : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Racing"))
         {
-            delayTeleport = true;
+            onPlayerAudio.PlayOneShot(whoosh);
             mainRoomAudio.enabled = false;
-
-            StartCoroutine(TeleportDelay);
+            mainRoomNarrationAudio.enabled = false;
 
             racingAudio.enabled = true;
             racingNarrationAudio.enabled = true;
 
             Debug.Log("Racing Triggered");
-            SteamVR_Actions.move.Deactivate();
+           // SteamVR_Actions.move.Deactivate();
 
             racingGame.gameOver = false;
             player.transform.position = racingPosition;
@@ -126,13 +136,16 @@ public class Teleporter : MonoBehaviour
         }
         else if (other.gameObject.CompareTag("Golfing"))
         {
+            onPlayerAudio.PlayOneShot(whoosh);
             delayTeleport = true;
             mainRoomAudio.enabled = false;
+            mainRoomNarrationAudio.enabled = false;
 
-            StartCoroutine(TeleportDelay);
+            //StartCoroutine(TeleportDelay);
 
             golf2Audio.enabled = true;
-            golfNarrationAudio.enabled = false;
+            golfNarrationAudio.enabled = true;
+            player.transform.position = golf2Position;
 
             Debug.Log("Golfing Triggered");
 
@@ -142,10 +155,14 @@ public class Teleporter : MonoBehaviour
         }
         else if (other.gameObject.CompareTag("Hangman"))
         {
+            onPlayerAudio.PlayOneShot(whoosh);
             delayTeleport = true;
             mainRoomAudio.enabled = false;
+            mainRoomNarrationAudio.enabled = false;
 
-            StartCoroutine(TeleportDelay);
+            hangmanSign.SetActive(true);
+            hangmanButton.SetActive(true);
+            //StartCoroutine(TeleportDelay);
 
             hangmanAudio.enabled = true;
             hangmanNarration.enabled = true;
@@ -156,14 +173,15 @@ public class Teleporter : MonoBehaviour
             hangman.gameOver = false;
             player.transform.position = hangmanPosition;
             movePlayer.maxSpeed = 2.5f;
-            // add enabled texts and audio below
         }
         else if (other.gameObject.CompareTag("Shooting"))
         {
+            onPlayerAudio.PlayOneShot(whoosh);
             delayTeleport = true;
             mainRoomAudio.enabled = false;
+            mainRoomNarrationAudio.enabled = false;
 
-            StartCoroutine(TeleportDelay);
+            //StartCoroutine(TeleportDelay);
 
             shootingAudio.enabled = true;
             shootingNarrationAudio.enabled = true;
@@ -173,30 +191,32 @@ public class Teleporter : MonoBehaviour
             shootingGame.gameOver = false;
             player.transform.position = shootingPosition;
             player.transform.eulerAngles = new Vector3(player.transform.eulerAngles.x, 90.0f, player.transform.eulerAngles.z);
-            ufoGenerator.SetActive(true);
-
+            
             movePlayer.maxSpeed = 1.0f;
         }
         else if (other.gameObject.CompareTag("Matching"))
         {
+            onPlayerAudio.PlayOneShot(whoosh);
             delayTeleport = true;
             mainRoomAudio.enabled = false;
+            mainRoomNarrationAudio.enabled = false;
 
-            StartCoroutine(TeleportDelay);
+            //StartCoroutine(TeleportDelay);
 
             matchingAudio.enabled = true;
             matchingNarrationAudio.enabled = true;
+            player.transform.position = matchingPosition;
 
             Debug.Log("matching Triggered");
 
             SteamVR_Actions.move.Deactivate();
-
-            player.transform.position = matchingPosition;
+            
             matchingGame.gameOver = false;
             matchingGame.sun.GetComponent<MeshRenderer>().material = matchingGame.good;
         }
         else if (other.gameObject.CompareTag("MainRoom"))
         {
+            onPlayerAudio.PlayOneShot(whoosh);
             blackRoomAmbient.enabled = false;
             blackRoomNarration.enabled = false;
 
@@ -204,7 +224,7 @@ public class Teleporter : MonoBehaviour
 
             delayTeleport = true;
 
-            StartCoroutine(TeleportDelay);
+            //StartCoroutine(TeleportDelay);
 
             racingAudio.enabled = false;
             golf1Audio.enabled = false;
@@ -213,6 +233,58 @@ public class Teleporter : MonoBehaviour
             shootingAudio.enabled = false;
             hangmanAudio.enabled = false;
             matchingAudio.enabled = false;
+
+            hangmanWinAudio.enabled = false;
+            shootingWinAudio.enabled = false;
+
+            mainRoomAudio.enabled = true;
+            mainRoomNarrationAudio.enabled = false;
+
+            racingNarrationAudio.enabled = false;
+            golfNarrationAudio.enabled = false;
+            hangmanNarration.enabled = false;
+            shootingNarrationAudio.enabled = false;
+            matchingNarrationAudio.enabled = false;
+
+            Debug.Log("Main Room Triggered");
+            SteamVR_Actions.move.Activate();
+
+            player.transform.position = startPosition;
+            movePlayer.maxSpeed = 20.0f;
+
+            foreach (GameObject portal in portals)
+            {
+                portal.SetActive(false);
+            }
+        }
+        else if (other.gameObject.CompareTag("MainRoom1"))
+        {
+            onPlayerAudio.PlayOneShot(whoosh);
+            blackRoomAmbient.enabled = false;
+            blackRoomNarration.enabled = false;
+
+            SteamVR_Actions.move.Activate();
+
+            delayTeleport = true;
+
+            //StartCoroutine(TeleportDelay);
+
+            racingAudio.enabled = false;
+            golf1Audio.enabled = false;
+            golf2Audio.enabled = false;
+            golf3Audio.enabled = false;
+            shootingAudio.enabled = false;
+            hangmanAudio.enabled = false;
+            matchingAudio.enabled = false;
+
+            hangmanWinAudio.enabled = false;
+            shootingWinAudio.enabled = false;
+
+            racingNarrationAudio.enabled = false;
+            golfNarrationAudio.enabled = false;
+            hangmanNarration.enabled = false;
+            shootingNarrationAudio.enabled = false;
+            matchingNarrationAudio.enabled = false;
 
             mainRoomAudio.enabled = true;
             mainRoomNarrationAudio.enabled = true;
@@ -229,10 +301,4 @@ public class Teleporter : MonoBehaviour
             }
         }
     }
-    
-    IEnumerator TeleportDelay()
-    {
-        
-    }
 }
-

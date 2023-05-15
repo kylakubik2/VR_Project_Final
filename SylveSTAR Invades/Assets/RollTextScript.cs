@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class RollTextScript : MonoBehaviour
 {
@@ -10,6 +11,7 @@ public class RollTextScript : MonoBehaviour
     private float smooth = 0.0075f;
 
     public AudioSource IntroScript;
+    public TextMeshPro title;
 
     public bool moveText;
     // Start is called before the first frame update
@@ -24,6 +26,7 @@ public class RollTextScript : MonoBehaviour
         currentPosition = transform.position;
         if (moveText)
         {
+            title.enabled = false;
             transform.position = Vector3.Lerp(currentPosition, endPosition, smooth * Time.deltaTime);
         }
     }
