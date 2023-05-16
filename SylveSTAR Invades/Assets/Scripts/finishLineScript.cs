@@ -14,6 +14,8 @@ public class finishLineScript : MonoBehaviour
 
     public GameObject buggy;
     public AudioSource source;
+    public AudioSource win;
+    public AudioSource lose;
     public AudioClip lastLap;
     public AudioClip cheer;
     public AudioClip gameWin;
@@ -34,8 +36,7 @@ public class finishLineScript : MonoBehaviour
     private int sylvestarTime; // TODO:add in time to beat
 
     public GameObject cylinder;
-    public GameObject button;
-
+    
     private GameObject[] mushrooms;
 
     private float winTime = 100000.0f;
@@ -55,6 +56,9 @@ public class finishLineScript : MonoBehaviour
         buggyStart = buggy.transform.position;
 
         mushrooms = GameObject.FindGameObjectsWithTag("Mushroom");
+
+        win.enabled = false;
+        lose.enabled = false;
     }
     void SetLapText()
     {
@@ -90,13 +94,14 @@ public class finishLineScript : MonoBehaviour
                     source.PlayOneShot(cheer);
                     hasWon = true;
                     portal.SetActive(true);
-                    source.PlayOneShot(gameWin);
+                    win.enabled = true;
                 }
                 else
                 {
                     gameOver = true;
                     portal.SetActive(true);
                     source.PlayOneShot(gameLose);
+                    lose.enabled = true;
                 }
             }
 
@@ -139,7 +144,6 @@ public class finishLineScript : MonoBehaviour
         if (hasWon)
         {
             cylinder.SetActive(false);
-            button.SetActive(false);
         }
     }
 }

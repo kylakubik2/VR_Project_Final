@@ -15,8 +15,7 @@ public class LaserGunScript : MonoBehaviour
     public AudioSource win;
     public AudioClip laserShoot;
     public AudioClip explode;
-    public AudioClip gameWin;
-    public AudioClip gameLose;
+    public AudioSource gameLose;
 
     public Transform laserOrigin;
     LineRenderer laser;
@@ -33,7 +32,7 @@ public class LaserGunScript : MonoBehaviour
 
     private float winTime = 100000.0f;
 
-    private float gameTimer = 25.0f;
+    private float gameTimer = 20.0f;
     private int milliseconds;
     private int seconds;
     private int minutes;
@@ -54,7 +53,6 @@ public class LaserGunScript : MonoBehaviour
     private Interactable interactable;
 
     public GameObject cylinder;
-    public GameObject button;
 
     public GameObject[] ufos;
 
@@ -104,13 +102,17 @@ public class LaserGunScript : MonoBehaviour
 
     void Update()
     {
+        /*
         if (interactable.attachedToHand)
         {
-            ufoGenerator.SetActive(true);
+            
         }
+        */
 
         if (startTimer)
         {
+            ufoGenerator.SetActive(true);
+
             if (gameTimer > 0)
             {
                 gameTimer -= Time.deltaTime;
@@ -134,31 +136,32 @@ public class LaserGunScript : MonoBehaviour
             source.PlayOneShot(explode, 1.0f);
         }
 
-        if (Time.time > (winTime + 5.0f))
+        if (Time.time > (winTime + 1.0f))
         {
             Debug.Log("WHOOP");
-
+            gameOver = true;
             //player.transform.position = startPosition;
-            if(numHit > sylvestarScore)
+            if (gameOver)
             {
-                hasWon = true;
-                portal.SetActive(true);
-                win.enabled = true;
-
-            } else
-            {
-                gameOver = true;
-                portal.SetActive(true);
-                source.PlayOneShot(gameLose, 15.0f);
+                if (numHit > sylvestarScore)
+                {
+                    hasWon = true;
+                    portal.SetActive(true);
+                    win.enabled = true;
+                }
+                else
+                {
+                    portal.SetActive(true);
+                    gameLose.enabled = true;
+                }
             }
 
-            numHit = 0;
+            winTime = 100000.0f;
         }
 
         if (hasWon)
         {
             cylinder.SetActive(false);
-            button.SetActive(false);
         }
 
         SetShootText();

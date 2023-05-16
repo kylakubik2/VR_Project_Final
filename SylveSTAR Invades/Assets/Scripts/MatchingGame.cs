@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Valve.VR;
+using Valve.VR.InteractionSystem;
 
 public class MatchingGame : MonoBehaviour
 {
@@ -28,8 +30,6 @@ public class MatchingGame : MonoBehaviour
     public Material bad;
 
     public GameObject cylinder;
-    public GameObject button;
-
 
     public AudioSource source;
     public AudioClip sunAudio;
@@ -43,7 +43,7 @@ public class MatchingGame : MonoBehaviour
     public AudioClip neptuneAudio;
     public AudioClip plutoAudio;
 
-    public AudioClip gameWon;
+    public AudioSource gameWon;
 
     // Start is called before the first frame update
     void Start()
@@ -87,10 +87,12 @@ public class MatchingGame : MonoBehaviour
             uranus.SetActive(false);
             neptune.SetActive(false);
 
+            SteamVR_Actions.move.Activate();
+
             player.transform.SetParent(null);
             if (haveWon)
             {
-                source.PlayOneShot(gameWon);
+                gameWon.enabled = true;
             }
         }
 
@@ -103,7 +105,6 @@ public class MatchingGame : MonoBehaviour
         if (haveWon)
         {
             cylinder.SetActive(false);
-            button.SetActive(false);
         }
     }
 
@@ -135,6 +136,7 @@ public class MatchingGame : MonoBehaviour
                 {
                     if (card.tag == "plutoCard" || card.tag == "sunCard")
                     {
+                        card.flipped = false;
                         gameOver = true;
                         sun.GetComponent<MeshRenderer>().material = bad;
                         if(card.tag == "plutoCard")

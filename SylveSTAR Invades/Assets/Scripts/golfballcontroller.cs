@@ -32,15 +32,14 @@ public class golfballcontroller : MonoBehaviour
     public AudioSource golf3Source;
 
     public AudioClip boing;
-    public AudioClip gameWon;
-    public AudioClip gameLose;
+    public AudioSource gameWon;
+    public AudioSource gameLose;
 
     public TextMeshPro golfWarmUp;
 
     public GameObject player;
 
     public GameObject cylinder;
-    public GameObject button;
 
     // Start is called before the first frame update
     void Start()
@@ -51,6 +50,9 @@ public class golfballcontroller : MonoBehaviour
         numStrokes = 0;
         SetStrokeText();
         ballStartPosition = ball.transform.position;
+        
+        gameWon.enabled = false;
+        gameLose.enabled = false;
     }
 
     void SetStrokeText()
@@ -95,7 +97,6 @@ public class golfballcontroller : MonoBehaviour
         if (hasWon)
         {
             cylinder.SetActive(false);
-            button.SetActive(false);
         }
     }
 
@@ -115,6 +116,18 @@ public class golfballcontroller : MonoBehaviour
         {
             winTime = Time.time;
             ball.transform.position = ballStartPosition;
+            if (numStrokes < sylvestarPar)
+            {
+                hasWon = true;
+                portal.SetActive(true);
+                gameWon.enabled = true;
+            }
+            else
+            {
+                gameOver = true;
+                portal.SetActive(true);
+                gameLose.enabled = true;
+            }
         }
         else if (other.gameObject.CompareTag("Hole1"))
         {
@@ -122,17 +135,6 @@ public class golfballcontroller : MonoBehaviour
             teleport1Time = Time.time;
             golfWarmUp.enabled = false;
             golf2Source.enabled = false;
-            if (numStrokes < sylvestarPar)
-            {
-                hasWon = true;
-                portal.SetActive(true);
-                golf1Source.PlayOneShot(gameWon);
-            } else
-            {
-                gameOver = true;
-                portal.SetActive(true);
-                golf1Source.PlayOneShot(gameLose);
-            }
         }
         else if (other.gameObject.CompareTag("Hole3"))
         {
@@ -140,17 +142,6 @@ public class golfballcontroller : MonoBehaviour
             teleport3Time = Time.time;
             golfWarmUp.enabled = false;
             golf2Source.enabled = false;
-            if (numStrokes < sylvestarPar)
-            {
-                hasWon = true;
-                portal.SetActive(true);
-                golf3Source.PlayOneShot(gameWon);
-            } else
-            {
-                gameOver = true;
-                portal.SetActive(true);
-                golf3Source.PlayOneShot(gameLose);
-            }
         }
         else if (other.gameObject.CompareTag("Sand"))
         {

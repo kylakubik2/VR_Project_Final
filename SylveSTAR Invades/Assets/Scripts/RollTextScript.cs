@@ -7,8 +7,8 @@ public class RollTextScript : MonoBehaviour
 {
     //private Vector3 startPosition = new Vector3(19.3f, -7.46f, 172.49f);
     private Vector3 currentPosition;
-    private Vector3 endPosition = new Vector3(-2272.31f, 5393.3f, 102.5f);
-    private float smooth = 0.0075f;
+    public Vector3 endPosition = new Vector3(-2272.31f, 5393.3f, 102.5f);
+    private float smooth = 0.004f;
 
     public AudioSource IntroScript;
     public TextMeshPro title;

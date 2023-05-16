@@ -63,6 +63,7 @@ TagManager:
   - hand
   - wand
   - MainRoom1
+  - Outro
   layers:
   - Default
   - TransparentFX
