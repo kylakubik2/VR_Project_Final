@@ -19,7 +19,7 @@ MonoBehaviour:
     width: 1920
     height: 997
   m_ShowMode: 4
-  m_Title: Scene
+  m_Title: Inspector
   m_RootView: {fileID: 6}
   m_MinSize: {x: 875, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
@@ -48,7 +48,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 200}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 0
-  controlID: 27
+  controlID: 17
 --- !u!114 &3
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -94,8 +94,8 @@ MonoBehaviour:
     y: 0
     width: 361
     height: 633
-  m_MinSize: {x: 201, y: 221}
-  m_MaxSize: {x: 4001, y: 4021}
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 14}
   m_Panes:
   - {fileID: 14}
@@ -223,7 +223,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 200}
   m_MaxSize: {x: 16192, y: 16192}
   vertical: 1
-  controlID: 17
+  controlID: 23
 --- !u!114 &10
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -248,7 +248,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 100}
   m_MaxSize: {x: 16192, y: 8096}
   vertical: 0
-  controlID: 18
+  controlID: 24
 --- !u!114 &11
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -318,22 +318,22 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Scripts
+    - Assets
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Scripts
+  - Assets
   m_LastFoldersGridSize: -1
   m_LastProjectPath: D:\studentWork\VR_Project_Final\SylveSTAR Invades
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 223}
-    m_SelectedIDs: 4cbb0000
-    m_LastClickedID: 47948
-    m_ExpandedIDs: 00000000a8ba0000aaba000030bb000000ca9a3bffffff7f
+    scrollPos: {x: 0, y: 79}
+    m_SelectedIDs: b2ba0000
+    m_LastClickedID: 47794
+    m_ExpandedIDs: 00000000b2ba0000b4ba000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -361,7 +361,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000a8ba0000aaba0000
+    m_ExpandedIDs: 00000000b2ba0000b4ba0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -388,7 +388,7 @@ MonoBehaviour:
   m_ListAreaState:
     m_SelectedInstanceIDs: 
     m_LastClickedInstanceID: 0
-    m_HadKeyboardFocusLastEvent: 1
+    m_HadKeyboardFocusLastEvent: 0
     m_ExpandedInstanceIDs: c6230000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -490,10 +490,10 @@ MonoBehaviour:
     m_SaveData: []
   m_SceneHierarchy:
     m_TreeViewState:
-      scrollPos: {x: 0, y: 192}
-      m_SelectedIDs: 9865fdff
-      m_LastClickedID: -170600
-      m_ExpandedIDs: 28ecffff5cecffffa2ecffff54eeffff08fbfffff4ffffff847d00005281000056890000c48c0000b08d0000a28e0000f08e00009490000034930000
+      scrollPos: {x: 0, y: 0}
+      m_SelectedIDs: 10780000
+      m_LastClickedID: 30736
+      m_ExpandedIDs: 08fbffff24890000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -743,9 +743,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 273.137, y: 528.62463, z: -1219.4071}
+    m_Target: {x: 26.051888, y: 224.02397, z: -775.68134}
     speed: 2
-    m_Value: {x: 273.137, y: 528.62463, z: -1219.4071}
+    m_Value: {x: 26.051888, y: 224.02397, z: -775.68134}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -792,13 +792,13 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: 0.03748215, y: -0.8030612, z: 0.054716226, w: 0.592917}
+    m_Target: {x: 0.12451049, y: 0.17312571, z: -0.01959656, w: 0.97723997}
     speed: 2
-    m_Value: {x: 0.037384026, y: -0.80360556, z: 0.054748945, w: 0.5914585}
+    m_Value: {x: 0.12445715, y: 0.17305155, z: -0.019588165, w: 0.97682136}
   m_Size:
-    m_Target: 3.1041312
+    m_Target: 7.5
     speed: 2
-    m_Value: 3.1042373
+    m_Value: 7.5
   m_Ortho:
     m_Target: 0
     speed: 2
