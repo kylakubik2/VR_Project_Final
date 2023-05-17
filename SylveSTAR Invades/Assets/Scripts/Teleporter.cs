@@ -46,6 +46,8 @@ public class Teleporter : MonoBehaviour
     public AudioClip racingNarration;
     public GameObject racingSign;
     public GameObject racingButton;
+    public GameObject buggy;
+    private Vector3 buggyStartPosition;
 
     public golfballcontroller golfGame1;
     public golfballcontroller golfGame3;
@@ -90,6 +92,10 @@ public class Teleporter : MonoBehaviour
     public MovePlayer movePlayer;
 
     public GameObject[] portals;
+
+    public GameObject sylvestarOutro;
+    private Vector3 sylvestarOutroStartPos;
+    public SylvestarZoom sylvestarZoom;
     // add other positions as we go
     // Start is called before the first frame update
     void Start()
@@ -102,6 +108,8 @@ public class Teleporter : MonoBehaviour
         creditButton.SetActive(false);
 
         player.transform.position = blackRoomPosition;
+        buggyStartPosition = buggy.transform.position;
+
         ufoGenerator.SetActive(false);
 
         //ufoGenerator.SetActive(false);
@@ -139,6 +147,8 @@ public class Teleporter : MonoBehaviour
         }
 
         outroPortal.SetActive(false);
+
+        sylvestarOutroStartPos = sylvestarOutro.transform.position;
     }
 
     // Update is called once per frame
@@ -182,6 +192,7 @@ public class Teleporter : MonoBehaviour
             racingAudio.enabled = true;
             racingNarrationAudio.enabled = true;
 
+            buggy.transform.position = buggyStartPosition;
             Debug.Log("Racing Triggered");
             SteamVR_Actions.move.Deactivate();
 
@@ -380,6 +391,9 @@ public class Teleporter : MonoBehaviour
         }
         else if (other.gameObject.CompareTag("Outro"))
         {
+            sylvestarOutro.transform.position = sylvestarOutroStartPos;
+            sylvestarZoom.zoom = false;
+
             SteamVR_Actions.move.Activate();
             onPlayerAudio.PlayOneShot(bigCelebrate, 0.5f);
 

@@ -33,7 +33,7 @@ public class finishLineScript : MonoBehaviour
     private int minutes;
     private bool timing;
     private int numLaps;
-    private int sylvestarTime; // TODO:add in time to beat
+    private float sylvestarTime = 117.69f; // TODO:add in time to beat
 
     public GameObject cylinder;
     
@@ -66,7 +66,7 @@ public class finishLineScript : MonoBehaviour
     }
     void SetTimerText()
     {
-        timerText.text = "Time: " + minutes.ToString("D2") + ":" + seconds.ToString("D2") + "." + milliseconds.ToString("D2");
+        timerText.text = "Time - " + minutes.ToString("D2") + ":" + seconds.ToString("D2") + "." + milliseconds.ToString("D2");
     }
 
     private void OnTriggerEnter(Collider other)
@@ -79,7 +79,7 @@ public class finishLineScript : MonoBehaviour
                 numLaps = numLaps + 1;
                 if (numLaps == 3)
                 {
-                    source.PlayOneShot(lastLap);
+                    source.PlayOneShot(lastLap, 3.0f);
                 }
                 foreach(GameObject shroom in mushrooms)
                 {

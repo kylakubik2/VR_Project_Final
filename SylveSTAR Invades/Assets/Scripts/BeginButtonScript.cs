@@ -9,6 +9,7 @@ public class BeginButtonScript : MonoBehaviour
     public GameObject endIntroButton;
     public AudioSource introAudio;
     public TextMeshPro title;
+    public SylvestarZoom sylvestarZoom;
 
     public void OnTriggerEnter(Collider other)
     {
@@ -34,7 +35,8 @@ public class BeginButtonScript : MonoBehaviour
 
     IEnumerator DelayButton()
     {
-        yield return new WaitForSeconds(3.0f);
+        sylvestarZoom.zoom = true;
+        yield return new WaitForSeconds(1.5f);
         endIntroButton.SetActive(true);
     }
 }

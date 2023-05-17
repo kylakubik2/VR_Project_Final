@@ -22,7 +22,7 @@ public class golfballcontroller : MonoBehaviour
     public TextMeshPro parText;
     private int numStrokes;
     // TODO: set sylvestarPar
-    private int sylvestarPar;
+    public int sylvestarPar;
     public float winTime = 100000.0f;
     public float teleport1Time = 100000.0f;
     public float teleport3Time = 100000.0f;
@@ -68,8 +68,6 @@ public class golfballcontroller : MonoBehaviour
 
             //player.transform.position = startPosition;
             numStrokes = 0;
-            parText.enabled = false;
-            strokeCounter.enabled = false;
             golf1Source.enabled = false;
             golf3Source.enabled = false;
         }

@@ -40,7 +40,7 @@ public class LaserGunScript : MonoBehaviour
     public bool startTimer;
     public GameObject ufoGenerator;
 
-    private int sylvestarScore; //TODO: set sylvestarScore
+    private int sylvestarScore = 28; //TODO: set sylvestarScore
     public int numHit;
     public bool hit;
     public GameObject player;
