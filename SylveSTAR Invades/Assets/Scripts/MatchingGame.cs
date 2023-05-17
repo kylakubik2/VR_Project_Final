@@ -92,7 +92,7 @@ public class MatchingGame : MonoBehaviour
             player.transform.SetParent(null);
             if (haveWon)
             {
-                gameWon.enabled = true;
+                Invoke("PlayWin", 10.0f);
             }
         }
 
@@ -198,5 +198,10 @@ public class MatchingGame : MonoBehaviour
                 }
             }
         }
+    }
+
+    public void PlayWin()
+    {
+        gameWon.enabled = true;
     }
 }

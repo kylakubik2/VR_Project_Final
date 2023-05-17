@@ -9,6 +9,7 @@ public class OutroButton : MonoBehaviour
     public RollTextScript outroScript;
     public TextMeshPro title;
     public GameObject introButton;
+    public SylvestarZoom sylvestarZoom;
 
     public void OnTriggerEnter(Collider other)
     {
@@ -33,7 +34,8 @@ public class OutroButton : MonoBehaviour
 
     IEnumerator DelayButton()
     {
-        yield return new WaitForSeconds(3.0f);
+        sylvestarZoom.zoom = true;
+        yield return new WaitForSeconds(1.5f);
         creditsButton.SetActive(true);
     }
 }

@@ -38,6 +38,8 @@ public class Teleporter : MonoBehaviour
     public AudioSource mainRoomAudio;
     public AudioSource mainRoomNarrationAudio;
 
+    public GameObject introPortal;
+
     public finishLineScript racingGame;
     public AudioSource racingAudio;
     public AudioSource racingNarrationAudio;
@@ -96,12 +98,17 @@ public class Teleporter : MonoBehaviour
     public GameObject sylvestarOutro;
     private Vector3 sylvestarOutroStartPos;
     public SylvestarZoom sylvestarZoom;
+
+    public AudioSource sylvestarShipAudio;
+    public AudioClip sylvestarVoice;
+    private GameObject[] zones;
     // add other positions as we go
     // Start is called before the first frame update
     void Start()
     {
         //SteamVR_Actions.move.Deactivate();
         SteamVR_Actions.move.Activate();
+        movePlayer.maxSpeed = 5.0f;
 
         introButton.SetActive(false);
         outroButton.SetActive(false);
@@ -144,6 +151,12 @@ public class Teleporter : MonoBehaviour
         foreach (GameObject portal in portals)
         {
             portal.SetActive(false);
+        }
+
+        zones = GameObject.FindGameObjectsWithTag("Zone");
+        foreach (GameObject zone in zones)
+        {
+            zone.SetActive(true);
         }
 
         outroPortal.SetActive(false);
@@ -192,6 +205,8 @@ public class Teleporter : MonoBehaviour
             racingAudio.enabled = true;
             racingNarrationAudio.enabled = true;
 
+            sylvestarShipAudio.Stop();
+
             buggy.transform.position = buggyStartPosition;
             Debug.Log("Racing Triggered");
             SteamVR_Actions.move.Deactivate();
@@ -209,6 +224,8 @@ public class Teleporter : MonoBehaviour
             golf2Audio.enabled = true;
             golfNarrationAudio.enabled = true;
             player.transform.position = golf2Position;
+
+            sylvestarShipAudio.Stop();
 
             Debug.Log("Golfing Triggered");
 
@@ -230,6 +247,8 @@ public class Teleporter : MonoBehaviour
             hangmanAudio.enabled = true;
             hangmanNarration.enabled = true;
 
+            sylvestarShipAudio.Stop();
+
             Debug.Log("Hangman Triggered");
 
             hangman.PickRandomWord();
@@ -248,6 +267,8 @@ public class Teleporter : MonoBehaviour
 
             shootingAudio.enabled = true;
             shootingNarrationAudio.enabled = true;
+
+            sylvestarShipAudio.Stop();
 
             Debug.Log("Shooting Triggered");
 
@@ -270,6 +291,8 @@ public class Teleporter : MonoBehaviour
 
             matchingSign.SetActive(true);
             matchingButton.SetActive(true);
+
+            sylvestarShipAudio.Stop();
 
             Debug.Log("matching Triggered");
 
@@ -329,9 +352,16 @@ public class Teleporter : MonoBehaviour
 
             movePlayer.maxSpeed = 20.0f;
 
+            sylvestarShipAudio.Stop();
+
             foreach (GameObject portal in portals)
             {
                 portal.SetActive(false);
+            }
+
+            foreach (GameObject zone in zones)
+            {
+                zone.SetActive(true);
             }
         }
         else if (other.gameObject.CompareTag("MainRoom1"))
@@ -378,6 +408,9 @@ public class Teleporter : MonoBehaviour
             matchingGame.gameOver = false;
             hangman.gameOver = false;
 
+            sylvestarShipAudio.Play();
+            sylvestarZoom.vroom.enabled = false;
+
             Debug.Log("Main Room Triggered");
             SteamVR_Actions.move.Activate();
 
@@ -388,22 +421,60 @@ public class Teleporter : MonoBehaviour
             {
                 portal.SetActive(false);
             }
+
+            foreach (GameObject zone in zones)
+            {
+                zone.SetActive(true);
+            }
         }
         else if (other.gameObject.CompareTag("Outro"))
         {
+            introPortal.SetActive(false);
             sylvestarOutro.transform.position = sylvestarOutroStartPos;
             sylvestarZoom.zoom = false;
 
             SteamVR_Actions.move.Activate();
-            onPlayerAudio.PlayOneShot(bigCelebrate, 0.5f);
-
-            player.transform.position = blackRoomPosition;
+            //onPlayerAudio.PlayOneShot(bigCelebrate, 0.5f);
 
             blackRoomAmbient.enabled = true;
-            blackRoomOutro.enabled = true;
-
+            
             mainRoomAudio.enabled = false;
             mainRoomNarrationAudio.enabled = false;
+
+            sylvestarShipAudio.enabled = false;
+
+            racingAudio.enabled = false;
+            golf1Audio.enabled = false;
+            golf2Audio.enabled = false;
+            golf3Audio.enabled = false;
+            shootingAudio.enabled = false;
+            hangmanAudio.enabled = false;
+            matchingAudio.enabled = false;
+
+            hangmanWinAudio.enabled = false;
+            shootingWinAudio.enabled = false;
+            racingWinAudio.enabled = false;
+            golf1WinAudio.enabled = false;
+            golf3WinAudio.enabled = false;
+            matchingWinAudio.enabled = false;
+
+            shootingLoseAudio.enabled = false;
+            racingLoseAudio.enabled = false;
+            golf1LoseAudio.enabled = false;
+            golf3LoseAudio.enabled = false;
+
+            racingNarrationAudio.enabled = false;
+            golfNarrationAudio.enabled = false;
+            hangmanNarration.enabled = false;
+            shootingNarrationAudio.enabled = false;
+            matchingNarrationAudio.enabled = false;
+
+            player.transform.position = blackRoomPosition;
+        }
+        else if (other.gameObject.CompareTag("Zone"))
+        {
+            onPlayerAudio.PlayOneShot(sylvestarVoice);
+            other.gameObject.SetActive(false);
         }
     }
 }

@@ -33,7 +33,7 @@ public class finishLineScript : MonoBehaviour
     private int minutes;
     private bool timing;
     private int numLaps;
-    private float sylvestarTime = 117.69f; // TODO:add in time to beat
+    private float sylvestarTime = 143.69f; // TODO:add in time to beat
 
     public GameObject cylinder;
     
@@ -123,11 +123,6 @@ public class finishLineScript : MonoBehaviour
         if (Time.time > (winTime + 5.0f))
         {
             //player.transform.position = startPosition;
-            lapText.enabled = false;
-            timerText.enabled = false;
-            timeToBeat.enabled = false;
-
-            source.enabled = false;
             buggy.transform.position = buggyStart;
 
             timeNum = 0.0f;

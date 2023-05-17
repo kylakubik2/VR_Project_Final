@@ -64,6 +64,7 @@ TagManager:
   - wand
   - MainRoom1
   - Outro
+  - Zone
   layers:
   - Default
   - TransparentFX

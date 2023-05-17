@@ -21,9 +21,7 @@ public class IntroButtonScript : MonoBehaviour
             introScript.enabled = false;
             introAudio.Stop();
             outroScript.enabled = true;
-            outroButton.SetActive(true);
-            title.enabled = true;
-            gameObject.SetActive(false);
+            StartCoroutine(DelayButton());
         }
     }
 
@@ -37,5 +35,12 @@ public class IntroButtonScript : MonoBehaviour
     void Update()
     {
         
+    }
+
+    IEnumerator DelayButton()
+    {
+        yield return new WaitForSeconds(3.0f);
+        outroButton.SetActive(true);
+        title.enabled = true;
     }
 }
