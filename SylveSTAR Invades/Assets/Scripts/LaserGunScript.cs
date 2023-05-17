@@ -32,7 +32,7 @@ public class LaserGunScript : MonoBehaviour
 
     private float winTime = 100000.0f;
 
-    private float gameTimer = 20.0f;
+    public float gameTimer = 20.0f;
     private int milliseconds;
     private int seconds;
     private int minutes;

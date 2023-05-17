@@ -71,7 +71,7 @@ public class golfballcontroller : MonoBehaviour
             golf1Source.enabled = false;
             golf3Source.enabled = false;
         }
-        if (Time.time > (teleport1Time + 3.0f))
+        if (Time.time > (teleport1Time + 2.0f))
         {
             player.transform.position = golf1Position;
             golf1Source.enabled = true;
@@ -81,7 +81,7 @@ public class golfballcontroller : MonoBehaviour
             numStrokes = 0;
             SetStrokeText();
         }
-        if (Time.time > (teleport3Time + 3.0f))
+        if (Time.time > (teleport3Time + 2.0f))
         {
             player.transform.position = golf3Position;
             golf3Source.enabled = true;

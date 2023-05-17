@@ -274,6 +274,7 @@ public class Teleporter : MonoBehaviour
 
             shootingGame.gameOver = false;
             shootingGame.numHit = 0;
+            shootingGame.gameTimer = 20.0f;
             player.transform.position = shootingPosition;
             player.transform.eulerAngles = new Vector3(player.transform.eulerAngles.x, 90.0f, player.transform.eulerAngles.z);
             
