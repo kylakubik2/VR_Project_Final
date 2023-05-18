@@ -42,7 +42,7 @@ public class LaserGunScript : MonoBehaviour
     public UFOGenerator ufoGenerator;
     private bool startGame = false;
 
-    private int sylvestarScore = 20; //TODO: set sylvestarScore
+    private int sylvestarScore = 28; //TODO: set sylvestarScore
     public int numHit;
     public bool hit;
     public GameObject player;
