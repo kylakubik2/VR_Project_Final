@@ -64,7 +64,7 @@ public class Teleporter : MonoBehaviour
     public AudioSource golf3LoseAudio;
 
     public LaserGunScript shootingGame;
-    public GameObject ufoGenerator;
+    public UFOGenerator ufoGenerator;
     public AudioSource shootingNarrationAudio;
     public AudioSource shootingAudio;
     public AudioSource shootingWinAudio;
@@ -117,9 +117,8 @@ public class Teleporter : MonoBehaviour
         player.transform.position = blackRoomPosition;
         buggyStartPosition = buggy.transform.position;
 
-        ufoGenerator.SetActive(false);
+        ufoGenerator.startUFOs = false;
 
-        //ufoGenerator.SetActive(false);
         blackRoomAmbient.enabled = true;
         blackRoomNarration.enabled = false;
 

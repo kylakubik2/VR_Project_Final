@@ -11,10 +11,13 @@ public class UFOGenerator : MonoBehaviour
 
     public Teleporter teleporter;
     public LaserGunScript laserScript;
+    public bool startUFOs;
+    public bool stopUFOs;
 
     void Start()
     {
-        StartCoroutine(SpawnUFOs());
+        startUFOs = false;
+        stopUFOs = false;
     }
 
     IEnumerator SpawnUFOs()
@@ -39,6 +42,15 @@ public class UFOGenerator : MonoBehaviour
 
     void Update()
     {
-        
+        if (startUFOs)
+        {
+            StartCoroutine(SpawnUFOs());
+            startUFOs = false;
+        }
+        if (stopUFOs)
+        {
+            StopCoroutine(SpawnUFOs());
+            stopUFOs = false;
+        }
     }
 }

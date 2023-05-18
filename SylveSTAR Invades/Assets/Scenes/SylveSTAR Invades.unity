@@ -48703,7 +48703,7 @@ MonoBehaviour:
   golf3WinAudio: {fileID: 75890895}
   golf3LoseAudio: {fileID: 1436377423}
   shootingGame: {fileID: 1742698719}
-  ufoGenerator: {fileID: 1858386410}
+  ufoGenerator: {fileID: 1858386412}
   shootingNarrationAudio: {fileID: 954178454}
   shootingAudio: {fileID: 190817478}
   shootingWinAudio: {fileID: 198527472}
@@ -80787,8 +80787,10 @@ MonoBehaviour:
   ball: {fileID: 5543424096990329440, guid: 08a21e33455aed5448b01d5be932a0d6, type: 3}
   laserFireTime: 0.5
   laserTimer: 0
+  gameTimer: 20
   startTimer: 0
-  ufoGenerator: {fileID: 1858386410}
+  UFOGeneratorObject: {fileID: 1858386410}
+  ufoGenerator: {fileID: 1858386412}
   numHit: 0
   hit: 0
   player: {fileID: 1052862163}
@@ -85091,6 +85093,8 @@ MonoBehaviour:
   timeBetweenUFOs: 1
   teleporter: {fileID: 1052862167}
   laserScript: {fileID: 1742698719}
+  startUFOs: 0
+  stopUFOs: 0
 --- !u!1 &1860693234 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -1476871013257934367, guid: dcdf3a1a45deb8d48b7d3d0176a525f0,

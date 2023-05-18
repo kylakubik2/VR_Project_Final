@@ -38,7 +38,9 @@ public class LaserGunScript : MonoBehaviour
     private int minutes;
 
     public bool startTimer;
-    public GameObject ufoGenerator;
+    public GameObject UFOGeneratorObject;
+    public UFOGenerator ufoGenerator;
+    private bool startGame = false;
 
     private int sylvestarScore = 20; //TODO: set sylvestarScore
     public int numHit;
@@ -59,6 +61,7 @@ public class LaserGunScript : MonoBehaviour
     void Start()
     {
         win.enabled = false;
+        
         hasWon = false;
         gameOver = false;
         //portal.SetActive(false);
@@ -83,6 +86,10 @@ public class LaserGunScript : MonoBehaviour
     {
         Debug.Log("Trigger Down");
         startTimer = true;
+        if (gameTimer == 20.0f)
+        {
+            startGame = true;
+        }
         if (gameTimer > 0)
         {
             Instantiate(ball, laserOrigin.position, laserOrigin.rotation * Quaternion.Euler(0f, 0f, 0f)).GetComponent<Rigidbody>().AddForce(laserOrigin.forward * shootPower);
@@ -102,32 +109,32 @@ public class LaserGunScript : MonoBehaviour
 
     void Update()
     {
-        /*
-        if (interactable.attachedToHand)
+        if (startGame)
         {
-            
+            ufoGenerator.startUFOs = true;
+            UFOGeneratorObject.SetActive(true);
+            startGame = false;
         }
-        */
 
         if (startTimer)
         {
-            ufoGenerator.SetActive(true);
-
             if (gameTimer > 0)
             {
                 gameTimer -= Time.deltaTime;
             }
             else
-            {
-                ufoGenerator.SetActive(false);
+            { 
+                ufoGenerator.stopUFOs = true;
+                UFOGeneratorObject.SetActive(false);
                 winTime = Time.time;
+                startTimer = false;
+                startGame = false;
 
                 ufos = GameObject.FindGameObjectsWithTag("UFO");
                 foreach (GameObject ufo in ufos)
                 {
                     ufo.SetActive(false);
                 }
-                startTimer = false;
             }
         }
         if (hit)
