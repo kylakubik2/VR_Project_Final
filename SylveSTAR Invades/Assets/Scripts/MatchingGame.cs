@@ -78,14 +78,7 @@ public class MatchingGame : MonoBehaviour
         if (gameOver)
         {
             portal.SetActive(true);
-            mercury.SetActive(false);
-            venus.SetActive(false);
-            earth.SetActive(false);
-            mars.SetActive(false);
-            jupiter.SetActive(false);
-            saturn.SetActive(false);
-            uranus.SetActive(false);
-            neptune.SetActive(false);
+            Invoke("DeletePlanets", 15.0f);
 
             SteamVR_Actions.move.Activate();
 
@@ -203,5 +196,17 @@ public class MatchingGame : MonoBehaviour
     public void PlayWin()
     {
         gameWon.enabled = true;
+    }
+
+    public void DeletePlanets()
+    {
+        mercury.SetActive(false);
+        venus.SetActive(false);
+        earth.SetActive(false);
+        mars.SetActive(false);
+        jupiter.SetActive(false);
+        saturn.SetActive(false);
+        uranus.SetActive(false);
+        neptune.SetActive(false);
     }
 }
